@@ -59,6 +59,15 @@ yarn run ai
 デザインは
 - toolsから呼ばれる関数群を変更する(html以外でも書き出せる)
 - htmlのベースファイルに変更、もしくはstyleの追加
+  - assets/templates以下のファイルを書き換える
+  - templateファイルの指定
+    - `const handler = new htmlPlugin({ outputDir, rootDir, templateOptions: {htmlTemplateFile: "tailwind-sea"}});`
+  - templateのheaderへstyleを注入
+    - `const handler = new htmlPlugin({ outputDir, rootDir, templateOptions: {headerStyle: darkStyle}});`
 - 各スライド用の個別のhtmlファイルの変更
+  - `assets/html/` 以下のファイルを編集
+  - 各スライド用のフォルダーを変更する
+    `const templateFileName = path.resolve(this.rootDir, "./assets/html/", `${fileName}.html`);`
+
 することでカスタマイズできます。
 
