@@ -16,19 +16,17 @@
     "test_run": "node --test  --require ts-node/register ./tests/run_*.ts # just run locally",
     "run2": "npx tsx ./src/presentation.ts",
     "run": "npx tsx ./tests/test.ts",
-    "chat": "echo nothing",
-    "b": "echo nothing"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/receptron/graphai"
+    "url": "git+https://github.com/receptron/mulmocast-vision"
   },
   "author": "Satoshi Nakajima, Isamu Arimoto",
-  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/receptron/graphai/issues"
+    "url": "https://github.com/receptron/mulmocast-vision/issues"
   },
-  "homepage": "https://github.com/receptron/graphai",
+  "homepage": "https://github.com/receptron/mulmocast-vision",
+  "license": "AGPL-3.0-or-later",
   "dependencies": {
     "@graphai/openai_agent": "^2.0.5",
     "dotenv": "^17.2.1",
