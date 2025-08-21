@@ -4,6 +4,8 @@
     <div class="text-2xl font-semibold">X: {{xAxis}}</div>
   </div>
   <ul class="list-disc ml-5 text-2xl">
-    {% for p in players %}<li>{{p.name}} (x: {{p.x}}, y: {{p.y}})</li>{% endfor %}
+    {% for p in players %}
+    <li>{{p.name}} (x: {{p.x}}, y: {{p.y}})</li>
+    {% endfor %}
   </ul>
 </div>

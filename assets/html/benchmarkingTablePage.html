@@ -4,14 +4,18 @@
     <thead>
       <tr>
         <th class="border p-3 text-left">Metric \ Competitor</th>
-        {% for c in competitors %}<th class="border p-3">{{c}}</th>{% endfor %}
+        {% for c in competitors %}
+        <th class="border p-3">{{c}}</th>
+        {% endfor %}
       </tr>
     </thead>
     <tbody>
       {% for m in metrics %}
       <tr>
         <td class="border p-3">{{m}}</td>
-        {% for c in competitors %}<td class="border p-3"></td>{% endfor %}
+        {% for c in competitors %}
+        <td class="border p-3"></td>
+        {% endfor %}
       </tr>
       {% endfor %}
     </tbody>

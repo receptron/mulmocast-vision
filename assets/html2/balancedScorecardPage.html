@@ -7,13 +7,8 @@
   </div>
 
   <div class="grid grid-cols-2 gap-8 max-w-7xl mx-auto">
-    {% set colors = [
-      "from-emerald-500 to-green-600",
-      "from-blue-500 to-indigo-600", 
-      "from-purple-500 to-violet-600",
-      "from-amber-500 to-orange-600"
-    ] %}
-    {% for p in perspectives %}
+    {% set colors = [ "from-emerald-500 to-green-600", "from-blue-500 to-indigo-600", "from-purple-500 to-violet-600", "from-amber-500 to-orange-600" ] %} {%
+    for p in perspectives %}
     <section class="bg-gradient-to-br {{colors[loop.index0 % 4]}} rounded-3xl p-10 text-white shadow-2xl hover:scale-105 transition-all duration-300">
       <div class="flex items-center mb-6">
         <div class="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mr-6">
@@ -23,7 +18,11 @@
         </div>
         <h2 class="text-3xl font-bold">{{p.name}}</h2>
       </div>
-      <ul class="space-y-3 text-lg">{% for it in p.items %}<li class="flex items-start"><span class="w-2 h-2 bg-white rounded-full mt-3 mr-3 flex-shrink-0"></span><span class="font-light">{{it}}</span></li>{% endfor %}</ul>
+      <ul class="space-y-3 text-lg">
+        {% for it in p.items %}
+        <li class="flex items-start"><span class="w-2 h-2 bg-white rounded-full mt-3 mr-3 flex-shrink-0"></span><span class="font-light">{{it}}</span></li>
+        {% endfor %}
+      </ul>
     </section>
     {% endfor %}
   </div>

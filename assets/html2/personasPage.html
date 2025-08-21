@@ -18,8 +18,9 @@
         </div>
         <h2 class="text-3xl font-bold">{{p.name}}</h2>
       </div>
-      {% if p.bio %}<p class="text-xl mb-6 leading-relaxed">{{p.bio}}</p>{% endif %}
-      {% if p.needs %}
+      {% if p.bio %}
+      <p class="text-xl mb-6 leading-relaxed">{{p.bio}}</p>
+      {% endif %} {% if p.needs %}
       <div>
         <h3 class="text-xl font-semibold mb-4">Key Needs</h3>
         <ul class="space-y-3 text-lg">

@@ -1,9 +1,7 @@
 <div class="bg-white text-gray-900 px-20 py-20">
   <!-- Top: Key message -->
   <section class="mb-12">
-    <h1 class="text-6xl font-extrabold tracking-tight mb-6">
-      {{keyMessage}}
-    </h1>
+    <h1 class="text-6xl font-extrabold tracking-tight mb-6">{{keyMessage}}</h1>
   </section>
 
   <!-- Middle: Supports -->
@@ -19,11 +17,11 @@
   <!-- Bottom: Details per support (optional) -->
   <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
     {% for support in supports %}
-      <div class="rounded-2xl border border-gray-200 p-6 bg-gray-50">
-        <ul class="list-disc ml-5 space-y-2 text-xl leading-relaxed text-gray-800">
-          <li>{{support}}</li>
-        </ul>
-      </div>
+    <div class="rounded-2xl border border-gray-200 p-6 bg-gray-50">
+      <ul class="list-disc ml-5 space-y-2 text-xl leading-relaxed text-gray-800">
+        <li>{{support}}</li>
+      </ul>
+    </div>
     {% endfor %}
   </section>
 </div>

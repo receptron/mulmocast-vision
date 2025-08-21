@@ -4,7 +4,11 @@
     {% for ph in phases %}
     <section class="rounded-xl border p-4 bg-gray-50">
       <h2 class="text-lg font-semibold mb-2">{{ph}}</h2>
-      <ul class="list-disc ml-5 space-y-1 text-xl">{% for a in actions %}<li>{{a}}</li>{% endfor %}</ul>
+      <ul class="list-disc ml-5 space-y-1 text-xl">
+        {% for a in actions %}
+        <li>{{a}}</li>
+        {% endfor %}
+      </ul>
     </section>
     {% endfor %}
   </div>

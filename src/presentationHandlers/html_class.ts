@@ -18,7 +18,7 @@ export class htmlPlugin {
     const { index, name } = options;
     const tmpName = name.replace(/^create/, "");
     const fileName = tmpName.charAt(0).toLowerCase() + tmpName.slice(1);
-    const templateFileName = path.resolve(this.rootDir, "./assets/html/", `${fileName}.html`);
+    const templateFileName = path.resolve(this.rootDir, "./assets/html2", `${fileName}.html`);
 
     const outfile = path.resolve(this.outputDir, `${index}.png`);
 

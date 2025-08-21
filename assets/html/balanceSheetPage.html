@@ -3,15 +3,27 @@
   <div class="grid grid-cols-3 gap-6">
     <section class="rounded-xl border p-6 bg-gray-50">
       <h2 class="text-xl font-semibold mb-3">Assets</h2>
-      <ul class="list-disc ml-5 text-2xl">{% for a in assets %}<li>{{a}}</li>{% endfor %}</ul>
+      <ul class="list-disc ml-5 text-2xl">
+        {% for a in assets %}
+        <li>{{a}}</li>
+        {% endfor %}
+      </ul>
     </section>
     <section class="rounded-xl border p-6 bg-white">
       <h2 class="text-xl font-semibold mb-3">Liabilities</h2>
-      <ul class="list-disc ml-5 text-2xl">{% for l in liabilities %}<li>{{l}}</li>{% endfor %}</ul>
+      <ul class="list-disc ml-5 text-2xl">
+        {% for l in liabilities %}
+        <li>{{l}}</li>
+        {% endfor %}
+      </ul>
     </section>
     <section class="rounded-xl border p-6 bg-gray-50">
       <h2 class="text-xl font-semibold mb-3">Equity</h2>
-      <ul class="list-disc ml-5 text-2xl">{% for e in equity %}<li>{{e}}</li>{% endfor %}</ul>
+      <ul class="list-disc ml-5 text-2xl">
+        {% for e in equity %}
+        <li>{{e}}</li>
+        {% endfor %}
+      </ul>
     </section>
   </div>
 </div>

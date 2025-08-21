@@ -9,7 +9,7 @@
   "scripts": {
     "build": "echo nothing",
     "lint": "eslint src tests",
-    "format": "prettier --write '{src,tests}/**/*.ts'",
+    "format": "prettier --write '{src,tests,assets}/**/*.{ts,html}'",
     "doc": "echo nothing",
     "examplesDoc": "echo nothing",
     "test": "node --test --require ts-node/register ./tests/test_*.ts",

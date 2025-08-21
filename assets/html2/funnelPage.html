@@ -9,11 +9,12 @@
   <!-- Funnel Visualization -->
   <div class="max-w-4xl mx-auto">
     <div class="space-y-4">
-      {% for st in stages %}
-      {% set width_percent = 100 - (loop.index0 * 15) %}
+      {% for st in stages %} {% set width_percent = 100 - (loop.index0 * 15) %}
       <div class="flex justify-center">
-        <div class="bg-gradient-to-r from-blue-{{ 600 - (loop.index0 * 100) }} to-indigo-{{ 700 - (loop.index0 * 100) }} rounded-2xl shadow-xl text-white transform hover:scale-105 transition-all duration-300" 
-             style="width: {{ width_percent }}%; min-width: 300px;">
+        <div
+          class="bg-gradient-to-r from-blue-{{ 600 - (loop.index0 * 100) }} to-indigo-{{ 700 - (loop.index0 * 100) }} rounded-2xl shadow-xl text-white transform hover:scale-105 transition-all duration-300"
+          style="width: {{ width_percent }}%; min-width: 300px;"
+        >
           <div class="p-8 text-center">
             <div class="flex items-center justify-center mb-4">
               <div class="w-12 h-12 bg-white bg-opacity-20 rounded-xl flex items-center justify-center mr-4">

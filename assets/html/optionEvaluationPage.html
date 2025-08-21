@@ -4,14 +4,18 @@
     <thead>
       <tr>
         <th class="border p-3 text-left">Criteria \ Options</th>
-        {% for o in options %}<th class="border p-3">{{o}}</th>{% endfor %}
+        {% for o in options %}
+        <th class="border p-3">{{o}}</th>
+        {% endfor %}
       </tr>
     </thead>
     <tbody>
       {% for i in range(0, criteria|length) %}
       <tr>
         <td class="border p-3">{{criteria[i]}}</td>
-        {% for j in range(0, options|length) %}<td class="border p-3">{{scores[j][i]}}</td>{% endfor %}
+        {% for j in range(0, options|length) %}
+        <td class="border p-3">{{scores[j][i]}}</td>
+        {% endfor %}
       </tr>
       {% endfor %}
     </tbody>

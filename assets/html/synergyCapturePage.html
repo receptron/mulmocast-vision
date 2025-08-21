@@ -2,7 +2,7 @@
   <h1 class="text-5xl font-bold mb-6">Synergy Capture</h1>
   <ul class="list-disc ml-5 text-2xl">
     {% for i in range(0, sources|length) %}
-      <li>{{sources[i]}}{% if values %} — {{values[i]}}{% endif %}</li>
+    <li>{{sources[i]}}{% if values %} — {{values[i]}}{% endif %}</li>
     {% endfor %}
   </ul>
 </div>

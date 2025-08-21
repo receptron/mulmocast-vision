@@ -6,6 +6,8 @@
     {% endfor %}
   </div>
   <ul class="mt-8 list-disc ml-5 text-xl">
-    {% for p in placements %}<li>{{p.name}} (r{{p.row+1}}, c{{p.col+1}})</li>{% endfor %}
+    {% for p in placements %}
+    <li>{{p.name}} (r{{p.row+1}}, c{{p.col+1}})</li>
+    {% endfor %}
   </ul>
 </div>

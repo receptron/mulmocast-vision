@@ -11,7 +11,11 @@
       <div class="flex items-center mb-8">
         <div class="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mr-6">
           <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm0-7a1 1 0 10-2 0v3a1 1 0 102 0V7z" clip-rule="evenodd" />
+            <path
+              fill-rule="evenodd"
+              d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM11 14a1 1 0 11-2 0 1 1 0 012 0zm0-7a1 1 0 10-2 0v3a1 1 0 102 0V7z"
+              clip-rule="evenodd"
+            />
           </svg>
         </div>
         <h2 class="text-4xl font-bold">Compliance Assessment</h2>
@@ -22,13 +26,12 @@
           <span class="text-xl font-light">{{a}}</span>
           <div class="flex items-center">
             <span class="text-lg font-semibold mr-3">{{levels[loop.index0]}}</span>
-            {% set level = levels[loop.index0] %}
-            {% if "High" in level or "Good" in level %}
-              <div class="w-4 h-4 bg-green-400 rounded-full"></div>
+            {% set level = levels[loop.index0] %} {% if "High" in level or "Good" in level %}
+            <div class="w-4 h-4 bg-green-400 rounded-full"></div>
             {% elif "Medium" in level or "Fair" in level %}
-              <div class="w-4 h-4 bg-yellow-400 rounded-full"></div>
+            <div class="w-4 h-4 bg-yellow-400 rounded-full"></div>
             {% else %}
-              <div class="w-4 h-4 bg-red-300 rounded-full"></div>
+            <div class="w-4 h-4 bg-red-300 rounded-full"></div>
             {% endif %}
           </div>
         </div>

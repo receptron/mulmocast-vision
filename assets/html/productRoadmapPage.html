@@ -5,7 +5,9 @@
     <section class="rounded-xl border p-4 bg-gray-50">
       <h2 class="text-lg font-semibold mb-2">{{r}}</h2>
       <ul class="list-disc ml-5 space-y-1 text-xl">
-        {% for it in items %}{% if it.release == r %}<li>{{it.label}}</li>{% endif %}{% endfor %}
+        {% for it in items %}{% if it.release == r %}
+        <li>{{it.label}}</li>
+        {% endif %}{% endfor %}
       </ul>
     </section>
     {% endfor %}

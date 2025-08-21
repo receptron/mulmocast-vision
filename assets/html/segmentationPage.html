@@ -4,7 +4,11 @@
     {% for s in segments %}
     <section class="rounded-xl border p-4 bg-gray-50">
       <h2 class="text-lg font-semibold mb-2">{{s}}</h2>
-      <ul class="list-disc ml-5 space-y-1 text-xl">{% for d in descriptors %}<li>{{d}}</li>{% endfor %}</ul>
+      <ul class="list-disc ml-5 space-y-1 text-xl">
+        {% for d in descriptors %}
+        <li>{{d}}</li>
+        {% endfor %}
+      </ul>
     </section>
     {% endfor %}
   </div>

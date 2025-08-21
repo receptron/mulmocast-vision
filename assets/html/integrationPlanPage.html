@@ -3,11 +3,19 @@
   <div class="grid grid-cols-2 gap-6">
     <section class="rounded-xl border p-6 bg-gray-50">
       <h2 class="text-xl font-semibold mb-3">Workstreams</h2>
-      <ul class="list-disc ml-5 space-y-2 text-2xl">{% for w in workstreams %}<li>{{w}}</li>{% endfor %}</ul>
+      <ul class="list-disc ml-5 space-y-2 text-2xl">
+        {% for w in workstreams %}
+        <li>{{w}}</li>
+        {% endfor %}
+      </ul>
     </section>
     <section class="rounded-xl border p-6 bg-white">
       <h2 class="text-xl font-semibold mb-3">Milestones</h2>
-      <ul class="list-disc ml-5 space-y-2 text-2xl">{% for m in milestones %}<li>{{m}}</li>{% endfor %}</ul>
+      <ul class="list-disc ml-5 space-y-2 text-2xl">
+        {% for m in milestones %}
+        <li>{{m}}</li>
+        {% endfor %}
+      </ul>
     </section>
   </div>
 </div>

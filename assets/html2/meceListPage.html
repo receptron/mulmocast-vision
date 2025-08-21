@@ -12,13 +12,19 @@
       <div class="flex items-center mb-6">
         <div class="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mr-6">
           <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+            <path
+              fill-rule="evenodd"
+              d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+              clip-rule="evenodd"
+            />
           </svg>
         </div>
         <h2 class="text-3xl font-bold">{{g.label}}</h2>
       </div>
       <ul class="space-y-3 text-lg">
-        {% for it in g.items %}<li class="flex items-start"><span class="w-2 h-2 bg-white rounded-full mt-3 mr-3 flex-shrink-0"></span><span class="font-light">{{it}}</span></li>{% endfor %}
+        {% for it in g.items %}
+        <li class="flex items-start"><span class="w-2 h-2 bg-white rounded-full mt-3 mr-3 flex-shrink-0"></span><span class="font-light">{{it}}</span></li>
+        {% endfor %}
       </ul>
     </section>
     {% endfor %}

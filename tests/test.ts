@@ -19,7 +19,7 @@ const darkStyle = `
       }
     }
   </style>
-`
+`;
 
 const defaultStyle = `
   <style type="text/tailwindcss">
@@ -29,11 +29,11 @@ const defaultStyle = `
       }
     }
   </style>
-`
+`;
 
 const main = () => {
   mkdir(outputDir);
-  const handler = new htmlPlugin({ outputDir, rootDir, templateOptions: {headerStyle: defaultStyle } });
+  const handler = new htmlPlugin({ outputDir, rootDir, templateOptions: { headerStyle: defaultStyle } });
   // const handler = new htmlPlugin({ outputDir, rootDir, templateOptions: {htmlTemplateFile: "tailwind-sea"}});
   // const handler = new htmlPlugin({ outputDir, rootDir, templateOptions: {headerStyle: darkStyle}});
   toolsRunner(handler, data.items);

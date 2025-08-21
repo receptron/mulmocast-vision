@@ -10,7 +10,11 @@
   <section class="grid grid-cols-1 md:grid-cols-{{stages|length}} gap-6">
     {% for tp in touchpoints %}
     <div class="rounded-xl border p-4 bg-white">
-      <ul class="list-disc ml-5 space-y-2 text-xl">{% for t in tp %}<li>{{t}}</li>{% endfor %}</ul>
+      <ul class="list-disc ml-5 space-y-2 text-xl">
+        {% for t in tp %}
+        <li>{{t}}</li>
+        {% endfor %}
+      </ul>
     </div>
     {% endfor %}
   </section>

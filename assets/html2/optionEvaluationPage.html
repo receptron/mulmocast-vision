@@ -27,7 +27,12 @@
         <div class="flex items-center gap-4">
           <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-violet-600 rounded-2xl flex items-center justify-center">
             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+              />
             </svg>
           </div>
           <h2 class="text-3xl font-bold text-gray-900">Evaluation Matrix</h2>
@@ -41,7 +46,12 @@
               <th class="p-6 text-left text-lg font-semibold text-gray-900 border-b border-gray-200">
                 <div class="flex items-center gap-2">
                   <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                    />
                   </svg>
                   Criteria
                 </div>
@@ -71,11 +81,9 @@
               </td>
               {% for j in range(0, options|length) %}
               <td class="p-6 text-center border-b border-gray-100">
-                <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl text-lg font-bold text-white
-                  {% if scores[j][i]|int >= 8 %}bg-gradient-to-br from-emerald-500 to-green-600
-                  {% elif scores[j][i]|int >= 6 %}bg-gradient-to-br from-blue-500 to-indigo-600
-                  {% elif scores[j][i]|int >= 4 %}bg-gradient-to-br from-amber-500 to-orange-600
-                  {% else %}bg-gradient-to-br from-red-500 to-rose-600{% endif %}">
+                <div
+                  class="inline-flex items-center justify-center w-12 h-12 rounded-xl text-lg font-bold text-white {% if scores[j][i]|int >= 8 %}bg-gradient-to-br from-emerald-500 to-green-600 {% elif scores[j][i]|int >= 6 %}bg-gradient-to-br from-blue-500 to-indigo-600 {% elif scores[j][i]|int >= 4 %}bg-gradient-to-br from-amber-500 to-orange-600 {% else %}bg-gradient-to-br from-red-500 to-rose-600{% endif %}"
+                >
                   {{scores[j][i]}}
                 </div>
               </td>
@@ -92,7 +100,7 @@
       <div class="flex items-center gap-4 mb-6">
         <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl flex items-center justify-center">
           <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </div>
         <h3 class="text-3xl font-bold text-gray-900">Evaluation Framework</h3>

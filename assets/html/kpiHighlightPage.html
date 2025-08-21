@@ -5,7 +5,9 @@
     <section class="rounded-2xl border p-6 bg-gray-50">
       <div class="text-xl text-gray-700">{{k.label}}</div>
       <div class="text-5xl font-extrabold my-2">{{k.value}}</div>
-      {% if k.delta %}<div class="text-gray-600">Δ {{k.delta}}</div>{% endif %}
+      {% if k.delta %}
+      <div class="text-gray-600">Δ {{k.delta}}</div>
+      {% endif %}
     </section>
     {% endfor %}
   </div>
