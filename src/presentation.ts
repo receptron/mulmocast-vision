@@ -67,7 +67,7 @@ Zelensky and European leaders seem to have convinced Trump that such commitments
     toolsRunner(handler, res.tool_calls);
     writeTools(outputDir, res.tool_calls);
   }
-  
+
   // toolsRunner(presentationHandlers, res.tool_calls);
   // for debug
   // presentationHandlers.writeTools(res.tool_calls);
