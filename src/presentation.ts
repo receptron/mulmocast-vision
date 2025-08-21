@@ -62,5 +62,4 @@ Zelensky and European leaders seem to have convinced Trump that such commitments
 
   // for debug
   presentationHandlers.writeTools(res.tool_calls);
-  
 });

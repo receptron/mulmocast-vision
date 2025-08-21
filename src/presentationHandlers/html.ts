@@ -31,10 +31,9 @@ export const writeTools = (tools: any) => {
 const generateHtml = async (args: any, options: { index: number; name: string }) => {
   const { index, name } = options;
   const tmpName = name.replace(/^create/, "");
-  const fileName = tmpName.charAt(0).toLowerCase() + tmpName.slice(1)
+  const fileName = tmpName.charAt(0).toLowerCase() + tmpName.slice(1);
   await createPage(getOutfile(index), nunjucks.render(filePath(fileName), args));
 };
-
 
 export const createSectionDividerPage = async (args: any, options: { index: number; name: string }) => {
   await generateHtml(args, options);
@@ -355,5 +354,3 @@ export const createCultureValuesPage = async (args: any, options: { index: numbe
 export const createThankYouContactPage = async (args: any, options: { index: number; name: string }) => {
   await generateHtml(args, options);
 };
-
-
