@@ -29,18 +29,22 @@ flowchart TD
     D --> E[📑 完成したプレゼン資料]
 ```
 
-# 技術的なリンク
 
-- [slideを作成するtoolsの関数定義](./src/tools.ts)
-- [その関数で生成される80種類のサンプルのデータ](./tests/ai_referencing_80_tool_calls.ts)
-- [htmlのテンプレート](assets/html/)
+# 技術的な流れ
+- LLMがtoolsを使ってスライドの内容を決める
+  - [slideを作成するtoolsの関数定義](./src/tools.ts)
+- [runner](./src/runner.ts)でtoolsの結果から関数を呼び出す
+  - [呼び出される関数](./src/presentationHandlers/html_class.ts)
+- [html + tailwindを使ったベースhtml](./assets/templates/tailwind.html) + [スライドごとの個別のhtml](./assets/html/) でhtmlページをつくる
+- outdirに画像として保存する
 
 
-### 80このサンプルデータを使ってhtml -> imageを生成する
+### sample: 80このサンプルデータを使ってhtml -> imageを生成する
 
 ```
 yarn run generate_all_images
 ```
+- [その関数で生成される80種類のサンプルのデータ](./tests/ai_referencing_80_tool_calls.ts)
 
 outdir/{timeStamp}/{index}.png に画像生成
 
