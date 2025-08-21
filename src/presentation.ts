@@ -1,7 +1,7 @@
 import "dotenv/config";
 import { defaultTestContext } from "graphai";
 import { openAIAgent } from "@graphai/openai_agent";
-import { tools } from "./functions";
+import { tools } from "./tools";
 
 import * as presentationHandlers from "./presentationHandlers/html";
 import { toolsRunner } from "./runner";
