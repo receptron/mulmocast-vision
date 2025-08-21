@@ -15,7 +15,7 @@
     "test": "node --test --require ts-node/register ./tests/test_*.ts",
     "test_run": "node --test  --require ts-node/register ./tests/run_*.ts # just run locally",
     "run2": "npx tsx ./src/presentation.ts",
-    "run": "npx tsx ./tests/test.ts",
+    "run": "npx tsx ./tests/test.ts"
   },
   "repository": {
     "type": "git",

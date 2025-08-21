@@ -45,6 +45,6 @@ export const createPage = async (file: string, htmlBody: string) => {
 
   const template = getHTMLFile("tailwind");
   const htmlData = interpolate(template, { html_body: htmlBody });
-  console.log(htmlData);
+  // console.log(htmlData);
   await renderHTMLToImage(htmlData, file, canvasSize.width, canvasSize.height);
 };
