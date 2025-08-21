@@ -3,8 +3,10 @@ import { defaultTestContext } from "graphai";
 import { openAIAgent } from "@graphai/openai_agent";
 import { tools } from "./tools";
 
-import * as presentationHandlers from "./presentationHandlers/html";
+// import * as presentationHandlers from "./presentationHandlers/html";
+import { htmlPlugin } from "../src/presentationHandlers/html_class";
 import { toolsRunner } from "./runner";
+import { mkdir, getRootDir, getOutDir, writeTools } from "../src/utils";
 
 import test from "node:test";
 import assert from "node:assert";
@@ -55,11 +57,18 @@ Zelensky and European leaders seem to have convinced Trump that such commitments
     },
   })) as any;
 
+  const rootDir = getRootDir();
+  const outputDir = getOutDir();
+  mkdir(outputDir);
+
   if (res) {
     console.log(JSON.stringify(res.tool_calls, null, 2));
+    const handler = new htmlPlugin({ outputDir, rootDir });
+    toolsRunner(handler, res.tool_calls);
+    writeTools(outputDir, res.tool_calls);
   }
-  toolsRunner(presentationHandlers, res.tool_calls);
-
+  
+  // toolsRunner(presentationHandlers, res.tool_calls);
   // for debug
-  presentationHandlers.writeTools(res.tool_calls);
+  // presentationHandlers.writeTools(res.tool_calls);
 });
