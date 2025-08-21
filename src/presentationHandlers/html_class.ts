@@ -6,10 +6,12 @@ import nunjucks from "nunjucks";
 export class htmlPlugin {
   protected outputDir: string;
   protected rootDir: string;
-
-  constructor({ outputDir, rootDir }: { outputDir: string; rootDir: string }) {
+  protected templateOptions: any;
+  
+  constructor({ outputDir, rootDir, templateOptions }: { outputDir: string; rootDir: string, templateOptions: any }) {
     this.outputDir = outputDir;
     this.rootDir = rootDir;
+    this.templateOptions = templateOptions;
   }
 
   private async generateHtml(args: any, options: { index: number; name: string }) {
@@ -20,7 +22,7 @@ export class htmlPlugin {
 
     const outfile = path.resolve(this.outputDir, `${index}.png`);
 
-    await createPage(outfile, nunjucks.render(templateFileName, args));
+    await createPage(outfile, nunjucks.render(templateFileName, args), this.templateOptions);
   }
 
   public async createSectionDividerPage(args: any, options: { index: number; name: string }) {

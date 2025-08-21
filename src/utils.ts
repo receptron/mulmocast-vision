@@ -40,12 +40,14 @@ export const getHTMLFile = (filename: string) => {
   return fs.readFileSync(path.resolve(rootDir, `./assets/templates/${filename}.html`), "utf-8");
 };
 
-export const createPage = async (file: string, htmlBody: string) => {
+export const createPage = async (file: string, htmlBody: string, options?: { htmlTemplateFile?: string, headerStyle?: string}) => {
   const canvasSize = { width: 1536, height: 1024 };
-
-  const template = getHTMLFile("tailwind");
-  const htmlData = interpolate(template, { html_body: htmlBody });
-  // console.log(htmlData);
+  const { htmlTemplateFile, headerStyle } = options ?? {};
+  
+  const template = getHTMLFile(htmlTemplateFile ?? "tailwind");
+  // console.log(template)
+  const htmlData = interpolate(template, { htmlBody, headerStyle });
+  console.log(htmlData);
   await renderHTMLToImage(htmlData, file, canvasSize.width, canvasSize.height);
 };
 
