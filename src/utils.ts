@@ -37,7 +37,7 @@ export const interpolate = (template: string, data: Record<string, string>): str
 };
 
 export const getHTMLFile = (filename: string) => {
-  return fs.readFileSync(path.resolve(rootDir, `./assets/html/${filename}.html`), "utf-8");
+  return fs.readFileSync(path.resolve(rootDir, `./assets/templates/${filename}.html`), "utf-8");
 };
 
 export const createPage = async (file: string, htmlBody: string) => {
@@ -47,4 +47,22 @@ export const createPage = async (file: string, htmlBody: string) => {
   const htmlData = interpolate(template, { html_body: htmlBody });
   // console.log(htmlData);
   await renderHTMLToImage(htmlData, file, canvasSize.width, canvasSize.height);
+};
+
+export const mkdir = (dirPath: string) => {
+  if (!fs.existsSync(dirPath)) {
+    fs.mkdirSync(dirPath, { recursive: true });
+  }
+};
+
+export const writeTools = (baseDir: string, tools: any) => {
+  fs.writeFileSync(path.resolve(baseDir, "tools.json"), JSON.stringify(tools, null, 2), "utf8");
+};
+
+export const getRootDir = () => {
+  return path.resolve(__dirname, "../");
+};
+export const getOutDir = () => {
+  const now = Date.now();
+  return path.resolve(getRootDir(), "outdir", String(now));
 };
