@@ -16,7 +16,7 @@
     "test_run": "node --test  --require ts-node/register ./tests/run_*.ts # just run locally",
     "ai": "npx tsx ./src/presentation.ts",
     "generate_all_images": "npx tsx ./tests/test.ts",
-    "ci_text": "NODE_ENV=test npx tsx ./tests/test.ts"
+    "ci_test": "NODE_ENV=test npx tsx ./tests/test.ts"
   },
   "repository": {
     "type": "git",
