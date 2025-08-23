@@ -28,7 +28,7 @@
   "homepage": "https://github.com/receptron/mulmocast-vision",
   "license": "AGPL-3.0-or-later",
   "dependencies": {
-    "@graphai/openai_agent": "^2.0.5",
+    "@graphai/openai_agent": "^2.0.7",
     "@modelcontextprotocol/sdk": "^1.17.4",
     "dotenv": "^17.2.1",
     "graphai": "^2.0.14",
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@types/nunjucks": "^3.2.6",
-    "eslint": "^9.33.0",
+    "eslint": "^9.34.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "prettier": "^3.6.2",
