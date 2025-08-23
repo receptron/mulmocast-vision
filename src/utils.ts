@@ -2,11 +2,15 @@ import fs from "fs";
 import path from "path";
 import puppeteer from "puppeteer";
 
+const isCI = process.env.CI === "true";
+
 const rootDir = path.resolve(__dirname, "../");
 
 export const renderHTMLToImage = async (html: string, outputPath: string, width: number, height: number) => {
   // Use Puppeteer to render HTML to an image
-  const browser = await puppeteer.launch({});
+  const browser = await puppeteer.launch({
+    args: isCI ? ["--no-sandbox"] : [],
+  });
   const page = await browser.newPage();
 
   // Set the page content to the HTML generated from the Markdown
