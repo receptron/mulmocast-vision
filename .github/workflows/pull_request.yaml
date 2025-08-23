@@ -26,3 +26,4 @@ jobs:
     - run: yarn run format
     - run: yarn run lint
     - run: yarn run build
+    - run: yarn run generate_all_images
