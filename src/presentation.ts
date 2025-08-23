@@ -8,7 +8,7 @@ import { htmlPlugin } from "../src/presentationHandlers/html_class";
 import { toolsRunner } from "./runner";
 import { mkdir, getRootDir, getOutDir, writeTools } from "../src/utils";
 
-const main = () => {
+const main = async () => {
   const namedInputs = {
     prompt: [
       `
