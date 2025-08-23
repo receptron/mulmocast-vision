@@ -5,9 +5,6 @@ import { fileURLToPath } from "url";
 
 import nunjucks from "nunjucks";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 const rootDir = path.resolve(__dirname, "../");
 
 export const renderHTMLToImage = async (html: string, outputPath: string, width: number, height: number) => {
@@ -29,10 +26,7 @@ export const renderHTMLToImage = async (html: string, outputPath: string, width:
   await browser.close();
 };
 
-// export const interpolate = (template: string, data: Record<string, string>): string => {
-//  return nunjucks.renderString(template, data);
-// };
-export const interpolate = (template: string, data: Record<string, string>): string => {
+export const interpolate = (template: string, data: Record<string, string | undefined>): string => {
   return template.replace(/\$\{(.*?)\}/g, (_, key) => data[key.trim()] ?? "");
 };
 

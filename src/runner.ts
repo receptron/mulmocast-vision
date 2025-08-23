@@ -1,12 +1,12 @@
-import { GraphAI } from "graphai";
+import { GraphAI, type NodeData } from "graphai";
 // options: fileName, style
-export const toolsRunner = async (handler: any, response: any, options: any) => {
-  const nodes = {};
+export const toolsRunner = async (handler: any, response: any) => {
+  const nodes: Record<string, NodeData> = {};
 
-  response.forEach((tool, index) => {
+  response.forEach((tool: { name: string; arguments: unknown }, index: number) => {
     if (handler[tool.name]) {
-      nodes[index] = {
-        agent: async (namedInput) => {
+      nodes[String(index)] = {
+        agent: async (namedInput: { data: { args: unknown; options: { name: string; index: number } } }) => {
           await handler[tool.name](namedInput.data.args, namedInput.data.options);
         },
         inputs: {

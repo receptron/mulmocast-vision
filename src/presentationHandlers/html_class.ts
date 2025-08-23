@@ -8,7 +8,7 @@ export class htmlPlugin {
   protected rootDir: string;
   protected templateOptions: any;
 
-  constructor({ outputDir, rootDir, templateOptions }: { outputDir: string; rootDir: string; templateOptions: any }) {
+  constructor({ outputDir, rootDir, templateOptions }: { outputDir: string; rootDir: string; templateOptions?: any }) {
     this.outputDir = outputDir;
     this.rootDir = rootDir;
     this.templateOptions = templateOptions;
