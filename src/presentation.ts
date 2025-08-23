@@ -8,10 +8,7 @@ import { htmlPlugin } from "../src/presentationHandlers/html_class";
 import { toolsRunner } from "./runner";
 import { mkdir, getRootDir, getOutDir, writeTools } from "../src/utils";
 
-import test from "node:test";
-import assert from "node:assert";
-
-test("test openai tools", async () => {
+const main = () => {
   const namedInputs = {
     prompt: [
       `
@@ -71,4 +68,6 @@ Zelensky and European leaders seem to have convinced Trump that such commitments
   // toolsRunner(presentationHandlers, res.tool_calls);
   // for debug
   // presentationHandlers.writeTools(res.tool_calls);
-});
+};
+
+main();

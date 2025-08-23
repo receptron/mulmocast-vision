@@ -1,9 +1,6 @@
 import fs from "fs";
 import path from "path";
 import puppeteer from "puppeteer";
-import { fileURLToPath } from "url";
-
-import nunjucks from "nunjucks";
 
 const rootDir = path.resolve(__dirname, "../");
 

@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { createPage, interpolate, getRootDir, getOutDir, mkdir } from "../utils";
+import { createPage, getRootDir, getOutDir, mkdir } from "../utils";
 import nunjucks from "nunjucks";
 
 const rootDir = getRootDir();

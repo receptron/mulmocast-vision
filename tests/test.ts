@@ -1,7 +1,3 @@
-// import * as presentationHandlers from "../src/presentationHandlers/html";
-//import { toolsResponses } from "./tools_sample_response";
-import fs from "fs";
-import path from "path";
 import { htmlPlugin } from "../src/presentationHandlers/html_class";
 
 import { toolsRunner } from "../src/runner";
@@ -11,7 +7,7 @@ import { mkdir, getRootDir, getOutDir } from "../src/utils";
 const rootDir = getRootDir();
 const outputDir = getOutDir();
 
-const darkStyle = `
+export const darkStyle = `
   <style type="text/tailwindcss">
     @layer base {
       body {

@@ -3,9 +3,6 @@
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { CallToolRequestSchema, CallToolRequest, ListToolsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
 import { GraphAILogger } from "graphai";
 
 import { tools } from "../tools";

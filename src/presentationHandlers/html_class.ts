@@ -1,6 +1,5 @@
-import fs from "fs";
 import path from "path";
-import { createPage, interpolate } from "../utils";
+import { createPage } from "../utils";
 import nunjucks from "nunjucks";
 
 export class htmlPlugin {
