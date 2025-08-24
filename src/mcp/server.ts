@@ -25,7 +25,10 @@ const server = new Server(
 // List available tools
 server.setRequestHandler(ListToolsRequestSchema, async () => {
   return {
-    tools,
+    tools: tools.map((tool: {function: {name: string, description: string, parameters: unknown}}) => {
+      const { name, description, parameters } = tool.function;
+      return {  name, description, inputSchema: parameters };
+    }),
   };
 });
 
