@@ -4,12 +4,13 @@ export const tools = [
     type: "function" as const,
     function: {
       name: "createSectionDividerPage",
-      description: "Create a section divider page with a large heading.",
+      description:
+        "Insert a new slide in the presentation that serves as a section divider. This slide must include both a large main heading and a subtitle. Use this when the user wants to create a single slide that clearly introduces or separates a new section in their presentation.",
       parameters: {
         type: "object",
         properties: {
-          heading: { type: "string", description: "Main section title" },
-          subheading: { type: "string", description: "Optional subtitle" },
+          heading: { type: "string", description: "Main section title, shown prominently on the slide" },
+          subheading: { type: "string", description: "Subtitle that provides context or explanation for the section" },
         },
         required: ["heading", "subheading"],
       },
@@ -21,14 +22,15 @@ export const tools = [
     type: "function" as const,
     function: {
       name: "createAgendaPage",
-      description: "Create an agenda page with bullet points.",
+      description:
+        "Insert one slide in the presentation that shows the agenda. This slide lists the main topics as bullet points under a clear title, giving the audience an overview of what will be covered.",
       parameters: {
         type: "object",
         properties: {
-          title: { type: "string" },
-          items: { type: "array", items: { type: "string" }, minItems: 1 },
+          title: { type: "string", description: "Heading shown at the top of the agenda slide" },
+          items: { type: "array", items: { type: "string" }, minItems: 1, description: "Agenda bullet points" },
         },
-        required: ["items"],
+        required: ["title", "items"],
       },
     },
   },
@@ -38,19 +40,21 @@ export const tools = [
     type: "function" as const,
     function: {
       name: "createExecutiveSummaryPage",
-      description: "Create an executive summary with 3–5 key points.",
+      description:
+        "Insert one slide in the presentation that provides an executive summary. This slide should include a clear title and 3–7 concise bullet points highlighting the key takeaways.",
       parameters: {
         type: "object",
         properties: {
-          title: { type: "string" },
+          title: { type: "string", description: "Slide title for the executive summary" },
           bullets: {
             type: "array",
             items: { type: "string" },
             minItems: 3,
             maxItems: 7,
+            description: "Key takeaway points to summarize",
           },
         },
-        required: ["bullets"],
+        required: ["title", "bullets"],
       },
     },
   },
@@ -60,12 +64,13 @@ export const tools = [
     type: "function" as const,
     function: {
       name: "createKeyMessageWithSupportsPage",
-      description: "Create a key message headline with supporting points.",
+      description:
+        "Insert one slide in the presentation that emphasizes a single key message. The headline should state the main message, supported by at least two bullet points.",
       parameters: {
         type: "object",
         properties: {
-          headline: { type: "string" },
-          supports: { type: "array", items: { type: "string" }, minItems: 2 },
+          headline: { type: "string", description: "Main key message shown as the headline" },
+          supports: { type: "array", items: { type: "string" }, minItems: 2, description: "Supporting points or evidence" },
         },
         required: ["headline", "supports"],
       },
@@ -77,13 +82,14 @@ export const tools = [
     type: "function" as const,
     function: {
       name: "createHypothesisPage",
-      description: "Create a hypothesis page with implications and next steps.",
+      description:
+        "Insert one slide in the presentation that presents a hypothesis. This slide states the hypothesis clearly and may also outline implications and suggested next steps.",
       parameters: {
         type: "object",
         properties: {
-          hypothesis: { type: "string" },
-          implications: { type: "array", items: { type: "string" } },
-          nextSteps: { type: "array", items: { type: "string" } },
+          hypothesis: { type: "string", description: "The main hypothesis statement" },
+          implications: { type: "array", items: { type: "string" }, description: "Possible implications if the hypothesis is true" },
+          nextSteps: { type: "array", items: { type: "string" }, description: "Recommended next actions" },
         },
         required: ["hypothesis"],
       },
@@ -95,15 +101,17 @@ export const tools = [
     type: "function" as const,
     function: {
       name: "createIssueTreePage",
-      description: "Create an issue tree slide (MECE).",
+      description:
+        "Insert one slide in the presentation that visualizes an issue tree. This slide shows the root issue at the top and branches into MECE sub-issues to structure the problem.",
       parameters: {
         type: "object",
         properties: {
-          rootIssue: { type: "string" },
+          rootIssue: { type: "string", description: "Main issue or problem statement" },
           branches: {
             type: "array",
             items: { type: "array", items: { type: "string" } },
             minItems: 2,
+            description: "Sub-issues or branches grouped under the root issue",
           },
         },
         required: ["rootIssue", "branches"],
@@ -116,15 +124,17 @@ export const tools = [
     type: "function" as const,
     function: {
       name: "createDriverTreePage",
-      description: "Create a business driver tree.",
+      description:
+        "Insert one slide in the presentation that visualizes a driver tree. This slide shows a key business metric at the top and the drivers that influence it branching below.",
       parameters: {
         type: "object",
         properties: {
-          metric: { type: "string" },
+          metric: { type: "string", description: "The main business metric being analyzed" },
           drivers: {
             type: "array",
             items: { type: "array", items: { type: "string" } },
             minItems: 1,
+            description: "Driver branches that affect the main metric",
           },
         },
         required: ["metric", "drivers"],
@@ -137,29 +147,31 @@ export const tools = [
     type: "function" as const,
     function: {
       name: "createMeceListPage",
-      description: "Create a MECE grouped bullet list.",
+      description:
+        "Insert one slide in the presentation that organizes items into MECE (Mutually Exclusive, Collectively Exhaustive) groups. Each group has a label and its own bullet list.",
       parameters: {
         type: "object",
         properties: {
-          title: { type: "string" },
+          title: { type: "string", description: "Title of the MECE slide" },
           groups: {
             type: "array",
             minItems: 2,
             items: {
               type: "object",
               properties: {
-                label: { type: "string" },
+                label: { type: "string", description: "Group label" },
                 items: {
                   type: "array",
                   items: { type: "string" },
                   minItems: 1,
+                  description: "Bullet points within this group",
                 },
               },
               required: ["label", "items"],
             },
           },
         },
-        required: ["groups"],
+        required: ["title", "groups"],
       },
     },
   },
@@ -169,15 +181,17 @@ export const tools = [
     type: "function" as const,
     function: {
       name: "createPyramidPrinciplePage",
-      description: "Create a pyramid principle (conclusion → reasons) page.",
+      description:
+        "Insert one slide in the presentation that follows the pyramid principle. The slide starts with the key message, followed by supporting reasons, and optional detailed breakdowns.",
       parameters: {
         type: "object",
         properties: {
-          keyMessage: { type: "string" },
-          supports: { type: "array", items: { type: "string" }, minItems: 2 },
+          keyMessage: { type: "string", description: "Top-level conclusion or main message" },
+          supports: { type: "array", items: { type: "string" }, minItems: 2, description: "Supporting reasons for the key message" },
           details: {
             type: "array",
             items: { type: "array", items: { type: "string" } },
+            description: "Optional deeper details for each supporting reason",
           },
         },
         required: ["keyMessage", "supports"],
@@ -190,14 +204,14 @@ export const tools = [
     type: "function" as const,
     function: {
       name: "createScqaPage",
-      description: "Create a SCQA (Situation, Complication, Question, Answer) storyline page.",
+      description: "Insert one slide in the presentation that explains a storyline using the SCQA framework: Situation, Complication, Question, and Answer.",
       parameters: {
         type: "object",
         properties: {
-          situation: { type: "string" },
-          complication: { type: "string" },
-          question: { type: "string" },
-          answer: { type: "string" },
+          situation: { type: "string", description: "The initial situation or context" },
+          complication: { type: "string", description: "The complication or challenge" },
+          question: { type: "string", description: "The key question that arises" },
+          answer: { type: "string", description: "The answer or proposed resolution" },
         },
         required: ["situation", "complication", "question", "answer"],
       },
