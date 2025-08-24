@@ -75,3 +75,28 @@ yarn run ai
 
 することでカスタマイズできます。
 
+
+### mcp
+
+buildする
+```
+yarn run build
+```
+
+mcp設定
+```
+    "mulmocast-vision": {
+      "command": "env",
+      "args": [
+        "node",
+        "/path/to/mulmocast-vision/lib/mcp/server.js"
+      ],
+      "transport": {
+        "stdio": true
+      }
+    }
+```
+
+mulmocast-vision/output以下に画像が出力される。
+セッションごとにfolderができるので注意
+(連続すると画像が上書きされるかも)
