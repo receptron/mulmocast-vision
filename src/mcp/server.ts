@@ -42,15 +42,13 @@ let index = 0;
 // Handle tool calls
 server.setRequestHandler(CallToolRequestSchema, async (request: CallToolRequest) => {
   const { name, arguments: args } = request.params;
-
   try {
     if (name in handler) {
       const key = name as keyof typeof handler;
       const method = handler[key];
       if (typeof method === "function") {
-        // if (handler[name]) {
         index = index + 1;
-        method(args, { name, index });
+        await method(args, { name, index });
 
         return {
           content: [

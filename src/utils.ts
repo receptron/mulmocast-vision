@@ -35,15 +35,16 @@ export const getHTMLFile = (filename: string) => {
   return fs.readFileSync(path.resolve(rootDir, `./assets/templates/${filename}.html`), "utf-8");
 };
 
-export const createPage = async (file: string, htmlBody: string, options?: { htmlTemplateFile?: string; headerStyle?: string }) => {
+export const createPage = async (outputFile: string, htmlBody: string, options?: { htmlTemplateFile?: string; headerStyle?: string }) => {
   const canvasSize = { width: 1536, height: 1024 };
   const { htmlTemplateFile, headerStyle } = options ?? {};
 
   const template = getHTMLFile(htmlTemplateFile ?? "tailwind");
   // console.log(template)
   const htmlData = interpolate(template, { htmlBody, headerStyle });
-  console.log(htmlData);
-  await renderHTMLToImage(htmlData, file, canvasSize.width, canvasSize.height);
+  // console.log(htmlData);
+  await renderHTMLToImage(htmlData, outputFile, canvasSize.width, canvasSize.height);
+  return htmlData;
 };
 
 export const mkdir = (dirPath: string) => {
@@ -63,3 +64,15 @@ export const getOutDir = () => {
   const now = Date.now();
   return path.resolve(getRootDir(), "outdir", String(now));
 };
+
+export const debugLogger = (data: unknown) => {
+  const logFile = path.resolve("/tmp/mcp.log");
+
+  try {
+    const json = JSON.stringify(data, null, 2); // pretty print
+    fs.appendFileSync(logFile, json + "\n", { encoding: "utf8" });
+  } catch (err) {
+    console.error("Failed to write debug log:", err);
+  }
+};
+

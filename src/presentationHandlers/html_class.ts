@@ -13,334 +13,334 @@ export class htmlPlugin {
     this.templateOptions = templateOptions;
   }
 
-  private async generateHtml(args: any, options: { index: number; name: string }) {
-    const { index, name } = options;
-    const tmpName = name.replace(/^create/, "");
-    const fileName = tmpName.charAt(0).toLowerCase() + tmpName.slice(1);
+  private generateHtml = async (args: any, options: { index: number; name: string }) => {
+    const { index, name } = options ?? {};
+    const tmpName = name?.replace(/^create/, "");
+    const fileName = tmpName?.charAt(0)?.toLowerCase() + tmpName?.slice(1);
     const templateFileName = path.resolve(this.rootDir, "./assets/html2", `${fileName}.html`);
 
     const outfile = path.resolve(this.outputDir, `${index}.png`);
 
-    await createPage(outfile, nunjucks.render(templateFileName, args), this.templateOptions);
+    return await createPage(outfile, nunjucks.render(templateFileName, args), this.templateOptions);
   }
 
-  public async createSectionDividerPage(args: any, options: { index: number; name: string }) {
+  public createSectionDividerPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createAgendaPage(args: any, options: { index: number; name: string }) {
+  public createAgendaPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createExecutiveSummaryPage(args: any, options: { index: number; name: string }) {
+  public createExecutiveSummaryPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createKeyMessageWithSupportsPage(args: any, options: { index: number; name: string }) {
+  public createKeyMessageWithSupportsPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createHypothesisPage(args: any, options: { index: number; name: string }) {
+  public createHypothesisPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createIssueTreePage(args: any, options: { index: number; name: string }) {
+  public createIssueTreePage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createDriverTreePage(args: any, options: { index: number; name: string }) {
+  public createDriverTreePage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createMeceListPage(args: any, options: { index: number; name: string }) {
+  public createMeceListPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createPyramidPrinciplePage(args: any, options: { index: number; name: string }) {
+  public createPyramidPrinciplePage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createScqaPage(args: any, options: { index: number; name: string }) {
+  public createScqaPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createSwotPage(args: any, options: { index: number; name: string }) {
+  public createSwotPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createThreeCPage(args: any, options: { index: number; name: string }) {
+  public createThreeCPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createFourPPage(args: any, options: { index: number; name: string }) {
+  public createFourPPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createSevenSPage(args: any, options: { index: number; name: string }) {
+  public createSevenSPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createValueChainPage(args: any, options: { index: number; name: string }) {
+  public createValueChainPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createPorterFiveForcesPage(args: any, options: { index: number; name: string }) {
+  public createPorterFiveForcesPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createBusinessModelCanvasPage(args: any, options: { index: number; name: string }) {
+  public createBusinessModelCanvasPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createCustomerJourneyPage(args: any, options: { index: number; name: string }) {
+  public createCustomerJourneyPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createStakeholderMapPage(args: any, options: { index: number; name: string }) {
+  public createStakeholderMapPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createRaciPage(args: any, options: { index: number; name: string }) {
+  public createRaciPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createOkrKpiDashboardPage(args: any, options: { index: number; name: string }) {
+  public createOkrKpiDashboardPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createBalancedScorecardPage(args: any, options: { index: number; name: string }) {
+  public createBalancedScorecardPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createQuarterlyRoadmapPage(args: any, options: { index: number; name: string }) {
+  public createQuarterlyRoadmapPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createMilestoneTimelinePage(args: any, options: { index: number; name: string }) {
+  public createMilestoneTimelinePage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createGanttSimplePage(args: any, options: { index: number; name: string }) {
+  public createGanttSimplePage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createWaterfallPage(args: any, options: { index: number; name: string }) {
+  public createWaterfallPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createFunnelPage(args: any, options: { index: number; name: string }) {
+  public createFunnelPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createTwoByTwoMatrixPage(args: any, options: { index: number; name: string }) {
+  public createTwoByTwoMatrixPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createBcgMatrixPage(args: any, options: { index: number; name: string }) {
+  public createBcgMatrixPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createGeMcKinseyMatrixPage(args: any, options: { index: number; name: string }) {
+  public createGeMcKinseyMatrixPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createMarimekkoPlaceholderPage(args: any, options: { index: number; name: string }) {
+  public createMarimekkoPlaceholderPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createBubbleChartPlaceholderPage(args: any, options: { index: number; name: string }) {
+  public createBubbleChartPlaceholderPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createHeatmapPlaceholderPage(args: any, options: { index: number; name: string }) {
+  public createHeatmapPlaceholderPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createKpiHighlightPage(args: any, options: { index: number; name: string }) {
+  public createKpiHighlightPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createBeforeAfterPage(args: any, options: { index: number; name: string }) {
+  public createBeforeAfterPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createOptionEvaluationPage(args: any, options: { index: number; name: string }) {
+  public createOptionEvaluationPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createRiskMitigationPage(args: any, options: { index: number; name: string }) {
+  public createRiskMitigationPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createPositioningMapPage(args: any, options: { index: number; name: string }) {
+  public createPositioningMapPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createTamSamSomPage(args: any, options: { index: number; name: string }) {
+  public createTamSamSomPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createMarketDriversPage(args: any, options: { index: number; name: string }) {
+  public createMarketDriversPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createRevenueModelPage(args: any, options: { index: number; name: string }) {
+  public createRevenueModelPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createCostStructurePage(args: any, options: { index: number; name: string }) {
+  public createCostStructurePage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createOrgChartPage(args: any, options: { index: number; name: string }) {
+  public createOrgChartPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createCapabilityMaturityPage(args: any, options: { index: number; name: string }) {
+  public createCapabilityMaturityPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createTechRoadmapPage(args: any, options: { index: number; name: string }) {
+  public createTechRoadmapPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createDigitalMaturityPage(args: any, options: { index: number; name: string }) {
+  public createDigitalMaturityPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createEcosystemMapPage(args: any, options: { index: number; name: string }) {
+  public createEcosystemMapPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createChangeCurvePage(args: any, options: { index: number; name: string }) {
+  public createChangeCurvePage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createCommunicationPlanPage(args: any, options: { index: number; name: string }) {
+  public createCommunicationPlanPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createIntegrationPlanPage(args: any, options: { index: number; name: string }) {
+  public createIntegrationPlanPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createBenchmarkingTablePage(args: any, options: { index: number; name: string }) {
+  public createBenchmarkingTablePage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createSurveyResultsPage(args: any, options: { index: number; name: string }) {
+  public createSurveyResultsPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createPersonasPage(args: any, options: { index: number; name: string }) {
+  public createPersonasPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createSegmentationPage(args: any, options: { index: number; name: string }) {
+  public createSegmentationPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createPricingWaterfallPage(args: any, options: { index: number; name: string }) {
+  public createPricingWaterfallPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createSensitivityAnalysisPage(args: any, options: { index: number; name: string }) {
+  public createSensitivityAnalysisPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createPLBreakdownPage(args: any, options: { index: number; name: string }) {
+  public createPLBreakdownPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createCashFlowPage(args: any, options: { index: number; name: string }) {
+  public createCashFlowPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createBalanceSheetPage(args: any, options: { index: number; name: string }) {
+  public createBalanceSheetPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createShareholderValueTreePage(args: any, options: { index: number; name: string }) {
+  public createShareholderValueTreePage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createNpvSummaryPage(args: any, options: { index: number; name: string }) {
+  public createNpvSummaryPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createScenarioPlanningPage(args: any, options: { index: number; name: string }) {
+  public createScenarioPlanningPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createComplianceHeatmapPage(args: any, options: { index: number; name: string }) {
+  public createComplianceHeatmapPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createEsgFrameworkPage(args: any, options: { index: number; name: string }) {
+  public createEsgFrameworkPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createCsrInitiativesPage(args: any, options: { index: number; name: string }) {
+  public createCsrInitiativesPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createSustainabilityRoadmapPage(args: any, options: { index: number; name: string }) {
+  public createSustainabilityRoadmapPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createCircularEconomyMapPage(args: any, options: { index: number; name: string }) {
+  public createCircularEconomyMapPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createInnovationFunnelPage(args: any, options: { index: number; name: string }) {
+  public createInnovationFunnelPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createProductRoadmapPage(args: any, options: { index: number; name: string }) {
+  public createProductRoadmapPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createLaunchPlanPage(args: any, options: { index: number; name: string }) {
+  public createLaunchPlanPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createPipelineFunnelPage(args: any, options: { index: number; name: string }) {
+  public createPipelineFunnelPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createSalesDashboardPage(args: any, options: { index: number; name: string }) {
+  public createSalesDashboardPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createMarketingMixPage(args: any, options: { index: number; name: string }) {
+  public createMarketingMixPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createCustomerSuccessJourneyPage(args: any, options: { index: number; name: string }) {
+  public createCustomerSuccessJourneyPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createSupportOrgModelPage(args: any, options: { index: number; name: string }) {
+  public createSupportOrgModelPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createPartnershipMapPage(args: any, options: { index: number; name: string }) {
+  public createPartnershipMapPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createMAPipelinePage(args: any, options: { index: number; name: string }) {
+  public createMAPipelinePage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createSynergyCapturePage(args: any, options: { index: number; name: string }) {
+  public createSynergyCapturePage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createCultureValuesPage(args: any, options: { index: number; name: string }) {
+  public createCultureValuesPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 
-  public async createThankYouContactPage(args: any, options: { index: number; name: string }) {
+  public createThankYouContactPage = async (args: any, options: { index: number; name: string }) => {
     await this.generateHtml(args, options);
   }
 }
