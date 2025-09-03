@@ -10,7 +10,7 @@ export class htmlPlugin {
   constructor({ outputDir, rootDir, templateOptions }: { outputDir: string; rootDir: string; templateOptions?: any }) {
     this.outputDir = outputDir;
     this.rootDir = rootDir;
-    this.templateOptions = templateOptions;
+    this.templateOptions = templateOptions ?? {};
   }
 
   private generateHtml = async (args: any, options: { index: number; name: string }) => {
@@ -20,8 +20,9 @@ export class htmlPlugin {
     const templateFileName = path.resolve(this.rootDir, "./assets/html2", `${fileName}.html`);
 
     const outfile = path.resolve(this.outputDir, `${index}.png`);
+    const htmlFile = path.resolve(this.outputDir, `${index}.html`);
 
-    return await createPage(outfile, nunjucks.render(templateFileName, args), this.templateOptions);
+    return await createPage(outfile, nunjucks.render(templateFileName, args), { htmlFile, ...this.templateOptions });
   };
 
   public createSectionDividerPage = async (args: any, options: { index: number; name: string }) => {
