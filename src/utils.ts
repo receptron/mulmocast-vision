@@ -4,8 +4,6 @@ import puppeteer from "puppeteer";
 
 const isCI = process.env.CI === "true";
 
-const rootDir = path.resolve(__dirname, "../");
-
 export const renderHTMLToImage = async (html: string, outputPath: string, width: number, height: number) => {
   // Use Puppeteer to render HTML to an image
   const browser = await puppeteer.launch({
@@ -31,15 +29,15 @@ export const interpolate = (template: string, data: Record<string, string | unde
   return template.replace(/\$\{(.*?)\}/g, (_, key) => data[key.trim()] ?? "");
 };
 
-export const getHTMLFile = (filename: string) => {
+export const getHTMLFile = (rootDir: string, filename: string) => {
   return fs.readFileSync(path.resolve(rootDir, `./assets/templates/${filename}.html`), "utf-8");
 };
 
-export const createPage = async (outputFile: string, htmlBody: string, options?: { htmlTemplateFile?: string; headerStyle?: string; htmlFile?: string }) => {
+export const createPage = async (rootDir: string, outputFile: string, htmlBody: string, options?: { htmlTemplateFile?: string; headerStyle?: string; htmlFile?: string }) => {
   const canvasSize = { width: 1536, height: 1024 };
   const { htmlTemplateFile, headerStyle, htmlFile } = options ?? {};
 
-  const template = getHTMLFile(htmlTemplateFile ?? "tailwind");
+  const template = getHTMLFile(rootDir, htmlTemplateFile ?? "tailwind");
   // console.log(template)
   const htmlData = interpolate(template, { htmlBody, headerStyle });
   // console.log(htmlData);

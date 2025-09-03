@@ -21,7 +21,7 @@ const generateHtml = async (args: any, options: { index: number; name: string })
   const tmpName = name.replace(/^create/, "");
   const fileName = tmpName.charAt(0).toLowerCase() + tmpName.slice(1);
   console.log(path.resolve(baseDir, `${index}.png`));
-  await createPage(path.resolve(baseDir, `${index}.png`), nunjucks.render(filePath(fileName), args));
+  await createPage(rootDir, path.resolve(baseDir, `${index}.png`), nunjucks.render(filePath(fileName), args));
 };
 
 export const createSectionDividerPage = async (args: any, options: { index: number; name: string }) => {

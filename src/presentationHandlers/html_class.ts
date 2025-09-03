@@ -14,7 +14,7 @@ export class htmlPlugin {
   protected rootDir: string; // for read html template
   protected templateOptions: any;
 
-  constructor({ outputDir, rootDir, templateOptions }: { outputDir: string; rootDir?: string; templateOptions?: any }) {
+  constructor({ outputDir, rootDir, templateOptions }: { outputDir?: string; rootDir?: string; templateOptions?: any }) {
     this.outputDir = outputDir ?? getOutDir();
     this.rootDir = rootDir ?? getRootDir();
     this.templateOptions = templateOptions ?? {};
@@ -29,7 +29,7 @@ export class htmlPlugin {
     const outfile = imageFilePath ?? path.resolve(this.outputDir, `${index}.png`);
     const htmlFile = htmlFilePath ?? path.resolve(this.outputDir, `${index}.html`);
 
-    return await createPage(outfile, nunjucks.render(templateFileName, args), { htmlFile, ...this.templateOptions });
+    return await createPage(this.rootDir, outfile, nunjucks.render(templateFileName, args), { htmlFile, ...this.templateOptions });
   };
 
   public createSectionDividerPage = async (args: any, options: OptionParams) => {
