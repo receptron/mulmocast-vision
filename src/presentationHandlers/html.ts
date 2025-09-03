@@ -9,7 +9,7 @@ export const baseDir = getOutDir();
 mkdir(baseDir);
 
 const filePath = (filename: string) => {
-  return path.resolve(rootDir, "./assets/html/", `${filename}.html`);
+  return path.resolve(rootDir, "./html/html/", `${filename}.html`);
 };
 
 export const writeTools = (tools: any) => {
