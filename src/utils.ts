@@ -30,7 +30,7 @@ export const interpolate = (template: string, data: Record<string, string | unde
 };
 
 export const getHTMLFile = (rootDir: string, filename: string) => {
-  return fs.readFileSync(path.resolve(rootDir, `./assets/templates/${filename}.html`), "utf-8");
+  return fs.readFileSync(path.resolve(rootDir, `./html/templates/${filename}.html`), "utf-8");
 };
 
 export const createPage = async (rootDir: string, outputFile: string, htmlBody: string, options?: { htmlTemplateFile?: string; headerStyle?: string; htmlFile?: string }) => {
