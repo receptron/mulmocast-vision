@@ -39,6 +39,7 @@ export const convertTools = (tools: any[]) => {
           description: "What the presenter will say for this slide (1–3 sentences).",
         },
       };
+      console.log(newProperties);
       return {
         type: "function",
         function: {
@@ -46,7 +47,7 @@ export const convertTools = (tools: any[]) => {
           description,
           parameters: {
             type,
-            properties,
+            properties: newProperties,
             required,
           },
         },
