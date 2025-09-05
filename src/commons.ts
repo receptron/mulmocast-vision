@@ -12,6 +12,45 @@ export const templateNameTofunctionName = (templateName: string) => {
 
 export const toolsToTemplateNames = (tools: any[]) => {
   return tools.map((tool) => {
-    return functionNameToTemplateName(tool.function.name)
+    return functionNameToTemplateName(tool.function.name);
   });
+};
+
+export const convertTools = (tools: any[]) => {
+  return tools.map(
+    (tool: {
+      function: {
+        name: string;
+        description: string;
+        parameters: {
+          type: string;
+          required: string[];
+          properties: Record<string, unknown>;
+        };
+      };
+    }) => {
+      const { name, description, parameters } = tool.function;
+
+      const { type, properties, required } = parameters;
+      const newProperties = {
+        ...properties,
+        talkTrack: {
+          type: "string",
+          description: "What the presenter will say for this slide (1–3 sentences).",
+        },
+      };
+      return {
+        type: "function",
+        function: {
+          name: "mulmoVisionAgent--" + name,
+          description,
+          parameters: {
+            type,
+            properties,
+            required,
+          },
+        },
+      };
+    },
+  );
 };
