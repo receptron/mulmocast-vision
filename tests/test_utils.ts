@@ -1,6 +1,8 @@
 import test from "node:test";
 import assert from "node:assert";
-import { functionNameToTemplateName, templateNameTofunctionName } from "../src/commons";
+import { functionNameToTemplateName, templateNameTofunctionName, toolsToTemplateNames } from "../src/commons";
+import { tools } from "../src/tools";
+
 // import assert from "node:assert";
 
 test("test temp name", async () => {
@@ -11,4 +13,9 @@ test("test temp name", async () => {
   const funcName = templateNameTofunctionName("thisIsAPen");
   assert.equal(funcName, "createThisIsAPen");
 
+});
+
+test("test temp name", async () => {
+  const res = toolsToTemplateNames(tools);
+  console.log(res);
 });
