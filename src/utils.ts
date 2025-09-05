@@ -33,14 +33,18 @@ export const getHTMLFile = (rootDir: string, filename: string) => {
   return fs.readFileSync(path.resolve(rootDir, `./html/templates/${filename}.html`), "utf-8");
 };
 
-export const createPage = async (rootDir: string, outputFile: string, htmlBody: string, options?: { htmlTemplateFile?: string; headerStyle?: string; htmlFile?: string }) => {
+export const createPage = async (
+  rootDir: string,
+  outputFile: string,
+  htmlBody: string,
+  options?: { htmlTemplateFile?: string; headerStyle?: string; htmlFile?: string },
+) => {
   const canvasSize = { width: 1536, height: 1024 };
   const { htmlTemplateFile, headerStyle, htmlFile } = options ?? {};
 
   const template = getHTMLFile(rootDir, htmlTemplateFile ?? "tailwind");
-  // console.log(template)
   const htmlData = interpolate(template, { htmlBody, headerStyle });
-  // console.log(htmlData);
+
   await renderHTMLToImage(htmlData, outputFile, canvasSize.width, canvasSize.height);
   if (htmlFile) {
     fs.writeFileSync(htmlFile, htmlData, "utf8");
@@ -54,7 +58,7 @@ export const mkdir = (dirPath: string) => {
   }
 };
 
-export const writeTools = (baseDir: string, tools: any) => {
+export const writeJSONData = (baseDir: string, tools: any) => {
   fs.writeFileSync(path.resolve(baseDir, "tools.json"), JSON.stringify(tools, null, 2), "utf8");
 };
 

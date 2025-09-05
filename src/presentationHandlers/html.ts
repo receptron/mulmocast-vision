@@ -1,4 +1,3 @@
-import fs from "fs";
 import path from "path";
 import { createPage, getRootDir, getOutDir, mkdir } from "../utils";
 import nunjucks from "nunjucks";
@@ -10,10 +9,6 @@ mkdir(baseDir);
 
 const filePath = (filename: string) => {
   return path.resolve(rootDir, "./html/html/", `${filename}.html`);
-};
-
-export const writeTools = (tools: any) => {
-  fs.writeFileSync(path.resolve(baseDir, "tools.json"), JSON.stringify(tools, null, 2), "utf8");
 };
 
 const generateHtml = async (args: any, options: { index: number; name: string }) => {
