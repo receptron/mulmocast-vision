@@ -1,12 +1,13 @@
 import path from "path";
 import { createPage, getOutDir, getRootDir } from "../utils";
+import { functionNameToTemplateName } from "../commons";
 import nunjucks from "nunjucks";
 
 type OptionParams = {
-  name: string;
-  index?: number;
-  imageFilePath?: string;
-  htmlFilePath?: string;
+  functionName: string; // functionName tools called
+  outputFileName?: number; // output png html file name. A file with this name will be written to outputDir.
+  imageFilePath?: string; // The full path to the output image, including the dir and extent. This setting causes outputFileName to be ignored.
+  htmlFilePath?: string; // The full path to the output html, including the dir and extent. This setting causes outputFileName to be ignored.
 };
 
 export class htmlPlugin {
@@ -21,15 +22,14 @@ export class htmlPlugin {
   }
 
   private generateHtml = async (args: any, options: OptionParams) => {
-    const { index, name, imageFilePath, htmlFilePath } = options ?? {};
-    const tmpName = name?.replace(/^create/, "");
-    const fileName = tmpName?.charAt(0)?.toLowerCase() + tmpName?.slice(1);
-    const templateFileName = path.resolve(this.rootDir, "./html/html2", `${fileName}.html`);
+    const { outputFileName, functionName, imageFilePath, htmlFilePath } = options ?? {};
+    const templateFileName = functionNameToTemplateName(functionName);
+    const templateFilePath = path.resolve(this.rootDir, "./html/html2", `${templateFileName}.html`);
 
-    const outfile = imageFilePath ?? path.resolve(this.outputDir, `${index}.png`);
-    const htmlFile = htmlFilePath ?? path.resolve(this.outputDir, `${index}.html`);
+    const outfile = imageFilePath ?? path.resolve(this.outputDir, `${outputFileName}.png`);
+    const htmlFile = htmlFilePath ?? path.resolve(this.outputDir, `${outputFileName}.html`);
 
-    return await createPage(this.rootDir, outfile, nunjucks.render(templateFileName, args), { htmlFile, ...this.templateOptions });
+    return await createPage(this.rootDir, outfile, nunjucks.render(templateFilePath, args), { htmlFile, ...this.templateOptions });
   };
 
   public createSectionDividerPage = async (args: any, options: OptionParams) => {
