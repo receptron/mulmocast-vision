@@ -34,7 +34,7 @@ export const getServer = (rootDir: string, outputDir: string) => {
       if (name in handler) {
         const key = name as keyof typeof handler;
         const method = handler[key];
-        if (typeof method === "function") {
+        if (typeof method === "function" && args) {
           const fileName = generateUniqueId();
           await method(args, { functionName: name, outputFileName: fileName });
 
