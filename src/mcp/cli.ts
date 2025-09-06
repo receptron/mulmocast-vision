@@ -2,7 +2,7 @@
 
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 
-import { mkdir, getRootDir, getOutDir } from "../utils";
+import { mkdir, getRootDir } from "../utils";
 import { getServer } from "./core";
 
 import os from "os";
