@@ -5,7 +5,7 @@ import { CallToolRequestSchema, CallToolRequest, ListToolsRequestSchema } from "
 
 import { tools } from "../tools";
 import { htmlPlugin } from "../presentationHandlers/html_class";
-import { openAIToolsToAnthropicTools } from "../commons";
+import { openAIToolsToAnthropicTools, generateUniqueId } from "../commons";
 
 export const getServer = (rootDir: string, outputDir: string) => {
   const server = new Server(
@@ -27,7 +27,6 @@ export const getServer = (rootDir: string, outputDir: string) => {
 
   const handler = new htmlPlugin({ outputDir, rootDir });
 
-  let index = 0;
   // Handle tool calls
   server.setRequestHandler(CallToolRequestSchema, async (request: CallToolRequest) => {
     const { name, arguments: args } = request.params;
@@ -36,14 +35,14 @@ export const getServer = (rootDir: string, outputDir: string) => {
         const key = name as keyof typeof handler;
         const method = handler[key];
         if (typeof method === "function") {
-          index = index + 1;
-          await method(args, { functionName: name, outputFileName: index });
+          const fileName = generateUniqueId();
+          await method(args, { functionName: name, outputFileName: fileName });
 
           return {
             content: [
               {
                 type: "text",
-                text: `html generated successfully to: ${outputDir}`,
+                text: `html generated successfully to: ${outputDir} ${fileName}`,
               },
             ],
           };

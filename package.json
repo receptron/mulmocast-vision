@@ -4,7 +4,7 @@
   "description": "PlayGround",
   "main": "lib/index.js",
   "bin": {
-    "mulmocast-vision": "lib/mcp/server.js"
+    "mulmocast-vision": "lib/mcp/cli.js"
   },
   "files": [
     "./lib",
