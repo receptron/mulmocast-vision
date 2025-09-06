@@ -9,6 +9,7 @@ import { tools } from "../tools";
 import { htmlPlugin } from "../presentationHandlers/html_class";
 
 import { mkdir, getRootDir, getOutDir } from "../utils";
+import { openAIToolsToAnthropicTools } from "../commons";
 
 const server = new Server(
   {
@@ -24,12 +25,7 @@ const server = new Server(
 
 // List available tools
 server.setRequestHandler(ListToolsRequestSchema, async () => {
-  return {
-    tools: tools.map((tool: { function: { name: string; description: string; parameters: unknown } }) => {
-      const { name, description, parameters } = tool.function;
-      return { name, description, inputSchema: parameters };
-    }),
-  };
+  return openAIToolsToAnthropicTools(tools);
 });
 
 const rootDir = getRootDir();
