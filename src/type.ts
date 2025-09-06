@@ -16,4 +16,3 @@ export type PluginOptionParams = {
   imageFilePath?: string; // The full path to the output image, including the dir and extent. This setting causes outputFileName to be ignored.
   htmlFilePath?: string; // The full path to the output html, including the dir and extent. This setting causes outputFileName to be ignored.
 };
-
