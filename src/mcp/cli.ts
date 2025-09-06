@@ -8,7 +8,6 @@ import { getServer } from "./core";
 import os from "os";
 import path from "path";
 
-
 const main = async () => {
   const rootDir = getRootDir();
 
