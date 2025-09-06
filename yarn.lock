@@ -82,6 +82,11 @@
     "@eslint/core" "^0.15.2"
     levn "^0.4.1"
 
+"@graphai/agent_utils@^2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@graphai/agent_utils/-/agent_utils-2.0.4.tgz#8b56e1a27e0a991bedf3610ac238fe77ee925c85"
+  integrity sha512-mNne4ftCmiNd0A/L8Rs/aVYkUHiFi/ids0iJ0PxWPRqo4q/KQG927J5EU7RFkCWftkga98ew6bhBhWfin4Bulw==
+
 "@graphai/llm_utils@^2.0.3":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@graphai/llm_utils/-/llm_utils-2.0.3.tgz#abdb91d606c2ca304aeeacc67e33255a543c4488"
@@ -94,6 +99,13 @@
   dependencies:
     "@graphai/llm_utils" "^2.0.3"
     openai "^5.15.0"
+
+"@graphai/vanilla@^2.0.12":
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/@graphai/vanilla/-/vanilla-2.0.12.tgz#1f1edf3e7f207c6f2ae02e4e5388a13493756981"
+  integrity sha512-kCzU33iFJHIsyvM491Nl8zH6+B2hzOAtVZWT2F3cjrADZ+YrGio2LKjsOVt78ky4GUEJm+ovxJWxeP042JFNZg==
+  dependencies:
+    "@graphai/agent_utils" "^2.0.4"
 
 "@humanfs/core@^0.19.1":
   version "0.19.1"
