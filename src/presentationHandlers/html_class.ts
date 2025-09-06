@@ -2,13 +2,7 @@ import path from "path";
 import { createPage, getOutDir, getRootDir } from "../utils";
 import { functionNameToTemplateName } from "../commons";
 import nunjucks from "nunjucks";
-
-type OptionParams = {
-  functionName: string; // functionName tools called
-  outputFileName?: number; // output png html file name. A file with this name will be written to outputDir.
-  imageFilePath?: string; // The full path to the output image, including the dir and extent. This setting causes outputFileName to be ignored.
-  htmlFilePath?: string; // The full path to the output html, including the dir and extent. This setting causes outputFileName to be ignored.
-};
+import { type PluginOptionParams } from "../type";
 
 export class htmlPlugin {
   protected outputDir: string;
@@ -21,7 +15,7 @@ export class htmlPlugin {
     this.templateOptions = templateOptions ?? {};
   }
 
-  private generateHtml = async (args: any, options: OptionParams) => {
+  private generateHtml = async (args: any, options: PluginOptionParams) => {
     const { outputFileName, functionName, imageFilePath, htmlFilePath } = options ?? {};
     const templateFileName = functionNameToTemplateName(functionName);
     const templateFilePath = path.resolve(this.rootDir, "./html/html2", `${templateFileName}.html`);
@@ -32,323 +26,323 @@ export class htmlPlugin {
     return await createPage(this.rootDir, outfile, nunjucks.render(templateFilePath, args), { htmlFile, ...this.templateOptions });
   };
 
-  public createSectionDividerPage = async (args: any, options: OptionParams) => {
+  public createSectionDividerPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createAgendaPage = async (args: any, options: OptionParams) => {
+  public createAgendaPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createExecutiveSummaryPage = async (args: any, options: OptionParams) => {
+  public createExecutiveSummaryPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createKeyMessageWithSupportsPage = async (args: any, options: OptionParams) => {
+  public createKeyMessageWithSupportsPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createHypothesisPage = async (args: any, options: OptionParams) => {
+  public createHypothesisPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createIssueTreePage = async (args: any, options: OptionParams) => {
+  public createIssueTreePage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createDriverTreePage = async (args: any, options: OptionParams) => {
+  public createDriverTreePage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createMeceListPage = async (args: any, options: OptionParams) => {
+  public createMeceListPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createPyramidPrinciplePage = async (args: any, options: OptionParams) => {
+  public createPyramidPrinciplePage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createScqaPage = async (args: any, options: OptionParams) => {
+  public createScqaPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createSwotPage = async (args: any, options: OptionParams) => {
+  public createSwotPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createThreeCPage = async (args: any, options: OptionParams) => {
+  public createThreeCPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createFourPPage = async (args: any, options: OptionParams) => {
+  public createFourPPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createSevenSPage = async (args: any, options: OptionParams) => {
+  public createSevenSPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createValueChainPage = async (args: any, options: OptionParams) => {
+  public createValueChainPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createPorterFiveForcesPage = async (args: any, options: OptionParams) => {
+  public createPorterFiveForcesPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createBusinessModelCanvasPage = async (args: any, options: OptionParams) => {
+  public createBusinessModelCanvasPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createCustomerJourneyPage = async (args: any, options: OptionParams) => {
+  public createCustomerJourneyPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createStakeholderMapPage = async (args: any, options: OptionParams) => {
+  public createStakeholderMapPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createRaciPage = async (args: any, options: OptionParams) => {
+  public createRaciPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createOkrKpiDashboardPage = async (args: any, options: OptionParams) => {
+  public createOkrKpiDashboardPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createBalancedScorecardPage = async (args: any, options: OptionParams) => {
+  public createBalancedScorecardPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createQuarterlyRoadmapPage = async (args: any, options: OptionParams) => {
+  public createQuarterlyRoadmapPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createMilestoneTimelinePage = async (args: any, options: OptionParams) => {
+  public createMilestoneTimelinePage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createGanttSimplePage = async (args: any, options: OptionParams) => {
+  public createGanttSimplePage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createWaterfallPage = async (args: any, options: OptionParams) => {
+  public createWaterfallPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createFunnelPage = async (args: any, options: OptionParams) => {
+  public createFunnelPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createTwoByTwoMatrixPage = async (args: any, options: OptionParams) => {
+  public createTwoByTwoMatrixPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createBcgMatrixPage = async (args: any, options: OptionParams) => {
+  public createBcgMatrixPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createGeMcKinseyMatrixPage = async (args: any, options: OptionParams) => {
+  public createGeMcKinseyMatrixPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createMarimekkoPlaceholderPage = async (args: any, options: OptionParams) => {
+  public createMarimekkoPlaceholderPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createBubbleChartPlaceholderPage = async (args: any, options: OptionParams) => {
+  public createBubbleChartPlaceholderPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createHeatmapPlaceholderPage = async (args: any, options: OptionParams) => {
+  public createHeatmapPlaceholderPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createKpiHighlightPage = async (args: any, options: OptionParams) => {
+  public createKpiHighlightPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createBeforeAfterPage = async (args: any, options: OptionParams) => {
+  public createBeforeAfterPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createOptionEvaluationPage = async (args: any, options: OptionParams) => {
+  public createOptionEvaluationPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createRiskMitigationPage = async (args: any, options: OptionParams) => {
+  public createRiskMitigationPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createPositioningMapPage = async (args: any, options: OptionParams) => {
+  public createPositioningMapPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createTamSamSomPage = async (args: any, options: OptionParams) => {
+  public createTamSamSomPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createMarketDriversPage = async (args: any, options: OptionParams) => {
+  public createMarketDriversPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createRevenueModelPage = async (args: any, options: OptionParams) => {
+  public createRevenueModelPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createCostStructurePage = async (args: any, options: OptionParams) => {
+  public createCostStructurePage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createOrgChartPage = async (args: any, options: OptionParams) => {
+  public createOrgChartPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createCapabilityMaturityPage = async (args: any, options: OptionParams) => {
+  public createCapabilityMaturityPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createTechRoadmapPage = async (args: any, options: OptionParams) => {
+  public createTechRoadmapPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createDigitalMaturityPage = async (args: any, options: OptionParams) => {
+  public createDigitalMaturityPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createEcosystemMapPage = async (args: any, options: OptionParams) => {
+  public createEcosystemMapPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createChangeCurvePage = async (args: any, options: OptionParams) => {
+  public createChangeCurvePage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createCommunicationPlanPage = async (args: any, options: OptionParams) => {
+  public createCommunicationPlanPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createIntegrationPlanPage = async (args: any, options: OptionParams) => {
+  public createIntegrationPlanPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createBenchmarkingTablePage = async (args: any, options: OptionParams) => {
+  public createBenchmarkingTablePage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createSurveyResultsPage = async (args: any, options: OptionParams) => {
+  public createSurveyResultsPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createPersonasPage = async (args: any, options: OptionParams) => {
+  public createPersonasPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createSegmentationPage = async (args: any, options: OptionParams) => {
+  public createSegmentationPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createPricingWaterfallPage = async (args: any, options: OptionParams) => {
+  public createPricingWaterfallPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createSensitivityAnalysisPage = async (args: any, options: OptionParams) => {
+  public createSensitivityAnalysisPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createPLBreakdownPage = async (args: any, options: OptionParams) => {
+  public createPLBreakdownPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createCashFlowPage = async (args: any, options: OptionParams) => {
+  public createCashFlowPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createBalanceSheetPage = async (args: any, options: OptionParams) => {
+  public createBalanceSheetPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createShareholderValueTreePage = async (args: any, options: OptionParams) => {
+  public createShareholderValueTreePage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createNpvSummaryPage = async (args: any, options: OptionParams) => {
+  public createNpvSummaryPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createScenarioPlanningPage = async (args: any, options: OptionParams) => {
+  public createScenarioPlanningPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createComplianceHeatmapPage = async (args: any, options: OptionParams) => {
+  public createComplianceHeatmapPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createEsgFrameworkPage = async (args: any, options: OptionParams) => {
+  public createEsgFrameworkPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createCsrInitiativesPage = async (args: any, options: OptionParams) => {
+  public createCsrInitiativesPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createSustainabilityRoadmapPage = async (args: any, options: OptionParams) => {
+  public createSustainabilityRoadmapPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createCircularEconomyMapPage = async (args: any, options: OptionParams) => {
+  public createCircularEconomyMapPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createInnovationFunnelPage = async (args: any, options: OptionParams) => {
+  public createInnovationFunnelPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createProductRoadmapPage = async (args: any, options: OptionParams) => {
+  public createProductRoadmapPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createLaunchPlanPage = async (args: any, options: OptionParams) => {
+  public createLaunchPlanPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createPipelineFunnelPage = async (args: any, options: OptionParams) => {
+  public createPipelineFunnelPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createSalesDashboardPage = async (args: any, options: OptionParams) => {
+  public createSalesDashboardPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createMarketingMixPage = async (args: any, options: OptionParams) => {
+  public createMarketingMixPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createCustomerSuccessJourneyPage = async (args: any, options: OptionParams) => {
+  public createCustomerSuccessJourneyPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createSupportOrgModelPage = async (args: any, options: OptionParams) => {
+  public createSupportOrgModelPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createPartnershipMapPage = async (args: any, options: OptionParams) => {
+  public createPartnershipMapPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createMAPipelinePage = async (args: any, options: OptionParams) => {
+  public createMAPipelinePage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createSynergyCapturePage = async (args: any, options: OptionParams) => {
+  public createSynergyCapturePage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createCultureValuesPage = async (args: any, options: OptionParams) => {
+  public createCultureValuesPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 
-  public createThankYouContactPage = async (args: any, options: OptionParams) => {
+  public createThankYouContactPage = async (args: any, options: PluginOptionParams) => {
     await this.generateHtml(args, options);
   };
 }
