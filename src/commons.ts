@@ -53,3 +53,9 @@ export const convertTools = (tools: OpenAITool[]) => {
     };
   });
 };
+
+export const generateUniqueId = (): string => {
+  const now = Date.now();
+  const random = Math.random().toString(36).slice(-10);
+  return `${now}-${random}`;
+}

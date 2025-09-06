@@ -84,6 +84,23 @@ yarn run build
 ```
 
 mcp設定
+
+for dev
+```
+    "mulmocast-vision": {
+      "command": "npx",
+      "args": [
+        "mulmocast-vision",
+        "page"
+      ],
+      "transport": {
+        "stdio": true
+      }
+    }
+```
+
+
+for dev
 ```
     "mulmocast-vision": {
       "command": "env",

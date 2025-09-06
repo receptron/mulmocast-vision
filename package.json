@@ -3,6 +3,9 @@
   "version": "0.0.6",
   "description": "PlayGround",
   "main": "lib/index.js",
+  "bin": {
+    "mulmocast-vision": "lib/mcp/cli.js"
+  },
   "files": [
     "./lib",
     "./html"
@@ -15,7 +18,8 @@
     "test_run": "node --test  --require ts-node/register ./tests/run_*.ts # just run locally",
     "ai": "npx tsx ./src/presentation.ts",
     "generate_all_images": "npx tsx ./tests/test.ts",
-    "ci_test": "NODE_ENV=test npx tsx ./tests/test.ts"
+    "ci_test": "NODE_ENV=test npx tsx ./tests/test.ts",
+    "ci_test2": "NODE_ENV=test npx tsx ./tests/test2.ts"
   },
   "repository": {
     "type": "git",
@@ -29,6 +33,7 @@
   "license": "AGPL-3.0-or-later",
   "dependencies": {
     "@graphai/openai_agent": "^2.0.7",
+    "@graphai/vanilla": "^2.0.12",
     "@modelcontextprotocol/sdk": "^1.17.4",
     "dotenv": "^17.2.1",
     "graphai": "^2.0.14",
@@ -41,6 +46,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
     "typescript": "^5.9.2",
     "typescript-eslint": "^8.40.0"
   },
