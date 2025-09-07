@@ -4,6 +4,7 @@ import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { CallToolRequestSchema, CallToolRequest, ListToolsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
 
 import { tools } from "../tools";
+import { mcp_tools } from "../mcp_tools";
 import { htmlPlugin } from "../presentationHandlers/html_class";
 import { openAIToolsToAnthropicTools, generateUniqueId } from "../commons";
 
@@ -22,7 +23,7 @@ export const getServer = (rootDir: string, outputDir: string) => {
 
   // List available tools
   server.setRequestHandler(ListToolsRequestSchema, async () => {
-    return openAIToolsToAnthropicTools(tools);
+    return openAIToolsToAnthropicTools([...tools, ...mcp_tools]);
   });
 
   const handler = new htmlPlugin({ outputDir, rootDir });
@@ -31,10 +32,10 @@ export const getServer = (rootDir: string, outputDir: string) => {
   server.setRequestHandler(CallToolRequestSchema, async (request: CallToolRequest) => {
     const { name, arguments: args } = request.params;
     try {
-      if (name in handler) {
+      if (name in handler && args) {
         const key = name as keyof typeof handler;
         const method = handler[key];
-        if (typeof method === "function" && args) {
+        if (typeof method === "function") {
           const fileName = generateUniqueId();
           await method(args, { functionName: name, outputFileName: fileName });
 

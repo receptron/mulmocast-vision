@@ -38,10 +38,12 @@
     "dotenv": "^17.2.1",
     "graphai": "^2.0.14",
     "nunjucks": "^3.2.4",
+    "pdfkit": "^0.17.2",
     "puppeteer": "^24.17.0"
   },
   "devDependencies": {
     "@types/nunjucks": "^3.2.6",
+    "@types/pdfkit": "^0.17.3",
     "eslint": "^9.34.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",

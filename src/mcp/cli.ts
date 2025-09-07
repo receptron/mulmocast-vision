@@ -12,7 +12,9 @@ const main = async () => {
   const rootDir = getRootDir();
 
   const documentsDir = path.join(os.homedir(), "Documents");
-  const outputDir = path.join(documentsDir, "mulmocast-vision");
+  const now = Date.now();
+
+  const outputDir = path.join(documentsDir, "mulmocast-vision", String(now));
   mkdir(outputDir);
 
   const server = getServer(rootDir, outputDir);

@@ -1,7 +1,7 @@
 export const tools = [
   // 01 Section divider
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createSectionDividerPage",
       description:
@@ -19,7 +19,7 @@ export const tools = [
 
   // 02 Agenda
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createAgendaPage",
       description:
@@ -37,7 +37,7 @@ export const tools = [
 
   // 03 Executive summary
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createExecutiveSummaryPage",
       description:
@@ -61,7 +61,7 @@ export const tools = [
 
   // 04 Key message + supports
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createKeyMessageWithSupportsPage",
       description:
@@ -79,7 +79,7 @@ export const tools = [
 
   // 05 Hypothesis
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createHypothesisPage",
       description:
@@ -98,7 +98,7 @@ export const tools = [
 
   // 06 Issue tree
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createIssueTreePage",
       description:
@@ -121,7 +121,7 @@ export const tools = [
 
   // 07 Driver tree
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createDriverTreePage",
       description:
@@ -144,7 +144,7 @@ export const tools = [
 
   // 08 MECE list
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createMeceListPage",
       description:
@@ -178,7 +178,7 @@ export const tools = [
 
   // 09 Pyramid principle
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createPyramidPrinciplePage",
       description:
@@ -201,7 +201,7 @@ export const tools = [
 
   // 10 SCQA
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createScqaPage",
       description: "Insert one slide in the presentation that explains a storyline using the SCQA framework: Situation, Complication, Question, and Answer.",
@@ -220,7 +220,7 @@ export const tools = [
 
   // 11 SWOT
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createSwotPage",
       description: "Create a SWOT matrix.",
@@ -239,7 +239,7 @@ export const tools = [
 
   // 12 3C
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createThreeCPage",
       description: "Create a 3C (Company, Customer, Competitor) page.",
@@ -257,7 +257,7 @@ export const tools = [
 
   // 13 4P
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createFourPPage",
       description: "Create a marketing 4P page.",
@@ -276,7 +276,7 @@ export const tools = [
 
   // 14 7S
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createSevenSPage",
       description: "Create a McKinsey 7S page.",
@@ -298,7 +298,7 @@ export const tools = [
 
   // 15 Value chain
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createValueChainPage",
       description: "Create a value chain with primary and support activities.",
@@ -315,7 +315,7 @@ export const tools = [
 
   // 16 Five forces
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createPorterFiveForcesPage",
       description: "Create a Porter’s Five Forces page.",
@@ -335,7 +335,7 @@ export const tools = [
 
   // 17 Business model canvas
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createBusinessModelCanvasPage",
       description: "Create a Business Model Canvas (9 blocks).",
@@ -354,7 +354,7 @@ export const tools = [
 
   // 18 Customer journey
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createCustomerJourneyPage",
       description: "Create a customer journey with stages and touchpoints.",
@@ -374,7 +374,7 @@ export const tools = [
 
   // 19 Stakeholder map
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createStakeholderMapPage",
       description: "Create a stakeholder influence-interest map.",
@@ -402,7 +402,7 @@ export const tools = [
 
   // 20 RACI
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createRaciPage",
       description: "Create a RACI matrix.",
@@ -423,7 +423,7 @@ export const tools = [
 
   // 21 OKR/KPI dashboard
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createOkrKpiDashboardPage",
       description: "Create an OKR/KPI dashboard with tiles.",
@@ -453,7 +453,7 @@ export const tools = [
 
   // 22 Balanced scorecard
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createBalancedScorecardPage",
       description: "Create a balanced scorecard page.",
@@ -479,7 +479,7 @@ export const tools = [
 
   // 23 Quarterly roadmap
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createQuarterlyRoadmapPage",
       description: "Create a quarterly roadmap.",
@@ -506,7 +506,7 @@ export const tools = [
 
   // 24 Milestone timeline
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createMilestoneTimelinePage",
       description: "Create a milestone timeline.",
@@ -535,7 +535,7 @@ export const tools = [
 
   // 25 Gantt (simple)
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createGanttSimplePage",
       description: "Create a simple Gantt placeholder.",
@@ -562,7 +562,7 @@ export const tools = [
 
   // 26 Waterfall (numeric decomposition)
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createWaterfallPage",
       description: "Create a numeric waterfall steps placeholder.",
@@ -589,7 +589,7 @@ export const tools = [
 
   // 27 Funnel
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createFunnelPage",
       description: "Create a funnel stages placeholder.",
@@ -616,7 +616,7 @@ export const tools = [
 
   // 28 2x2 matrix
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createTwoByTwoMatrixPage",
       description: "Create a 2x2 matrix with quadrant items.",
@@ -639,7 +639,7 @@ export const tools = [
 
   // 29 BCG matrix
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createBcgMatrixPage",
       description: "Create a BCG matrix placeholder.",
@@ -658,7 +658,7 @@ export const tools = [
 
   // 30 GE-McKinsey matrix
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createGeMcKinseyMatrixPage",
       description: "Create a GE-McKinsey 3x3 matrix placeholder.",
@@ -687,7 +687,7 @@ export const tools = [
 
   // 31 Marimekko (placeholder)
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createMarimekkoPlaceholderPage",
       description: "Create a Marimekko chart placeholder.",
@@ -704,7 +704,7 @@ export const tools = [
 
   // 32 Bubble chart (placeholder)
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createBubbleChartPlaceholderPage",
       description: "Create a bubble chart placeholder.",
@@ -733,7 +733,7 @@ export const tools = [
 
   // 33 Heatmap (placeholder)
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createHeatmapPlaceholderPage",
       description: "Create a heatmap placeholder.",
@@ -754,7 +754,7 @@ export const tools = [
 
   // 34 KPI highlight
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createKpiHighlightPage",
       description: "Create a slide highlighting key KPIs.",
@@ -782,7 +782,7 @@ export const tools = [
 
   // 35 Before/After
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createBeforeAfterPage",
       description: "Create a before vs after comparison page.",
@@ -800,7 +800,7 @@ export const tools = [
 
   // 36 Option evaluation (criteria x options)
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createOptionEvaluationPage",
       description: "Create an options vs criteria evaluation matrix.",
@@ -821,7 +821,7 @@ export const tools = [
 
   // 37 Risk & mitigation
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createRiskMitigationPage",
       description: "Create a risk register with mitigations.",
@@ -849,7 +849,7 @@ export const tools = [
 
   // 38 Positioning map
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createPositioningMapPage",
       description: "Create a competitive positioning map.",
@@ -878,7 +878,7 @@ export const tools = [
 
   // 39 TAM/SAM/SOM
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createTamSamSomPage",
       description: "Create a market size (TAM/SAM/SOM) page.",
@@ -897,7 +897,7 @@ export const tools = [
 
   // 40 Market drivers
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createMarketDriversPage",
       description: "Create a list of market growth drivers.",
@@ -914,7 +914,7 @@ export const tools = [
 
   // 41 Revenue model
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createRevenueModelPage",
       description: "Create revenue streams and pricing notes.",
@@ -931,7 +931,7 @@ export const tools = [
 
   // 42 Cost structure
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createCostStructurePage",
       description: "Create a cost structure with buckets and notes.",
@@ -948,7 +948,7 @@ export const tools = [
 
   // 43 Org chart
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createOrgChartPage",
       description: "Create a simple org chart placeholder.",
@@ -975,7 +975,7 @@ export const tools = [
 
   // 44 Capability maturity
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createCapabilityMaturityPage",
       description: "Create a capability maturity model (1–5).",
@@ -1001,7 +1001,7 @@ export const tools = [
 
   // 45 Technology roadmap
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createTechRoadmapPage",
       description: "Create a technology roadmap with phases.",
@@ -1028,7 +1028,7 @@ export const tools = [
 
   // 46 Digital maturity
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createDigitalMaturityPage",
       description: "Create a digital maturity assessment.",
@@ -1046,7 +1046,7 @@ export const tools = [
 
   // 47 Ecosystem map
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createEcosystemMapPage",
       description: "Create an ecosystem or partner map.",
@@ -1073,7 +1073,7 @@ export const tools = [
 
   // 48 Change curve
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createChangeCurvePage",
       description: "Create a change curve with stages.",
@@ -1090,7 +1090,7 @@ export const tools = [
 
   // 49 Communication plan
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createCommunicationPlanPage",
       description: "Create a communication plan matrix.",
@@ -1108,7 +1108,7 @@ export const tools = [
 
   // 50 Integration plan (PMI)
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createIntegrationPlanPage",
       description: "Create a post-merger integration (PMI) plan placeholder.",
@@ -1129,7 +1129,7 @@ export const tools = [
 
   // 51 Benchmarking table
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createBenchmarkingTablePage",
       description: "Create a benchmarking comparison table.",
@@ -1150,7 +1150,7 @@ export const tools = [
 
   // 52 Survey results
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createSurveyResultsPage",
       description: "Create a survey results summary.",
@@ -1167,7 +1167,7 @@ export const tools = [
 
   // 53 Personas
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createPersonasPage",
       description: "Create customer persona cards.",
@@ -1194,7 +1194,7 @@ export const tools = [
 
   // 54 Segmentation
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createSegmentationPage",
       description: "Create a customer segmentation page.",
@@ -1211,7 +1211,7 @@ export const tools = [
 
   // 55 Pricing waterfall
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createPricingWaterfallPage",
       description: "Create a pricing waterfall placeholder.",
@@ -1237,7 +1237,7 @@ export const tools = [
 
   // 56 Sensitivity analysis
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createSensitivityAnalysisPage",
       description: "Create a sensitivity analysis placeholder.",
@@ -1254,7 +1254,7 @@ export const tools = [
 
   // 57 P&L breakdown
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createPLBreakdownPage",
       description: "Create a P&L breakdown placeholder.",
@@ -1271,7 +1271,7 @@ export const tools = [
 
   // 58 Cash flow
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createCashFlowPage",
       description: "Create a cash flow summary placeholder.",
@@ -1288,7 +1288,7 @@ export const tools = [
 
   // 59 Balance sheet
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createBalanceSheetPage",
       description: "Create a balance sheet summary placeholder.",
@@ -1306,7 +1306,7 @@ export const tools = [
 
   // 60 Shareholder value tree
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createShareholderValueTreePage",
       description: "Create a shareholder value driver tree.",
@@ -1322,7 +1322,7 @@ export const tools = [
 
   // 61 NPV summary
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createNpvSummaryPage",
       description: "Create an NPV summary placeholder.",
@@ -1339,7 +1339,7 @@ export const tools = [
 
   // 62 Scenario planning
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createScenarioPlanningPage",
       description: "Create a scenario planning page.",
@@ -1356,7 +1356,7 @@ export const tools = [
 
   // 63 Compliance heatmap
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createComplianceHeatmapPage",
       description: "Create a compliance heatmap placeholder.",
@@ -1373,7 +1373,7 @@ export const tools = [
 
   // 64 ESG framework
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createEsgFrameworkPage",
       description: "Create an ESG framework summary.",
@@ -1391,7 +1391,7 @@ export const tools = [
 
   // 65 CSR initiatives
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createCsrInitiativesPage",
       description: "Create a CSR initiatives page.",
@@ -1411,7 +1411,7 @@ export const tools = [
 
   // 66 Sustainability roadmap
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createSustainabilityRoadmapPage",
       description: "Create a sustainability roadmap.",
@@ -1428,7 +1428,7 @@ export const tools = [
 
   // 67 Circular economy map
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createCircularEconomyMapPage",
       description: "Create a circular economy loop map placeholder.",
@@ -1444,7 +1444,7 @@ export const tools = [
 
   // 68 Innovation funnel
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createInnovationFunnelPage",
       description: "Create an innovation funnel placeholder.",
@@ -1461,7 +1461,7 @@ export const tools = [
 
   // 69 Product roadmap
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createProductRoadmapPage",
       description: "Create a product roadmap.",
@@ -1488,7 +1488,7 @@ export const tools = [
 
   // 70 Launch plan
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createLaunchPlanPage",
       description: "Create a go-to-market launch plan.",
@@ -1506,7 +1506,7 @@ export const tools = [
 
   // 71 Pipeline funnel
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createPipelineFunnelPage",
       description: "Create a pipeline funnel placeholder.",
@@ -1523,7 +1523,7 @@ export const tools = [
 
   // 72 Sales dashboard
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createSalesDashboardPage",
       description: "Create a sales dashboard placeholder.",
@@ -1540,7 +1540,7 @@ export const tools = [
 
   // 73 Marketing mix
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createMarketingMixPage",
       description: "Create a marketing mix summary.",
@@ -1557,7 +1557,7 @@ export const tools = [
 
   // 74 Customer success journey
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createCustomerSuccessJourneyPage",
       description: "Create a customer success journey map.",
@@ -1574,7 +1574,7 @@ export const tools = [
 
   // 75 Support org model
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createSupportOrgModelPage",
       description: "Create a support organization model placeholder.",
@@ -1591,7 +1591,7 @@ export const tools = [
 
   // 76 Partnership map
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createPartnershipMapPage",
       description: "Create a partnership ecosystem map.",
@@ -1618,7 +1618,7 @@ export const tools = [
 
   // 77 M&A pipeline
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createMAPipelinePage",
       description: "Create an M&A pipeline placeholder.",
@@ -1635,7 +1635,7 @@ export const tools = [
 
   // 78 Synergy capture
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createSynergyCapturePage",
       description: "Create a synergy capture plan placeholder.",
@@ -1652,7 +1652,7 @@ export const tools = [
 
   // 79 Culture values
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createCultureValuesPage",
       description: "Create a culture and values page.",
@@ -1669,7 +1669,7 @@ export const tools = [
 
   // 80 Thank-you / Contact
   {
-    type: "function" as const,
+    type: "function",
     function: {
       name: "createThankYouContactPage",
       description: "Create a closing page with a thank-you message and contacts.",
