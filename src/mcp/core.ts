@@ -37,13 +37,13 @@ export const getServer = (rootDir: string, outputDir: string) => {
         const method = handler[key];
         if (typeof method === "function") {
           const fileName = generateUniqueId();
-          await method(args, { functionName: name, outputFileName: fileName });
+          const result = await method(args, { functionName: name, outputFileName: fileName });
 
           return {
             content: [
               {
                 type: "text",
-                text: `html generated successfully to: ${outputDir} ${fileName}`,
+                text: result?.text ?? "success",
               },
             ],
           };
