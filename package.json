@@ -1,6 +1,6 @@
 {
   "name": "mulmocast-vision",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "PlayGround",
   "main": "lib/index.js",
   "bin": {
