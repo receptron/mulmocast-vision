@@ -35,323 +35,323 @@ export class htmlPlugin {
     };
   };
 
-  public createSectionDividerPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createSectionDividerSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createAgendaPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createAgendaSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createExecutiveSummaryPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createExecutiveSummarySlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createKeyMessageWithSupportsPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createKeyMessageWithSupportsSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createHypothesisPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createHypothesisSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createIssueTreePage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createIssueTreeSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createDriverTreePage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createDriverTreeSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createMeceListPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createMeceListSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createPyramidPrinciplePage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createPyramidPrincipleSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createScqaPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createScqaSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createSwotPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createSwotSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createThreeCPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createThreeCSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createFourPPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createFourPSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createSevenSPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createSevenSSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createValueChainPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createValueChainSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createPorterFiveForcesPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createPorterFiveForcesSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createBusinessModelCanvasPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createBusinessModelCanvasSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createCustomerJourneyPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createCustomerJourneySlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createStakeholderMapPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createStakeholderMapSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createRaciPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createRaciSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createOkrKpiDashboardPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createOkrKpiDashboardSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createBalancedScorecardPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createBalancedScorecardSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createQuarterlyRoadmapPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createQuarterlyRoadmapSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createMilestoneTimelinePage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createMilestoneTimelineSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createGanttSimplePage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createGanttSimpleSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createWaterfallPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createWaterfallSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createFunnelPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createFunnelSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createTwoByTwoMatrixPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createTwoByTwoMatrixSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createBcgMatrixPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createBcgMatrixSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createGeMcKinseyMatrixPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createGeMcKinseyMatrixSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createMarimekkoPlaceholderPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createMarimekkoPlaceholderSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createBubbleChartPlaceholderPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createBubbleChartPlaceholderSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createHeatmapPlaceholderPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createHeatmapPlaceholderSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createKpiHighlightPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createKpiHighlightSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createBeforeAfterPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createBeforeAfterSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createOptionEvaluationPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createOptionEvaluationSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createRiskMitigationPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createRiskMitigationSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createPositioningMapPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createPositioningMapSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createTamSamSomPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createTamSamSomSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createMarketDriversPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createMarketDriversSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createRevenueModelPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createRevenueModelSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createCostStructurePage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createCostStructureSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createOrgChartPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createOrgChartSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createCapabilityMaturityPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createCapabilityMaturitySlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createTechRoadmapPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createTechRoadmapSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createDigitalMaturityPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createDigitalMaturitySlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createEcosystemMapPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createEcosystemMapSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createChangeCurvePage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createChangeCurveSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createCommunicationPlanPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createCommunicationPlanSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createIntegrationPlanPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createIntegrationPlanSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createBenchmarkingTablePage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createBenchmarkingTableSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createSurveyResultsPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createSurveyResultsSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createPersonasPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createPersonasSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createSegmentationPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createSegmentationSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createPricingWaterfallPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createPricingWaterfallSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createSensitivityAnalysisPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createSensitivityAnalysisSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createPLBreakdownPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createPLBreakdownSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createCashFlowPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createCashFlowSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createBalanceSheetPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createBalanceSheetSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createShareholderValueTreePage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createShareholderValueTreeSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createNpvSummaryPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createNpvSummarySlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createScenarioPlanningPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createScenarioPlanningSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createComplianceHeatmapPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createComplianceHeatmapSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createEsgFrameworkPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createEsgFrameworkSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createCsrInitiativesPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createCsrInitiativesSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createSustainabilityRoadmapPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createSustainabilityRoadmapSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createCircularEconomyMapPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createCircularEconomyMapSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createInnovationFunnelPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createInnovationFunnelSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createProductRoadmapPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createProductRoadmapSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createLaunchPlanPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createLaunchPlanSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createPipelineFunnelPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createPipelineFunnelSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createSalesDashboardPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createSalesDashboardSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createMarketingMixPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createMarketingMixSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createCustomerSuccessJourneyPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createCustomerSuccessJourneySlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createSupportOrgModelPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createSupportOrgModelSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createPartnershipMapPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createPartnershipMapSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createMAPipelinePage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createMAPipelineSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createSynergyCapturePage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createSynergyCaptureSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createCultureValuesPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createCultureValuesSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
-  public createThankYouContactPage = async (args: ToolArgs, options: PluginOptionParams) => {
+  public createThankYouContactSlide = async (args: ToolArgs, options: PluginOptionParams) => {
     return await this.generateHtml(args, options);
   };
 
