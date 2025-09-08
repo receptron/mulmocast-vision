@@ -3,14 +3,14 @@ export const data = {
   generated_on: "2025-08-21",
   items: [
     {
-      name: "createSectionDividerPage",
+      name: "createSectionDividerSlide",
       arguments: {
         heading: "How AI Is Reshaping Referencing",
         subheading: "From sources to systems: reliability, traceability, and credit in the age of models",
       },
     },
     {
-      name: "createAgendaPage",
+      name: "createAgendaSlide",
       arguments: {
         title: "Agenda",
         items: [
@@ -23,7 +23,7 @@ export const data = {
       },
     },
     {
-      name: "createExecutiveSummaryPage",
+      name: "createExecutiveSummarySlide",
       arguments: {
         title: "Executive Summary",
         bullets: [
@@ -36,7 +36,7 @@ export const data = {
       },
     },
     {
-      name: "createKeyMessageWithSupportsPage",
+      name: "createKeyMessageWithSupportsSlide",
       arguments: {
         headline: "Trustworthy referencing is a prerequisite for AI at scale.",
         supports: [
@@ -47,7 +47,7 @@ export const data = {
       },
     },
     {
-      name: "createHypothesisPage",
+      name: "createHypothesisSlide",
       arguments: {
         hypothesis: "Firms that implement verifiable AI referencing will reduce risk and accelerate adoption.",
         implications: [
@@ -63,7 +63,7 @@ export const data = {
       },
     },
     {
-      name: "createIssueTreePage",
+      name: "createIssueTreeSlide",
       arguments: {
         rootIssue: "How to ensure accurate, compliant AI referencing?",
         branches: [
@@ -74,7 +74,7 @@ export const data = {
       },
     },
     {
-      name: "createDriverTreePage",
+      name: "createDriverTreeSlide",
       arguments: {
         metric: "Reference accuracy rate (%)",
         drivers: [
@@ -85,7 +85,7 @@ export const data = {
       },
     },
     {
-      name: "createMeceListPage",
+      name: "createMeceListSlide",
       arguments: {
         title: "MECE: Reference Risk Areas",
         groups: [
@@ -105,7 +105,7 @@ export const data = {
       },
     },
     {
-      name: "createPyramidPrinciplePage",
+      name: "createPyramidPrincipleSlide",
       arguments: {
         keyMessage: "Verifiable references unlock safe, scalable AI adoption.",
         supports: ["Reduces legal and reputational risk", "Improves stakeholder confidence", "Shortens audit cycles"],
@@ -117,7 +117,7 @@ export const data = {
       },
     },
     {
-      name: "createScqaPage",
+      name: "createScqaSlide",
       arguments: {
         situation: "Teams increasingly rely on AI to synthesize knowledge and draft outputs.",
         complication: "AI can misattribute or fabricate sources, risking credibility and compliance.",
@@ -126,7 +126,7 @@ export const data = {
       },
     },
     {
-      name: "createSwotPage",
+      name: "createSwotSlide",
       arguments: {
         strengths: ["Speed of synthesis", "Scalable drafting", "Broad corpus reach"],
         weaknesses: ["Hallucinations", "Opaque provenance", "Reviewer overload"],
@@ -135,7 +135,7 @@ export const data = {
       },
     },
     {
-      name: "createThreeCPage",
+      name: "createThreeCSlide",
       arguments: {
         company: ["Commit to verifiable AI outputs", "Invest in governed retrieval"],
         customer: ["Needs trustworthy citations", "Wants explorable sources"],
@@ -143,7 +143,7 @@ export const data = {
       },
     },
     {
-      name: "createFourPPage",
+      name: "createFourPSlide",
       arguments: {
         product: ["Reference-safe AI assistant", "Evidence panel", "Citation export"],
         price: ["Tiered by audit features", "Enterprise compliance add-ons"],
@@ -152,7 +152,7 @@ export const data = {
       },
     },
     {
-      name: "createSevenSPage",
+      name: "createSevenSSlide",
       arguments: {
         strategy: "Make 'trustworthy references' a core AI value prop",
         structure: "Central knowledge governance with federated champions",
@@ -164,14 +164,14 @@ export const data = {
       },
     },
     {
-      name: "createValueChainPage",
+      name: "createValueChainSlide",
       arguments: {
         primary: ["Ingestion", "Indexing", "Retrieval", "Generation", "Review", "Publication"],
         support: ["Governance", "Security", "Compliance", "Training", "Monitoring"],
       },
     },
     {
-      name: "createPorterFiveForcesPage",
+      name: "createPorterFiveForcesSlide",
       arguments: {
         newEntrants: ["AI-first doc tools", "Verification startups"],
         suppliers: ["Model providers", "Content licensors"],
@@ -181,7 +181,7 @@ export const data = {
       },
     },
     {
-      name: "createBusinessModelCanvasPage",
+      name: "createBusinessModelCanvasSlide",
       arguments: {
         blocks: {
           "Key Partners": ["Model vendors", "Content platforms", "Auditors"],
@@ -197,7 +197,7 @@ export const data = {
       },
     },
     {
-      name: "createCustomerJourneyPage",
+      name: "createCustomerJourneySlide",
       arguments: {
         stages: ["Discover", "Draft", "Verify", "Publish", "Audit"],
         touchpoints: [
@@ -210,7 +210,7 @@ export const data = {
       },
     },
     {
-      name: "createStakeholderMapPage",
+      name: "createStakeholderMapSlide",
       arguments: {
         stakeholders: [
           {
@@ -241,7 +241,7 @@ export const data = {
       },
     },
     {
-      name: "createRaciPage",
+      name: "createRaciSlide",
       arguments: {
         tasks: ["Define policy", "Implement RAG", "Roll out training", "Monitor KPIs"],
         roles: ["Legal", "Engineering", "L&D", "Ops"],
@@ -254,7 +254,7 @@ export const data = {
       },
     },
     {
-      name: "createOkrKpiDashboardPage",
+      name: "createOkrKpiDashboardSlide",
       arguments: {
         title: "Reference Quality KPIs",
         metrics: [
@@ -280,7 +280,7 @@ export const data = {
       },
     },
     {
-      name: "createBalancedScorecardPage",
+      name: "createBalancedScorecardSlide",
       arguments: {
         perspectives: [
           {
@@ -303,7 +303,7 @@ export const data = {
       },
     },
     {
-      name: "createQuarterlyRoadmapPage",
+      name: "createQuarterlyRoadmapSlide",
       arguments: {
         quarters: ["Q1", "Q2", "Q3", "Q4"],
         items: [
@@ -327,7 +327,7 @@ export const data = {
       },
     },
     {
-      name: "createMilestoneTimelinePage",
+      name: "createMilestoneTimelineSlide",
       arguments: {
         title: "Implementation Timeline",
         milestones: [
@@ -355,7 +355,7 @@ export const data = {
       },
     },
     {
-      name: "createGanttSimplePage",
+      name: "createGanttSimpleSlide",
       arguments: {
         tasks: [
           {
@@ -382,7 +382,7 @@ export const data = {
       },
     },
     {
-      name: "createWaterfallPage",
+      name: "createWaterfallSlide",
       arguments: {
         title: "Time Savings from AI Referencing (hrs/month)",
         steps: [
@@ -406,7 +406,7 @@ export const data = {
       },
     },
     {
-      name: "createFunnelPage",
+      name: "createFunnelSlide",
       arguments: {
         stages: [
           {
@@ -429,7 +429,7 @@ export const data = {
       },
     },
     {
-      name: "createTwoByTwoMatrixPage",
+      name: "createTwoByTwoMatrixSlide",
       arguments: {
         xAxis: "Evidence depth",
         yAxis: "Ease of use",
@@ -437,7 +437,7 @@ export const data = {
       },
     },
     {
-      name: "createBcgMatrixPage",
+      name: "createBcgMatrixSlide",
       arguments: {
         stars: ["Signed-citation AI editors"],
         cashCows: ["Governed enterprise search"],
@@ -446,7 +446,7 @@ export const data = {
       },
     },
     {
-      name: "createGeMcKinseyMatrixPage",
+      name: "createGeMcKinseyMatrixSlide",
       arguments: {
         industryAttractiveness: ["Regulatory clarity", "IP-safe corpora", "Audit tooling"],
         competitiveStrength: ["Corpus quality", "Model integration", "Compliance features"],
@@ -470,14 +470,14 @@ export const data = {
       },
     },
     {
-      name: "createMarimekkoPlaceholderPage",
+      name: "createMarimekkoPlaceholderSlide",
       arguments: {
         title: "Content Types by Share & Effort",
         categories: ["Academic", "News", "Internal docs", "Web"],
       },
     },
     {
-      name: "createBubbleChartPlaceholderPage",
+      name: "createBubbleChartPlaceholderSlide",
       arguments: {
         title: "Risk vs Impact vs Adoption",
         points: [
@@ -503,7 +503,7 @@ export const data = {
       },
     },
     {
-      name: "createHeatmapPlaceholderPage",
+      name: "createHeatmapPlaceholderSlide",
       arguments: {
         rows: ["Teams"],
         cols: ["Accuracy", "Provenance", "Speed", "Compliance"],
@@ -511,7 +511,7 @@ export const data = {
       },
     },
     {
-      name: "createKpiHighlightPage",
+      name: "createKpiHighlightSlide",
       arguments: {
         title: "KPI Highlights",
         kpis: [
@@ -534,7 +534,7 @@ export const data = {
       },
     },
     {
-      name: "createBeforeAfterPage",
+      name: "createBeforeAfterSlide",
       arguments: {
         title: "Before vs After AI Referencing",
         before: ["Manual searches", "Inconsistent citations", "Slow audits"],
@@ -542,7 +542,7 @@ export const data = {
       },
     },
     {
-      name: "createOptionEvaluationPage",
+      name: "createOptionEvaluationSlide",
       arguments: {
         criteria: ["Accuracy", "Latency", "Compliance", "Cost"],
         options: ["Generic chatbot", "RAG + signing", "Manual review"],
@@ -554,7 +554,7 @@ export const data = {
       },
     },
     {
-      name: "createRiskMitigationPage",
+      name: "createRiskMitigationSlide",
       arguments: {
         risks: [
           {
@@ -579,7 +579,7 @@ export const data = {
       },
     },
     {
-      name: "createPositioningMapPage",
+      name: "createPositioningMapSlide",
       arguments: {
         xAxis: "Compliance readiness",
         yAxis: "User adoption",
@@ -603,7 +603,7 @@ export const data = {
       },
     },
     {
-      name: "createTamSamSomPage",
+      name: "createTamSamSomSlide",
       arguments: {
         tam: 50000000000,
         sam: 12000000000,
@@ -612,28 +612,28 @@ export const data = {
       },
     },
     {
-      name: "createMarketDriversPage",
+      name: "createMarketDriversSlide",
       arguments: {
         title: "Market Growth Drivers",
         drivers: ["Regulatory push for provenance", "Enterprise AI adoption", "Cost pressure to automate reviews"],
       },
     },
     {
-      name: "createRevenueModelPage",
+      name: "createRevenueModelSlide",
       arguments: {
         streams: ["Seats", "Usage", "Compliance add-on"],
         pricingNotes: "Discounts for academic & nonprofit segments with strict compliance needs.",
       },
     },
     {
-      name: "createCostStructurePage",
+      name: "createCostStructureSlide",
       arguments: {
         buckets: ["Compute", "Licenses", "Storage", "Review ops"],
         fixedVsVariable: ["Fixed: platform & storage", "Variable: compute & review time"],
       },
     },
     {
-      name: "createOrgChartPage",
+      name: "createOrgChartSlide",
       arguments: {
         nodes: [
           {
@@ -655,7 +655,7 @@ export const data = {
       },
     },
     {
-      name: "createCapabilityMaturityPage",
+      name: "createCapabilityMaturitySlide",
       arguments: {
         capabilities: [
           {
@@ -674,7 +674,7 @@ export const data = {
       },
     },
     {
-      name: "createTechRoadmapPage",
+      name: "createTechRoadmapSlide",
       arguments: {
         phases: ["MVP", "Scale", "Certify"],
         items: [
@@ -694,7 +694,7 @@ export const data = {
       },
     },
     {
-      name: "createDigitalMaturityPage",
+      name: "createDigitalMaturitySlide",
       arguments: {
         dimensions: ["Data", "Process", "People", "Tech"],
         levels: [3, 3, 2, 4],
@@ -702,7 +702,7 @@ export const data = {
       },
     },
     {
-      name: "createEcosystemMapPage",
+      name: "createEcosystemMapSlide",
       arguments: {
         categories: ["Models", "Content", "Tooling", "Auditors"],
         entities: [
@@ -726,14 +726,14 @@ export const data = {
       },
     },
     {
-      name: "createChangeCurvePage",
+      name: "createChangeCurveSlide",
       arguments: {
         stages: ["Awareness", "Understanding", "Adoption", "Advocacy"],
         notes: "Evidence-first culture requires incentives and leadership modeling.",
       },
     },
     {
-      name: "createCommunicationPlanPage",
+      name: "createCommunicationPlanSlide",
       arguments: {
         audiences: ["Executives", "Managers", "Contributors"],
         channels: ["Town halls", "Docs add-in tips", "Slack nudges"],
@@ -741,28 +741,28 @@ export const data = {
       },
     },
     {
-      name: "createIntegrationPlanPage",
+      name: "createIntegrationPlanSlide",
       arguments: {
         workstreams: ["Tech", "Policy", "Training", "Ops"],
         milestones: ["MVP live", "Org-wide training", "Audit pilot"],
       },
     },
     {
-      name: "createBenchmarkingTablePage",
+      name: "createBenchmarkingTableSlide",
       arguments: {
         metrics: ["Accuracy", "Provenance", "Latency", "Cost"],
         competitors: ["Manual", "Generic chatbot", "Signed AI editor"],
       },
     },
     {
-      name: "createSurveyResultsPage",
+      name: "createSurveyResultsSlide",
       arguments: {
         questions: ["Do you trust AI references?", "Is evidence easy to review?"],
         summaries: ["Trust increased post-signing rollout.", "Review time dropped by 35%."],
       },
     },
     {
-      name: "createPersonasPage",
+      name: "createPersonasSlide",
       arguments: {
         personas: [
           {
@@ -779,14 +779,14 @@ export const data = {
       },
     },
     {
-      name: "createSegmentationPage",
+      name: "createSegmentationSlide",
       arguments: {
         segments: ["Academic", "Enterprise", "Media"],
         descriptors: ["Risk tolerance", "Compliance needs", "Speed expectations"],
       },
     },
     {
-      name: "createPricingWaterfallPage",
+      name: "createPricingWaterfallSlide",
       arguments: {
         steps: [
           {
@@ -809,28 +809,28 @@ export const data = {
       },
     },
     {
-      name: "createSensitivityAnalysisPage",
+      name: "createSensitivityAnalysisSlide",
       arguments: {
         variables: ["Corpus coverage", "Reviewer time", "Compute cost"],
         scenarios: ["Best case", "Expected", "Stress"],
       },
     },
     {
-      name: "createPLBreakdownPage",
+      name: "createPLBreakdownSlide",
       arguments: {
         categories: ["Revenue", "COGS", "Opex"],
         values: [20, 8, 6],
       },
     },
     {
-      name: "createCashFlowPage",
+      name: "createCashFlowSlide",
       arguments: {
         inflows: [8, 10, 12, 14],
         outflows: [6, 7, 8, 9],
       },
     },
     {
-      name: "createBalanceSheetPage",
+      name: "createBalanceSheetSlide",
       arguments: {
         assets: ["Cash", "Intangibles", "Receivables"],
         liabilities: ["Deferred revenue", "Accounts payable"],
@@ -838,34 +838,34 @@ export const data = {
       },
     },
     {
-      name: "createShareholderValueTreePage",
+      name: "createShareholderValueTreeSlide",
       arguments: {
         drivers: ["Adoption", "Retention", "Compliance premium"],
       },
     },
     {
-      name: "createNpvSummaryPage",
+      name: "createNpvSummarySlide",
       arguments: {
         npv: 12500000,
         assumptions: ["3-year horizon", "10% discount rate", "Compliance uplift included"],
       },
     },
     {
-      name: "createScenarioPlanningPage",
+      name: "createScenarioPlanningSlide",
       arguments: {
         scenarios: ["Tight regulation", "Moderate", "Self-regulation"],
         impacts: ["Higher audit cost", "Balanced investment", "Faster rollout"],
       },
     },
     {
-      name: "createComplianceHeatmapPage",
+      name: "createComplianceHeatmapSlide",
       arguments: {
         areas: ["Copyright", "Privacy", "Disclosure"],
         levels: ["Green", "Amber", "Red"],
       },
     },
     {
-      name: "createEsgFrameworkPage",
+      name: "createEsgFrameworkSlide",
       arguments: {
         environmental: ["Efficient compute", "Green datacenters"],
         social: ["Source credit", "Anti-bias reviews"],
@@ -873,33 +873,33 @@ export const data = {
       },
     },
     {
-      name: "createCsrInitiativesPage",
+      name: "createCsrInitiativesSlide",
       arguments: {
         initiatives: ["Open citations to public research", "Academic partnerships"],
       },
     },
     {
-      name: "createSustainabilityRoadmapPage",
+      name: "createSustainabilityRoadmapSlide",
       arguments: {
         phases: ["Measure", "Reduce", "Offset"],
         actions: ["Track energy per query", "Optimize inference", "Offset remaining"],
       },
     },
     {
-      name: "createCircularEconomyMapPage",
+      name: "createCircularEconomyMapSlide",
       arguments: {
         loops: ["Data ingestion", "Use", "Feedback", "Curation"],
       },
     },
     {
-      name: "createInnovationFunnelPage",
+      name: "createInnovationFunnelSlide",
       arguments: {
         stages: ["Ideas", "Prototypes", "Pilots", "Scale"],
         counts: [120, 24, 8, 3],
       },
     },
     {
-      name: "createProductRoadmapPage",
+      name: "createProductRoadmapSlide",
       arguments: {
         releases: ["R1", "R2", "R3"],
         items: [
@@ -919,7 +919,7 @@ export const data = {
       },
     },
     {
-      name: "createLaunchPlanPage",
+      name: "createLaunchPlanSlide",
       arguments: {
         workstreams: ["Marketing", "Sales", "Success"],
         milestones: ["Beta cohort", "GA", "Case studies"],
@@ -927,42 +927,42 @@ export const data = {
       },
     },
     {
-      name: "createPipelineFunnelPage",
+      name: "createPipelineFunnelSlide",
       arguments: {
         stages: ["Leads", "Qualified", "Trials", "Paid"],
         values: [400, 220, 120, 60],
       },
     },
     {
-      name: "createSalesDashboardPage",
+      name: "createSalesDashboardSlide",
       arguments: {
         metrics: ["Win rate 32%", "Cycle time 48d", "Avg deal $85k"],
         notes: "Education on value of signed references shortens cycles.",
       },
     },
     {
-      name: "createMarketingMixPage",
+      name: "createMarketingMixSlide",
       arguments: {
         levers: ["Content marketing", "Compliance webinars", "Partner co-sell", "Analyst briefings"],
         notes: "Lead with risk reduction and measurable trust.",
       },
     },
     {
-      name: "createCustomerSuccessJourneyPage",
+      name: "createCustomerSuccessJourneySlide",
       arguments: {
         stages: ["Onboard", "Adopt", "Expand", "Renew"],
         metrics: ["Time-to-value", "Feature usage", "CSAT", "Renewal rate"],
       },
     },
     {
-      name: "createSupportOrgModelPage",
+      name: "createSupportOrgModelSlide",
       arguments: {
         tiers: ["Tier 1", "Tier 2", "Tier 3"],
         roles: ["Agent", "Specialist", "Engineer"],
       },
     },
     {
-      name: "createPartnershipMapPage",
+      name: "createPartnershipMapSlide",
       arguments: {
         categories: ["Licensing", "Technology", "Audit"],
         partners: [
@@ -982,28 +982,28 @@ export const data = {
       },
     },
     {
-      name: "createMAPipelinePage",
+      name: "createMAPipelineSlide",
       arguments: {
         stages: ["Identify", "Evaluate", "Negotiate", "Integrate"],
         targets: ["Evidence startup X", "Audit SaaS Y"],
       },
     },
     {
-      name: "createSynergyCapturePage",
+      name: "createSynergyCaptureSlide",
       arguments: {
         sources: ["Cross-sell", "Shared infra", "Joint R&D"],
         values: [4.0, 1.5, 2.0],
       },
     },
     {
-      name: "createCultureValuesPage",
+      name: "createCultureValuesSlide",
       arguments: {
         values: ["Truth", "Transparency", "Accountability"],
         behaviors: ["Cite sources", "Log context", "Flag uncertainty"],
       },
     },
     {
-      name: "createThankYouContactPage",
+      name: "createThankYouContactSlide",
       arguments: {
         message: "Thank you!",
         name: "AI Referencing Taskforce",

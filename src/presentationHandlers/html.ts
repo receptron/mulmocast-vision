@@ -21,322 +21,322 @@ const generateHtml = async (args: ToolArgs, options: PluginOptionParams) => {
   await createPage(rootDir, outfile, nunjucks.render(filePath(templateFileName), args));
 };
 
-export const createSectionDividerPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createSectionDividerSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createAgendaPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createAgendaSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createExecutiveSummaryPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createExecutiveSummarySlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createKeyMessageWithSupportsPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createKeyMessageWithSupportsSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createHypothesisPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createHypothesisSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createIssueTreePage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createIssueTreeSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createDriverTreePage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createDriverTreeSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createMeceListPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createMeceListSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createPyramidPrinciplePage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createPyramidPrincipleSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createScqaPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createScqaSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createSwotPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createSwotSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createThreeCPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createThreeCSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createFourPPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createFourPSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createSevenSPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createSevenSSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createValueChainPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createValueChainSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createPorterFiveForcesPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createPorterFiveForcesSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createBusinessModelCanvasPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createBusinessModelCanvasSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createCustomerJourneyPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createCustomerJourneySlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createStakeholderMapPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createStakeholderMapSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createRaciPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createRaciSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createOkrKpiDashboardPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createOkrKpiDashboardSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createBalancedScorecardPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createBalancedScorecardSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createQuarterlyRoadmapPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createQuarterlyRoadmapSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createMilestoneTimelinePage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createMilestoneTimelineSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createGanttSimplePage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createGanttSimpleSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createWaterfallPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createWaterfallSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createFunnelPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createFunnelSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createTwoByTwoMatrixPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createTwoByTwoMatrixSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createBcgMatrixPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createBcgMatrixSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createGeMcKinseyMatrixPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createGeMcKinseyMatrixSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createMarimekkoPlaceholderPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createMarimekkoPlaceholderSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createBubbleChartPlaceholderPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createBubbleChartPlaceholderSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createHeatmapPlaceholderPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createHeatmapPlaceholderSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createKpiHighlightPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createKpiHighlightSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createBeforeAfterPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createBeforeAfterSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createOptionEvaluationPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createOptionEvaluationSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createRiskMitigationPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createRiskMitigationSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createPositioningMapPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createPositioningMapSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createTamSamSomPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createTamSamSomSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createMarketDriversPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createMarketDriversSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createRevenueModelPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createRevenueModelSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createCostStructurePage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createCostStructureSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createOrgChartPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createOrgChartSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createCapabilityMaturityPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createCapabilityMaturitySlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createTechRoadmapPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createTechRoadmapSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createDigitalMaturityPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createDigitalMaturitySlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createEcosystemMapPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createEcosystemMapSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createChangeCurvePage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createChangeCurveSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createCommunicationPlanPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createCommunicationPlanSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createIntegrationPlanPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createIntegrationPlanSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createBenchmarkingTablePage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createBenchmarkingTableSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createSurveyResultsPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createSurveyResultsSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createPersonasPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createPersonasSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createSegmentationPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createSegmentationSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createPricingWaterfallPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createPricingWaterfallSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createSensitivityAnalysisPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createSensitivityAnalysisSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createPLBreakdownPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createPLBreakdownSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createCashFlowPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createCashFlowSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createBalanceSheetPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createBalanceSheetSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createShareholderValueTreePage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createShareholderValueTreeSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createNpvSummaryPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createNpvSummarySlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createScenarioPlanningPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createScenarioPlanningSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createComplianceHeatmapPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createComplianceHeatmapSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createEsgFrameworkPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createEsgFrameworkSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createCsrInitiativesPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createCsrInitiativesSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createSustainabilityRoadmapPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createSustainabilityRoadmapSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createCircularEconomyMapPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createCircularEconomyMapSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createInnovationFunnelPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createInnovationFunnelSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createProductRoadmapPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createProductRoadmapSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createLaunchPlanPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createLaunchPlanSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createPipelineFunnelPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createPipelineFunnelSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createSalesDashboardPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createSalesDashboardSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createMarketingMixPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createMarketingMixSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createCustomerSuccessJourneyPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createCustomerSuccessJourneySlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createSupportOrgModelPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createSupportOrgModelSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createPartnershipMapPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createPartnershipMapSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createMAPipelinePage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createMAPipelineSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createSynergyCapturePage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createSynergyCaptureSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createCultureValuesPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createCultureValuesSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
 
-export const createThankYouContactPage = async (args: ToolArgs, options: PluginOptionParams) => {
+export const createThankYouContactSlide = async (args: ToolArgs, options: PluginOptionParams) => {
   await generateHtml(args, options);
 };
