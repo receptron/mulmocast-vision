@@ -1,4 +1,6 @@
-export const mcp_tools = [
+import { OpenAITool } from "./type";
+
+export const mcp_tools: OpenAITool[] = [
   {
     type: "function",
     function: {

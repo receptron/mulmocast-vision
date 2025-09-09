@@ -1,13 +1,18 @@
+export type ToolParametersSchema = {
+  type: string;
+  required: string[];
+  properties: Record<string, unknown>;
+};
+
+export type ToolFunction = {
+  name: string;
+  description: string;
+  parameters: ToolParametersSchema;
+};
+
 export type OpenAITool = {
-  function: {
-    name: string;
-    description: string;
-    parameters: {
-      type: string;
-      required: string[];
-      properties: Record<string, unknown>;
-    };
-  };
+  type: "function";
+  function: ToolFunction;
 };
 
 export type PluginOptionParams = {

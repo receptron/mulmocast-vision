@@ -1,13 +1,15 @@
+import { OpenAITool } from "./type";
+
 const indexDescription = "If 0 <= _index < slides.length, update that position. Omit or -1/out-of-range to append to the end (default -1).";
 
-export const toolsBase = [
+export const toolsBase: OpenAITool[] = [
   // 01 Section divider
   {
     type: "function",
     function: {
       name: "SectionDivider",
       description:
-      "a new slide in the presentation that serves as a section divider. This slide must include both a large main heading and a subtitle. Use this when the user wants to create a single slide that clearly introduces or separates a new section in their presentation.",
+        "a new slide in the presentation that serves as a section divider. This slide must include both a large main heading and a subtitle. Use this when the user wants to create a single slide that clearly introduces or separates a new section in their presentation.",
       parameters: {
         type: "object",
         properties: {
@@ -16,7 +18,6 @@ export const toolsBase = [
           _index: { type: "integer", description: indexDescription },
         },
         required: ["heading", "subheading"],
-        
       },
     },
   },
@@ -144,7 +145,7 @@ export const toolsBase = [
             items: { type: "array", items: { type: "string" } },
             minItems: 1,
             description: "Driver branches that affect the main metric",
-          _index: { type: "integer", description: indexDescription },
+            _index: { type: "integer", description: indexDescription },
           },
         },
         required: ["metric", "drivers"],
@@ -1769,10 +1770,9 @@ export const toolsBase = [
       },
     },
   },
-] as any;
+];
 
-
-export const tools = toolsBase.map((tool: any) => {
+export const tools = toolsBase.map((tool: OpenAITool) => {
   const { type, function: func } = tool;
   const { name, description, parameters } = func;
   return {
@@ -1781,11 +1781,11 @@ export const tools = toolsBase.map((tool: any) => {
       name: `create${name}Slide`,
       description: `Create or update ${description}`,
       parameters,
-    }
-  }
+    },
+  };
 });
 
-export const toolsForBeat = toolsBase.map((tool: any) => {
+export const toolsForBeat = toolsBase.map((tool: OpenAITool) => {
   const { type, function: func } = tool;
   const { name, description, parameters } = func;
   return {
@@ -1794,8 +1794,8 @@ export const toolsForBeat = toolsBase.map((tool: any) => {
       name: `updateBeatStyleTo${name}`,
       description: `Change the beat image to ${description}`,
       parameters,
-    }
-  }
+    },
+  };
 });
 
 // updateBeatImageForXXStyle
