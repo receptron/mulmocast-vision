@@ -1,18 +1,22 @@
-export const tools = [
+const indexDescription = "If 0 <= _index < slides.length, update that position. Omit or -1/out-of-range to append to the end (default -1).";
+
+export const toolsBase = [
   // 01 Section divider
   {
     type: "function",
     function: {
-      name: "createSectionDividerSlide",
+      name: "SectionDivider",
       description:
-        "Insert a new slide in the presentation that serves as a section divider. This slide must include both a large main heading and a subtitle. Use this when the user wants to create a single slide that clearly introduces or separates a new section in their presentation.",
+      "a new slide in the presentation that serves as a section divider. This slide must include both a large main heading and a subtitle. Use this when the user wants to create a single slide that clearly introduces or separates a new section in their presentation.",
       parameters: {
         type: "object",
         properties: {
           heading: { type: "string", description: "Main section title, shown prominently on the slide" },
           subheading: { type: "string", description: "Subtitle that provides context or explanation for the section" },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["heading", "subheading"],
+        
       },
     },
   },
@@ -21,14 +25,15 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createAgendaSlide",
+      name: "Agenda",
       description:
-        "Insert one slide in the presentation that shows the agenda. This slide lists the main topics as bullet points under a clear title, giving the audience an overview of what will be covered.",
+        "one slide in the presentation that shows the agenda. This slide lists the main topics as bullet points under a clear title, giving the audience an overview of what will be covered.",
       parameters: {
         type: "object",
         properties: {
           title: { type: "string", description: "Heading shown at the top of the agenda slide" },
           items: { type: "array", items: { type: "string" }, minItems: 1, description: "Agenda bullet points" },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["title", "items"],
       },
@@ -39,9 +44,9 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createExecutiveSummarySlide",
+      name: "ExecutiveSummary",
       description:
-        "Insert one slide in the presentation that provides an executive summary. This slide should include a clear title and 3–7 concise bullet points highlighting the key takeaways.",
+        "one slide in the presentation that provides an executive summary. This slide should include a clear title and 3–7 concise bullet points highlighting the key takeaways.",
       parameters: {
         type: "object",
         properties: {
@@ -53,6 +58,7 @@ export const tools = [
             maxItems: 7,
             description: "Key takeaway points to summarize",
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["title", "bullets"],
       },
@@ -63,14 +69,15 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createKeyMessageWithSupportsSlide",
+      name: "KeyMessageWithSupports",
       description:
-        "Insert one slide in the presentation that emphasizes a single key message. The headline should state the main message, supported by at least two bullet points.",
+        "one slide in the presentation that emphasizes a single key message. The headline should state the main message, supported by at least two bullet points.",
       parameters: {
         type: "object",
         properties: {
           headline: { type: "string", description: "Main key message shown as the headline" },
           supports: { type: "array", items: { type: "string" }, minItems: 2, description: "Supporting points or evidence" },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["headline", "supports"],
       },
@@ -81,15 +88,16 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createHypothesisSlide",
+      name: "Hypothesis",
       description:
-        "Insert one slide in the presentation that presents a hypothesis. This slide states the hypothesis clearly and may also outline implications and suggested next steps.",
+        "one slide in the presentation that presents a hypothesis. This slide states the hypothesis clearly and may also outline implications and suggested next steps.",
       parameters: {
         type: "object",
         properties: {
           hypothesis: { type: "string", description: "The main hypothesis statement" },
           implications: { type: "array", items: { type: "string" }, description: "Possible implications if the hypothesis is true" },
           nextSteps: { type: "array", items: { type: "string" }, description: "Recommended next actions" },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["hypothesis"],
       },
@@ -100,9 +108,9 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createIssueTreeSlide",
+      name: "IssueTree",
       description:
-        "Insert one slide in the presentation that visualizes an issue tree. This slide shows the root issue at the top and branches into MECE sub-issues to structure the problem.",
+        "one slide in the presentation that visualizes an issue tree. This slide shows the root issue at the top and branches into MECE sub-issues to structure the problem.",
       parameters: {
         type: "object",
         properties: {
@@ -113,6 +121,7 @@ export const tools = [
             minItems: 2,
             description: "Sub-issues or branches grouped under the root issue",
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["rootIssue", "branches"],
       },
@@ -123,9 +132,9 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createDriverTreeSlide",
+      name: "DriverTree",
       description:
-        "Insert one slide in the presentation that visualizes a driver tree. This slide shows a key business metric at the top and the drivers that influence it branching below.",
+        "one slide in the presentation that visualizes a driver tree. This slide shows a key business metric at the top and the drivers that influence it branching below.",
       parameters: {
         type: "object",
         properties: {
@@ -135,6 +144,7 @@ export const tools = [
             items: { type: "array", items: { type: "string" } },
             minItems: 1,
             description: "Driver branches that affect the main metric",
+          _index: { type: "integer", description: indexDescription },
           },
         },
         required: ["metric", "drivers"],
@@ -146,9 +156,9 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createMeceListSlide",
+      name: "MeceList",
       description:
-        "Insert one slide in the presentation that organizes items into MECE (Mutually Exclusive, Collectively Exhaustive) groups. Each group has a label and its own bullet list.",
+        "one slide in the presentation that organizes items into MECE (Mutually Exclusive, Collectively Exhaustive) groups. Each group has a label and its own bullet list.",
       parameters: {
         type: "object",
         properties: {
@@ -170,6 +180,7 @@ export const tools = [
               required: ["label", "items"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["title", "groups"],
       },
@@ -180,9 +191,9 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createPyramidPrincipleSlide",
+      name: "PyramidPrinciple",
       description:
-        "Insert one slide in the presentation that follows the pyramid principle. The slide starts with the key message, followed by supporting reasons, and optional detailed breakdowns.",
+        "one slide in the presentation that follows the pyramid principle. The slide starts with the key message, followed by supporting reasons, and optional detailed breakdowns.",
       parameters: {
         type: "object",
         properties: {
@@ -193,6 +204,7 @@ export const tools = [
             items: { type: "array", items: { type: "string" } },
             description: "Optional deeper details for each supporting reason",
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["keyMessage", "supports"],
       },
@@ -203,8 +215,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createScqaSlide",
-      description: "Insert one slide in the presentation that explains a storyline using the SCQA framework: Situation, Complication, Question, and Answer.",
+      name: "Scqa",
+      description: "one slide in the presentation that explains a storyline using the SCQA framework: Situation, Complication, Question, and Answer.",
       parameters: {
         type: "object",
         properties: {
@@ -212,6 +224,7 @@ export const tools = [
           complication: { type: "string", description: "The complication or challenge" },
           question: { type: "string", description: "The key question that arises" },
           answer: { type: "string", description: "The answer or proposed resolution" },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["situation", "complication", "question", "answer"],
       },
@@ -222,8 +235,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createSwotSlide",
-      description: "Create a SWOT matrix.",
+      name: "Swot",
+      description: "a SWOT matrix.",
       parameters: {
         type: "object",
         properties: {
@@ -231,6 +244,7 @@ export const tools = [
           weaknesses: { type: "array", items: { type: "string" } },
           opportunities: { type: "array", items: { type: "string" } },
           threats: { type: "array", items: { type: "string" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["strengths", "weaknesses", "opportunities", "threats"],
       },
@@ -241,14 +255,15 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createThreeCSlide",
-      description: "Create a 3C (Company, Customer, Competitor) page.",
+      name: "ThreeC",
+      description: "a 3C (Company, Customer, Competitor) slide.",
       parameters: {
         type: "object",
         properties: {
           company: { type: "array", items: { type: "string" } },
           customer: { type: "array", items: { type: "string" } },
           competitor: { type: "array", items: { type: "string" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["company", "customer", "competitor"],
       },
@@ -259,8 +274,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createFourPSlide",
-      description: "Create a marketing 4P page.",
+      name: "FourP",
+      description: "a marketing 4P slide.",
       parameters: {
         type: "object",
         properties: {
@@ -268,6 +283,7 @@ export const tools = [
           price: { type: "array", items: { type: "string" } },
           place: { type: "array", items: { type: "string" } },
           promotion: { type: "array", items: { type: "string" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["product", "price", "place", "promotion"],
       },
@@ -278,8 +294,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createSevenSSlide",
-      description: "Create a McKinsey 7S page.",
+      name: "SevenS",
+      description: "a McKinsey 7S slide.",
       parameters: {
         type: "object",
         properties: {
@@ -290,6 +306,7 @@ export const tools = [
           skills: { type: "string" },
           style: { type: "string" },
           staff: { type: "string" },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["strategy", "structure", "systems", "sharedValues", "skills", "style", "staff"],
       },
@@ -300,13 +317,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createValueChainSlide",
-      description: "Create a value chain with primary and support activities.",
+      name: "ValueChain",
+      description: "a value chain with primary and support activities.",
       parameters: {
         type: "object",
         properties: {
           primary: { type: "array", items: { type: "string" }, minItems: 3 },
           support: { type: "array", items: { type: "string" }, minItems: 3 },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["primary", "support"],
       },
@@ -317,8 +335,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createPorterFiveForcesSlide",
-      description: "Create a Porter’s Five Forces page.",
+      name: "PorterFiveForces",
+      description: "a Porter’s Five Forces slide.",
       parameters: {
         type: "object",
         properties: {
@@ -327,6 +345,7 @@ export const tools = [
           buyers: { type: "array", items: { type: "string" } },
           substitutes: { type: "array", items: { type: "string" } },
           rivalry: { type: "array", items: { type: "string" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["newEntrants", "suppliers", "buyers", "substitutes", "rivalry"],
       },
@@ -337,8 +356,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createBusinessModelCanvasSlide",
-      description: "Create a Business Model Canvas (9 blocks).",
+      name: "BusinessModelCanvas",
+      description: "a Business Model Canvas (9 blocks).",
       parameters: {
         type: "object",
         properties: {
@@ -346,6 +365,7 @@ export const tools = [
             type: "object",
             additionalProperties: { type: "array", items: { type: "string" } },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["blocks"],
       },
@@ -356,8 +376,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createCustomerJourneySlide",
-      description: "Create a customer journey with stages and touchpoints.",
+      name: "CustomerJourney",
+      description: "a customer journey with stages and touchpoints.",
       parameters: {
         type: "object",
         properties: {
@@ -366,6 +386,7 @@ export const tools = [
             type: "array",
             items: { type: "array", items: { type: "string" } },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["stages"],
       },
@@ -376,8 +397,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createStakeholderMapSlide",
-      description: "Create a stakeholder influence-interest map.",
+      name: "StakeholderMap",
+      description: "a stakeholder influence-interest map.",
       parameters: {
         type: "object",
         properties: {
@@ -394,6 +415,7 @@ export const tools = [
               required: ["name", "influence", "interest"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["stakeholders"],
       },
@@ -404,8 +426,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createRaciSlide",
-      description: "Create a RACI matrix.",
+      name: "Raci",
+      description: "a RACI matrix.",
       parameters: {
         type: "object",
         properties: {
@@ -415,6 +437,7 @@ export const tools = [
             type: "array",
             items: { type: "array", items: { type: "string" } },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["tasks", "roles"],
       },
@@ -425,8 +448,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createOkrKpiDashboardSlide",
-      description: "Create an OKR/KPI dashboard with tiles.",
+      name: "OkrKpiDashboard",
+      description: "an OKR/KPI dashboard with tiles.",
       parameters: {
         type: "object",
         properties: {
@@ -445,6 +468,7 @@ export const tools = [
               required: ["label", "value"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["metrics"],
       },
@@ -455,8 +479,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createBalancedScorecardSlide",
-      description: "Create a balanced scorecard page.",
+      name: "BalancedScorecard",
+      description: "a balanced scorecard slide.",
       parameters: {
         type: "object",
         properties: {
@@ -471,6 +495,7 @@ export const tools = [
               required: ["name", "items"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["perspectives"],
       },
@@ -481,8 +506,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createQuarterlyRoadmapSlide",
-      description: "Create a quarterly roadmap.",
+      name: "QuarterlyRoadmap",
+      description: "a quarterly roadmap.",
       parameters: {
         type: "object",
         properties: {
@@ -498,6 +523,7 @@ export const tools = [
               required: ["quarter", "label"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["quarters", "items"],
       },
@@ -508,8 +534,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createMilestoneTimelineSlide",
-      description: "Create a milestone timeline.",
+      name: "MilestoneTimeline",
+      description: "a milestone timeline.",
       parameters: {
         type: "object",
         properties: {
@@ -527,6 +553,7 @@ export const tools = [
               required: ["label"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["milestones"],
       },
@@ -537,8 +564,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createGanttSimpleSlide",
-      description: "Create a simple Gantt placeholder.",
+      name: "GanttSimple",
+      description: "a simple Gantt placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -554,6 +581,7 @@ export const tools = [
               required: ["name", "start", "end"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["tasks"],
       },
@@ -564,8 +592,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createWaterfallSlide",
-      description: "Create a numeric waterfall steps placeholder.",
+      name: "Waterfall",
+      description: "a numeric waterfall steps placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -581,6 +609,7 @@ export const tools = [
               required: ["label", "value"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["steps"],
       },
@@ -591,8 +620,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createFunnelSlide",
-      description: "Create a funnel stages placeholder.",
+      name: "Funnel",
+      description: "a funnel stages placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -608,6 +637,7 @@ export const tools = [
               required: ["label", "value"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["stages"],
       },
@@ -618,8 +648,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createTwoByTwoMatrixSlide",
-      description: "Create a 2x2 matrix with quadrant items.",
+      name: "TwoByTwoMatrix",
+      description: "a 2x2 matrix with quadrant items.",
       parameters: {
         type: "object",
         properties: {
@@ -631,6 +661,7 @@ export const tools = [
             maxItems: 4,
             items: { type: "array", items: { type: "string" } },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["xAxis", "yAxis", "quadrants"],
       },
@@ -641,8 +672,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createBcgMatrixSlide",
-      description: "Create a BCG matrix placeholder.",
+      name: "BcgMatrix",
+      description: "a BCG matrix placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -650,6 +681,7 @@ export const tools = [
           cashCows: { type: "array", items: { type: "string" } },
           questionMarks: { type: "array", items: { type: "string" } },
           dogs: { type: "array", items: { type: "string" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["stars", "cashCows", "questionMarks", "dogs"],
       },
@@ -660,8 +692,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createGeMcKinseyMatrixSlide",
-      description: "Create a GE-McKinsey 3x3 matrix placeholder.",
+      name: "GeMcKinseyMatrix",
+      description: "a GE-McKinsey 3x3 matrix placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -679,6 +711,7 @@ export const tools = [
               required: ["name", "row", "col"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["placements"],
       },
@@ -689,13 +722,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createMarimekkoPlaceholderSlide",
-      description: "Create a Marimekko chart placeholder.",
+      name: "MarimekkoPlaceholder",
+      description: "a Marimekko chart placeholder.",
       parameters: {
         type: "object",
         properties: {
           title: { type: "string" },
           categories: { type: "array", items: { type: "string" }, minItems: 2 },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["categories"],
       },
@@ -706,8 +740,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createBubbleChartPlaceholderSlide",
-      description: "Create a bubble chart placeholder.",
+      name: "BubbleChartPlaceholder",
+      description: "a bubble chart placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -725,6 +759,7 @@ export const tools = [
               required: ["label", "x", "y", "r"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["points"],
       },
@@ -735,8 +770,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createHeatmapPlaceholderSlide",
-      description: "Create a heatmap placeholder.",
+      name: "HeatmapPlaceholder",
+      description: "a heatmap placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -746,6 +781,7 @@ export const tools = [
             type: "array",
             items: { type: "array", items: { type: "number" } },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["rows", "cols", "values"],
       },
@@ -756,8 +792,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createKpiHighlightSlide",
-      description: "Create a slide highlighting key KPIs.",
+      name: "KpiHighlight",
+      description: "a slide highlighting key KPIs.",
       parameters: {
         type: "object",
         properties: {
@@ -774,6 +810,7 @@ export const tools = [
               required: ["label", "value"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["kpis"],
       },
@@ -784,14 +821,15 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createBeforeAfterSlide",
-      description: "Create a before vs after comparison page.",
+      name: "BeforeAfter",
+      description: "a before vs after comparison slide.",
       parameters: {
         type: "object",
         properties: {
           title: { type: "string" },
           before: { type: "array", items: { type: "string" }, minItems: 1 },
           after: { type: "array", items: { type: "string" }, minItems: 1 },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["before", "after"],
       },
@@ -802,8 +840,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createOptionEvaluationSlide",
-      description: "Create an options vs criteria evaluation matrix.",
+      name: "OptionEvaluation",
+      description: "an options vs criteria evaluation matrix.",
       parameters: {
         type: "object",
         properties: {
@@ -813,6 +851,7 @@ export const tools = [
             type: "array",
             items: { type: "array", items: { type: "number" } },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["criteria", "options"],
       },
@@ -823,8 +862,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createRiskMitigationSlide",
-      description: "Create a risk register with mitigations.",
+      name: "RiskMitigation",
+      description: "a risk register with mitigations.",
       parameters: {
         type: "object",
         properties: {
@@ -841,6 +880,7 @@ export const tools = [
               required: ["risk"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["risks"],
       },
@@ -851,8 +891,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createPositioningMapSlide",
-      description: "Create a competitive positioning map.",
+      name: "PositioningMap",
+      description: "a competitive positioning map.",
       parameters: {
         type: "object",
         properties: {
@@ -870,6 +910,7 @@ export const tools = [
               required: ["name", "x", "y"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["xAxis", "yAxis", "players"],
       },
@@ -880,8 +921,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createTamSamSomSlide",
-      description: "Create a market size (TAM/SAM/SOM) page.",
+      name: "TamSamSom",
+      description: "a market size (TAM/SAM/SOM) slide.",
       parameters: {
         type: "object",
         properties: {
@@ -889,6 +930,7 @@ export const tools = [
           sam: { type: "number" },
           som: { type: "number" },
           notes: { type: "string" },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["tam", "sam", "som"],
       },
@@ -899,13 +941,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createMarketDriversSlide",
-      description: "Create a list of market growth drivers.",
+      name: "MarketDrivers",
+      description: "a list of market growth drivers.",
       parameters: {
         type: "object",
         properties: {
           title: { type: "string" },
           drivers: { type: "array", items: { type: "string" }, minItems: 1 },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["drivers"],
       },
@@ -916,13 +959,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createRevenueModelSlide",
-      description: "Create revenue streams and pricing notes.",
+      name: "RevenueModel",
+      description: "revenue streams and pricing notes.",
       parameters: {
         type: "object",
         properties: {
           streams: { type: "array", items: { type: "string" }, minItems: 1 },
           pricingNotes: { type: "string" },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["streams"],
       },
@@ -933,13 +977,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createCostStructureSlide",
-      description: "Create a cost structure with buckets and notes.",
+      name: "CostStructure",
+      description: "a cost structure with buckets and notes.",
       parameters: {
         type: "object",
         properties: {
           buckets: { type: "array", items: { type: "string" }, minItems: 1 },
           fixedVsVariable: { type: "array", items: { type: "string" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["buckets"],
       },
@@ -950,8 +995,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createOrgChartSlide",
-      description: "Create a simple org chart placeholder.",
+      name: "OrgChart",
+      description: "a simple org chart placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -967,6 +1012,7 @@ export const tools = [
               required: ["id", "label"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["nodes"],
       },
@@ -977,8 +1023,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createCapabilityMaturitySlide",
-      description: "Create a capability maturity model (1–5).",
+      name: "CapabilityMaturity",
+      description: "a capability maturity model (1–5).",
       parameters: {
         type: "object",
         properties: {
@@ -993,6 +1039,7 @@ export const tools = [
               required: ["name", "level"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["capabilities"],
       },
@@ -1003,8 +1050,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createTechRoadmapSlide",
-      description: "Create a technology roadmap with phases.",
+      name: "TechRoadmap",
+      description: "a technology roadmap with phases.",
       parameters: {
         type: "object",
         properties: {
@@ -1020,6 +1067,7 @@ export const tools = [
               required: ["phase", "label"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["phases"],
       },
@@ -1030,14 +1078,15 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createDigitalMaturitySlide",
-      description: "Create a digital maturity assessment.",
+      name: "DigitalMaturity",
+      description: "a digital maturity assessment.",
       parameters: {
         type: "object",
         properties: {
           dimensions: { type: "array", items: { type: "string" } },
           levels: { type: "array", items: { type: "number" } },
           notes: { type: "string" },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["dimensions"],
       },
@@ -1048,8 +1097,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createEcosystemMapSlide",
-      description: "Create an ecosystem or partner map.",
+      name: "EcosystemMap",
+      description: "an ecosystem or partner map.",
       parameters: {
         type: "object",
         properties: {
@@ -1065,6 +1114,7 @@ export const tools = [
               required: ["category", "name"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["entities"],
       },
@@ -1075,13 +1125,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createChangeCurveSlide",
-      description: "Create a change curve with stages.",
+      name: "ChangeCurve",
+      description: "a change curve with stages.",
       parameters: {
         type: "object",
         properties: {
           stages: { type: "array", items: { type: "string" }, minItems: 4 },
           notes: { type: "string" },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["stages"],
       },
@@ -1092,14 +1143,15 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createCommunicationPlanSlide",
-      description: "Create a communication plan matrix.",
+      name: "CommunicationPlan",
+      description: "a communication plan matrix.",
       parameters: {
         type: "object",
         properties: {
           audiences: { type: "array", items: { type: "string" } },
           channels: { type: "array", items: { type: "string" } },
           cadence: { type: "string" },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["audiences", "channels"],
       },
@@ -1110,8 +1162,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createIntegrationPlanSlide",
-      description: "Create a post-merger integration (PMI) plan placeholder.",
+      name: "IntegrationPlan",
+      description: "a post-merger integration (PMI) plan placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -1121,6 +1173,7 @@ export const tools = [
             minItems: 2,
           },
           milestones: { type: "array", items: { type: "string" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["workstreams"],
       },
@@ -1131,8 +1184,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createBenchmarkingTableSlide",
-      description: "Create a benchmarking comparison table.",
+      name: "BenchmarkingTable",
+      description: "a benchmarking comparison table.",
       parameters: {
         type: "object",
         properties: {
@@ -1142,6 +1195,7 @@ export const tools = [
             items: { type: "string" },
             minItems: 2,
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["metrics", "competitors"],
       },
@@ -1152,13 +1206,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createSurveyResultsSlide",
-      description: "Create a survey results summary.",
+      name: "SurveyResults",
+      description: "a survey results summary.",
       parameters: {
         type: "object",
         properties: {
           questions: { type: "array", items: { type: "string" } },
           summaries: { type: "array", items: { type: "string" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["questions"],
       },
@@ -1169,8 +1224,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createPersonasSlide",
-      description: "Create customer persona cards.",
+      name: "Personas",
+      description: "customer persona cards.",
       parameters: {
         type: "object",
         properties: {
@@ -1186,6 +1241,7 @@ export const tools = [
               required: ["name"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["personas"],
       },
@@ -1196,13 +1252,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createSegmentationSlide",
-      description: "Create a customer segmentation page.",
+      name: "Segmentation",
+      description: "a customer segmentation slide.",
       parameters: {
         type: "object",
         properties: {
           segments: { type: "array", items: { type: "string" }, minItems: 2 },
           descriptors: { type: "array", items: { type: "string" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["segments"],
       },
@@ -1213,8 +1270,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createPricingWaterfallSlide",
-      description: "Create a pricing waterfall placeholder.",
+      name: "PricingWaterfall",
+      description: "a pricing waterfall placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -1229,6 +1286,7 @@ export const tools = [
               required: ["label", "value"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["steps"],
       },
@@ -1239,13 +1297,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createSensitivityAnalysisSlide",
-      description: "Create a sensitivity analysis placeholder.",
+      name: "SensitivityAnalysis",
+      description: "a sensitivity analysis placeholder.",
       parameters: {
         type: "object",
         properties: {
           variables: { type: "array", items: { type: "string" }, minItems: 2 },
           scenarios: { type: "array", items: { type: "string" }, minItems: 2 },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["variables", "scenarios"],
       },
@@ -1256,13 +1315,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createPLBreakdownSlide",
-      description: "Create a P&L breakdown placeholder.",
+      name: "PLBreakdown",
+      description: "a P&L breakdown placeholder.",
       parameters: {
         type: "object",
         properties: {
           categories: { type: "array", items: { type: "string" }, minItems: 3 },
           values: { type: "array", items: { type: "number" }, minItems: 3 },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["categories", "values"],
       },
@@ -1273,13 +1333,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createCashFlowSlide",
-      description: "Create a cash flow summary placeholder.",
+      name: "CashFlow",
+      description: "a cash flow summary placeholder.",
       parameters: {
         type: "object",
         properties: {
           inflows: { type: "array", items: { type: "number" } },
           outflows: { type: "array", items: { type: "number" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["inflows", "outflows"],
       },
@@ -1290,14 +1351,15 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createBalanceSheetSlide",
-      description: "Create a balance sheet summary placeholder.",
+      name: "BalanceSheet",
+      description: "a balance sheet summary placeholder.",
       parameters: {
         type: "object",
         properties: {
           assets: { type: "array", items: { type: "string" } },
           liabilities: { type: "array", items: { type: "string" } },
           equity: { type: "array", items: { type: "string" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["assets", "liabilities", "equity"],
       },
@@ -1308,12 +1370,13 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createShareholderValueTreeSlide",
-      description: "Create a shareholder value driver tree.",
+      name: "ShareholderValueTree",
+      description: "a shareholder value driver tree.",
       parameters: {
         type: "object",
         properties: {
           drivers: { type: "array", items: { type: "string" }, minItems: 3 },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["drivers"],
       },
@@ -1324,13 +1387,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createNpvSummarySlide",
-      description: "Create an NPV summary placeholder.",
+      name: "NpvSummary",
+      description: "an NPV summary placeholder.",
       parameters: {
         type: "object",
         properties: {
           npv: { type: "number" },
           assumptions: { type: "array", items: { type: "string" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["npv"],
       },
@@ -1341,13 +1405,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createScenarioPlanningSlide",
-      description: "Create a scenario planning page.",
+      name: "ScenarioPlanning",
+      description: "a scenario planning slide.",
       parameters: {
         type: "object",
         properties: {
           scenarios: { type: "array", items: { type: "string" }, minItems: 2 },
           impacts: { type: "array", items: { type: "string" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["scenarios"],
       },
@@ -1358,13 +1423,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createComplianceHeatmapSlide",
-      description: "Create a compliance heatmap placeholder.",
+      name: "ComplianceHeatmap",
+      description: "a compliance heatmap placeholder.",
       parameters: {
         type: "object",
         properties: {
           areas: { type: "array", items: { type: "string" } },
           levels: { type: "array", items: { type: "string" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["areas"],
       },
@@ -1375,14 +1441,15 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createEsgFrameworkSlide",
-      description: "Create an ESG framework summary.",
+      name: "EsgFramework",
+      description: "an ESG framework summary.",
       parameters: {
         type: "object",
         properties: {
           environmental: { type: "array", items: { type: "string" } },
           social: { type: "array", items: { type: "string" } },
           governance: { type: "array", items: { type: "string" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["environmental", "social", "governance"],
       },
@@ -1393,8 +1460,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createCsrInitiativesSlide",
-      description: "Create a CSR initiatives page.",
+      name: "CsrInitiatives",
+      description: "a CSR initiatives slide.",
       parameters: {
         type: "object",
         properties: {
@@ -1403,6 +1470,7 @@ export const tools = [
             items: { type: "string" },
             minItems: 1,
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["initiatives"],
       },
@@ -1413,13 +1481,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createSustainabilityRoadmapSlide",
-      description: "Create a sustainability roadmap.",
+      name: "SustainabilityRoadmap",
+      description: "a sustainability roadmap.",
       parameters: {
         type: "object",
         properties: {
           phases: { type: "array", items: { type: "string" }, minItems: 2 },
           actions: { type: "array", items: { type: "string" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["phases"],
       },
@@ -1430,12 +1499,13 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createCircularEconomyMapSlide",
-      description: "Create a circular economy loop map placeholder.",
+      name: "CircularEconomyMap",
+      description: "a circular economy loop map placeholder.",
       parameters: {
         type: "object",
         properties: {
           loops: { type: "array", items: { type: "string" }, minItems: 3 },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["loops"],
       },
@@ -1446,13 +1516,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createInnovationFunnelSlide",
-      description: "Create an innovation funnel placeholder.",
+      name: "InnovationFunnel",
+      description: "an innovation funnel placeholder.",
       parameters: {
         type: "object",
         properties: {
           stages: { type: "array", items: { type: "string" }, minItems: 3 },
           counts: { type: "array", items: { type: "number" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["stages"],
       },
@@ -1463,8 +1534,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createProductRoadmapSlide",
-      description: "Create a product roadmap.",
+      name: "ProductRoadmap",
+      description: "a product roadmap.",
       parameters: {
         type: "object",
         properties: {
@@ -1480,6 +1551,7 @@ export const tools = [
               required: ["release", "label"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["releases"],
       },
@@ -1490,14 +1562,15 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createLaunchPlanSlide",
-      description: "Create a go-to-market launch plan.",
+      name: "LaunchPlan",
+      description: "a go-to-market launch plan.",
       parameters: {
         type: "object",
         properties: {
           workstreams: { type: "array", items: { type: "string" } },
           milestones: { type: "array", items: { type: "string" } },
           risks: { type: "array", items: { type: "string" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["workstreams"],
       },
@@ -1508,13 +1581,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createPipelineFunnelSlide",
-      description: "Create a pipeline funnel placeholder.",
+      name: "PipelineFunnel",
+      description: "a pipeline funnel placeholder.",
       parameters: {
         type: "object",
         properties: {
           stages: { type: "array", items: { type: "string" }, minItems: 3 },
           values: { type: "array", items: { type: "number" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["stages"],
       },
@@ -1525,13 +1599,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createSalesDashboardSlide",
-      description: "Create a sales dashboard placeholder.",
+      name: "SalesDashboard",
+      description: "a sales dashboard placeholder.",
       parameters: {
         type: "object",
         properties: {
           metrics: { type: "array", items: { type: "string" }, minItems: 3 },
           notes: { type: "string" },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["metrics"],
       },
@@ -1542,13 +1617,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createMarketingMixSlide",
-      description: "Create a marketing mix summary.",
+      name: "MarketingMix",
+      description: "a marketing mix summary.",
       parameters: {
         type: "object",
         properties: {
           levers: { type: "array", items: { type: "string" }, minItems: 4 },
           notes: { type: "string" },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["levers"],
       },
@@ -1559,13 +1635,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createCustomerSuccessJourneySlide",
-      description: "Create a customer success journey map.",
+      name: "CustomerSuccessJourney",
+      description: "a customer success journey map.",
       parameters: {
         type: "object",
         properties: {
           stages: { type: "array", items: { type: "string" }, minItems: 3 },
           metrics: { type: "array", items: { type: "string" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["stages"],
       },
@@ -1576,13 +1653,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createSupportOrgModelSlide",
-      description: "Create a support organization model placeholder.",
+      name: "SupportOrgModel",
+      description: "a support organization model placeholder.",
       parameters: {
         type: "object",
         properties: {
           tiers: { type: "array", items: { type: "string" }, minItems: 2 },
           roles: { type: "array", items: { type: "string" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["tiers"],
       },
@@ -1593,8 +1671,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createPartnershipMapSlide",
-      description: "Create a partnership ecosystem map.",
+      name: "PartnershipMap",
+      description: "a partnership ecosystem map.",
       parameters: {
         type: "object",
         properties: {
@@ -1610,6 +1688,7 @@ export const tools = [
               required: ["name"],
             },
           },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["partners"],
       },
@@ -1620,13 +1699,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createMAPipelineSlide",
-      description: "Create an M&A pipeline placeholder.",
+      name: "MAPipeline",
+      description: "an M&A pipeline placeholder.",
       parameters: {
         type: "object",
         properties: {
           stages: { type: "array", items: { type: "string" }, minItems: 3 },
           targets: { type: "array", items: { type: "string" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["stages"],
       },
@@ -1637,13 +1717,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createSynergyCaptureSlide",
-      description: "Create a synergy capture plan placeholder.",
+      name: "SynergyCapture",
+      description: "a synergy capture plan placeholder.",
       parameters: {
         type: "object",
         properties: {
           sources: { type: "array", items: { type: "string" } },
           values: { type: "array", items: { type: "number" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["sources"],
       },
@@ -1654,13 +1735,14 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createCultureValuesSlide",
-      description: "Create a culture and values page.",
+      name: "CultureValues",
+      description: "a culture and values slide.",
       parameters: {
         type: "object",
         properties: {
           values: { type: "array", items: { type: "string" }, minItems: 3 },
           behaviors: { type: "array", items: { type: "string" } },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["values"],
       },
@@ -1671,8 +1753,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createThankYouContactSlide",
-      description: "Create a closing page with a thank-you message and contacts.",
+      name: "ThankYouContact",
+      description: "a closing slide with a thank-you message and contacts.",
       parameters: {
         type: "object",
         properties: {
@@ -1681,9 +1763,40 @@ export const tools = [
           email: { type: "string" },
           url: { type: "string" },
           qrImageUrl: { type: "string" },
+          _index: { type: "integer", description: indexDescription },
         },
         required: ["message"],
       },
     },
   },
 ] as any;
+
+
+export const tools = toolsBase.map((tool: any) => {
+  const { type, function: func } = tool;
+  const { name, description, parameters } = func;
+  return {
+    type,
+    function: {
+      name: `create${name}Slide`,
+      description: `Create or update ${description}`,
+      parameters,
+    }
+  }
+});
+
+export const toolsForBeat = toolsBase.map((tool: any) => {
+  const { type, function: func } = tool;
+  const { name, description, parameters } = func;
+  return {
+    type,
+    function: {
+      name: `updateBeatStyleTo${name}`,
+      description: `Change the beat image to ${description}`,
+      parameters,
+    }
+  }
+});
+
+// updateBeatImageForXXStyle
+// Change the beat image to
