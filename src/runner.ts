@@ -10,7 +10,7 @@ export const toolsRunner = async (handler: any, response: any) => {
           await handler[tool.name](namedInput.data.args, namedInput.data.options);
         },
         inputs: {
-          data: { args: tool.arguments, options: { functionName: tool.name, outputFileName: index } },
+          data: { args: tool.arguments, options: { outputFileName: index } },
         },
       };
     } else {

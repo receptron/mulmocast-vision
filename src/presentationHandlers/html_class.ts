@@ -20,13 +20,17 @@ export class htmlPlugin {
     this.sessionDir = "";
     this.templateOptions = templateOptions ?? {};
     tools.forEach((tool: { function: { name: string } }) => {
-      // @ts-ignore
-      this[tool.function.name] = this.generateHtml;
+      const functionName = tool.function.name;
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      this[functionName] = (args: ToolArgs, options: PluginOptionParams) => this.generateHtml(args, { ...options, functionName });
     });
   }
 
   private generateHtml = async (args: ToolArgs, options: PluginOptionParams) => {
     const { outputFileName, functionName, imageFilePath, htmlFilePath } = options ?? {};
+    if (!functionName) {
+      throw new Error("functionName is required");
+    }
     const templateFileName = functionNameToTemplateName(functionName);
     const templateFilePath = path.resolve(this.rootDir, "./html/html2", `${templateFileName}.html`);
 

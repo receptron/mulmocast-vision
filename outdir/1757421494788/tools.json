@@ -1,0 +1,65 @@
+[
+  {
+    "id": "call_2mM3FxeUlxt6lMYcbI581pph",
+    "name": "createSectionDividerSlide",
+    "arguments": {
+      "heading": "Summary of Recent Developments",
+      "subheading": "Key Events and Statements Regarding the Ukraine-Russia Conflict"
+    }
+  },
+  {
+    "id": "call_vGv8qinZN00qu0Xg4Eig7rdf",
+    "name": "createExecutiveSummarySlide",
+    "arguments": {
+      "title": "Executive Summary",
+      "bullets": [
+        "Kremlin downplays a potential summit between Putin and Zelensky.",
+        "Trump advocates for a meeting to end the war in Ukraine.",
+        "US President met with European leaders and Zelensky.",
+        "UK's Admiral Radakin visits Washington for discussions on Ukraine.",
+        "Putin proposes Zelensky's visit to Moscow, likely to be rejected.",
+        "Complexity of the war and differences between Moscow and Kyiv highlighted.",
+        "Trump's proposed ceasefire has not been achieved.",
+        "Focus shifts to permanent peace deal with security guarantees for Ukraine."
+      ]
+    }
+  },
+  {
+    "id": "call_wOeXg8JjpiwZeEKJx45pUffh",
+    "name": "createScqaSlide",
+    "arguments": {
+      "situation": "The ongoing conflict between Russia and Ukraine with international involvement.",
+      "complication": "Lack of progress in peace negotiations and differing demands from Moscow and Kyiv.",
+      "question": "How can a resolution to the conflict be achieved?",
+      "answer": "Through direct meetings and negotiations with security guarantees for Ukraine."
+    }
+  },
+  {
+    "id": "call_oN5RLwGJ6naXHjejqwq20sjJ",
+    "name": "createKeyMessageWithSupportsSlide",
+    "arguments": {
+      "headline": "The Need for Direct Negotiations",
+      "supports": [
+        "Trump's call for a meeting between Putin and Zelensky.",
+        "Security guarantees are essential for Ukraine's sovereignty."
+      ]
+    }
+  },
+  {
+    "id": "call_BsjsXFA0vLoBpJb8YXMo0I0K",
+    "name": "createIssueTreeSlide",
+    "arguments": {
+      "rootIssue": "Challenges in Achieving Peace in Ukraine",
+      "branches": [
+        [
+          "Lack of mutual agreement between Russia and Ukraine",
+          "Differing demands and expectations"
+        ],
+        [
+          "International involvement and influence",
+          "Need for security guarantees for Ukraine"
+        ]
+      ]
+    }
+  }
+]

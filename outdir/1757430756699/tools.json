@@ -1,0 +1,79 @@
+[
+  {
+    "id": "call_ugBBVybHIrLdrQwrrxTY8Aot",
+    "name": "createAgendaSlide",
+    "arguments": {
+      "title": "Presentation Agenda",
+      "items": [
+        "Introduction and Background",
+        "US and Russia Diplomatic Engagements",
+        "Challenges in Conflict Resolution",
+        "Role of European Leaders",
+        "Security Guarantees for Ukraine",
+        "Conclusion"
+      ]
+    }
+  },
+  {
+    "id": "call_sUxh8MMxlx2unH9y5BX9W5nm",
+    "name": "createSectionDividerSlide",
+    "arguments": {
+      "heading": "Introduction and Background",
+      "subheading": "Current status and recent developments in the Ukraine conflict"
+    }
+  },
+  {
+    "id": "call_gq9sZCv0xhAsxpKl7KcO2SxU",
+    "name": "createSectionDividerSlide",
+    "arguments": {
+      "heading": "US and Russia Diplomatic Engagements",
+      "subheading": "Recent meetings and proposals involving US, Russia, and Ukraine"
+    }
+  },
+  {
+    "id": "call_mtKber15pIdwVKFg9XjsIBBY",
+    "name": "createSectionDividerSlide",
+    "arguments": {
+      "heading": "Challenges in Conflict Resolution",
+      "subheading": "Complexities and obstacles in achieving peace between Russia and Ukraine"
+    }
+  },
+  {
+    "id": "call_kZGQtmuZuNhDrZENVaVGY7BV",
+    "name": "createSectionDividerSlide",
+    "arguments": {
+      "heading": "Role of European Leaders",
+      "subheading": "European involvement and influence in the peace process"
+    }
+  },
+  {
+    "id": "call_KBn0KhX5W78ezJXd5rp1ySWs",
+    "name": "createSectionDividerSlide",
+    "arguments": {
+      "heading": "Security Guarantees for Ukraine",
+      "subheading": "Importance of security commitments for Ukraine's sovereignty"
+    }
+  },
+  {
+    "id": "call_M0x2NDTDlDdcNJZKxlNlnhXp",
+    "name": "createSectionDividerSlide",
+    "arguments": {
+      "heading": "Conclusion",
+      "subheading": "Summary of key points and future outlook"
+    }
+  },
+  {
+    "id": "call_fVhq8MLWwI1Ih3K156GdyD4X",
+    "name": "createExecutiveSummarySlide",
+    "arguments": {
+      "title": "Executive Summary",
+      "bullets": [
+        "Kremlin downplays summit between Putin and Zelensky.",
+        "Trump's diplomatic efforts face challenges.",
+        "Complexities in Russia-Ukraine peace negotiations.",
+        "European leaders play crucial role in discussions.",
+        "Security guarantees essential for Ukraine's sovereignty."
+      ]
+    }
+  }
+]

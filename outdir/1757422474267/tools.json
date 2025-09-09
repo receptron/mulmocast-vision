@@ -1,0 +1,26 @@
+[
+  {
+    "id": "call_XtWcoQ4siV9RV4PCxaiMFTwB",
+    "name": "createSectionDividerSlide",
+    "arguments": {
+      "heading": "Introduction",
+      "subheading": "Overview of Recent Diplomatic Efforts"
+    }
+  },
+  {
+    "id": "call_cL1T5jJ6xRCfukrtP8jTwUeP",
+    "name": "createSectionDividerSlide",
+    "arguments": {
+      "heading": "US Involvement",
+      "subheading": "Trump's Role in Facilitating Peace Talks"
+    }
+  },
+  {
+    "id": "call_SCy9HdzKKfKSvboPHQITPtBB",
+    "name": "createSectionDividerSlide",
+    "arguments": {
+      "heading": "UK's Military Perspective",
+      "subheading": "Admiral Tony Radakin's Mission to Washington"
+    }
+  }
+]

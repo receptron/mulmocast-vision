@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply bg-white text-gray-800;
+      }
+    }
+  </style>
+
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <div class="bg-gradient-to-br from-slate-50 to-blue-50 text-gray-900 px-16 py-16 min-h-screen">
+  <!-- Header -->
+  <div class="mb-16">
+    <div class="w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mb-6"></div>
+    <h1 class="text-6xl font-bold text-gray-900 mb-4 leading-tight">RACI Matrix</h1>
+    <div class="w-32 h-0.5 bg-gray-300"></div>
+  </div>
+
+  <!-- RACI Table -->
+  <div
+    class="bg-gradient-to-br from-amber-500 to-orange-600 rounded-3xl p-10 text-white shadow-2xl hover:scale-105 transition-all duration-300 max-w-7xl mx-auto"
+  >
+    <div class="flex items-center mb-8">
+      <div class="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mr-6">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+          <path
+            fill-rule="evenodd"
+            d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+      <h2 class="text-4xl font-bold">Responsibility Matrix</h2>
+    </div>
+
+    <div class="bg-white bg-opacity-10 rounded-2xl p-6 overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr>
+            <th class="border border-white border-opacity-30 p-4 text-left text-xl font-bold bg-white bg-opacity-10">Task</th>
+            
+            <th class="border border-white border-opacity-30 p-4 text-left text-xl font-bold bg-white bg-opacity-10">Legal</th>
+            
+            <th class="border border-white border-opacity-30 p-4 text-left text-xl font-bold bg-white bg-opacity-10">Engineering</th>
+            
+            <th class="border border-white border-opacity-30 p-4 text-left text-xl font-bold bg-white bg-opacity-10">L&amp;D</th>
+            
+            <th class="border border-white border-opacity-30 p-4 text-left text-xl font-bold bg-white bg-opacity-10">Ops</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td class="border border-white border-opacity-30 p-4 text-lg font-semibold bg-white bg-opacity-5">Define policy</td>
+            
+            <td class="border border-white border-opacity-30 p-4 text-lg text-center font-bold">A</td>
+            
+            <td class="border border-white border-opacity-30 p-4 text-lg text-center font-bold">R</td>
+            
+            <td class="border border-white border-opacity-30 p-4 text-lg text-center font-bold">C</td>
+            
+            <td class="border border-white border-opacity-30 p-4 text-lg text-center font-bold">I</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="border border-white border-opacity-30 p-4 text-lg font-semibold bg-white bg-opacity-5">Implement RAG</td>
+            
+            <td class="border border-white border-opacity-30 p-4 text-lg text-center font-bold">C</td>
+            
+            <td class="border border-white border-opacity-30 p-4 text-lg text-center font-bold">A/R</td>
+            
+            <td class="border border-white border-opacity-30 p-4 text-lg text-center font-bold">I</td>
+            
+            <td class="border border-white border-opacity-30 p-4 text-lg text-center font-bold">I</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="border border-white border-opacity-30 p-4 text-lg font-semibold bg-white bg-opacity-5">Roll out training</td>
+            
+            <td class="border border-white border-opacity-30 p-4 text-lg text-center font-bold">I</td>
+            
+            <td class="border border-white border-opacity-30 p-4 text-lg text-center font-bold">C</td>
+            
+            <td class="border border-white border-opacity-30 p-4 text-lg text-center font-bold">A/R</td>
+            
+            <td class="border border-white border-opacity-30 p-4 text-lg text-center font-bold">I</td>
+            
+          </tr>
+          
+          <tr>
+            <td class="border border-white border-opacity-30 p-4 text-lg font-semibold bg-white bg-opacity-5">Monitor KPIs</td>
+            
+            <td class="border border-white border-opacity-30 p-4 text-lg text-center font-bold">C</td>
+            
+            <td class="border border-white border-opacity-30 p-4 text-lg text-center font-bold">R</td>
+            
+            <td class="border border-white border-opacity-30 p-4 text-lg text-center font-bold">I</td>
+            
+            <td class="border border-white border-opacity-30 p-4 text-lg text-center font-bold">A</td>
+            
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+  </body>
+</html>
