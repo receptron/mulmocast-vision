@@ -1,13 +1,13 @@
 const indexDescription = "If 0 <= _index < slides.length, update that position. Omit or -1/out-of-range to append to the end (default -1).";
 
-export const tools = [
+export const toolsBase = [
   // 01 Section divider
   {
     type: "function",
     function: {
-      name: "createSectionDividerSlide",
+      name: "SectionDivider",
       description:
-      "Insert or update a new slide in the presentation that serves as a section divider. This slide must include both a large main heading and a subtitle. Use this when the user wants to create a single slide that clearly introduces or separates a new section in their presentation.",
+      "a new slide in the presentation that serves as a section divider. This slide must include both a large main heading and a subtitle. Use this when the user wants to create a single slide that clearly introduces or separates a new section in their presentation.",
       parameters: {
         type: "object",
         properties: {
@@ -25,9 +25,9 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createAgendaSlide",
+      name: "Agenda",
       description:
-        "Insert or update one slide in the presentation that shows the agenda. This slide lists the main topics as bullet points under a clear title, giving the audience an overview of what will be covered.",
+        "one slide in the presentation that shows the agenda. This slide lists the main topics as bullet points under a clear title, giving the audience an overview of what will be covered.",
       parameters: {
         type: "object",
         properties: {
@@ -44,9 +44,9 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createExecutiveSummarySlide",
+      name: "ExecutiveSummary",
       description:
-        "Insert or update one slide in the presentation that provides an executive summary. This slide should include a clear title and 3–7 concise bullet points highlighting the key takeaways.",
+        "one slide in the presentation that provides an executive summary. This slide should include a clear title and 3–7 concise bullet points highlighting the key takeaways.",
       parameters: {
         type: "object",
         properties: {
@@ -69,9 +69,9 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createKeyMessageWithSupportsSlide",
+      name: "KeyMessageWithSupports",
       description:
-        "Insert or update one slide in the presentation that emphasizes a single key message. The headline should state the main message, supported by at least two bullet points.",
+        "one slide in the presentation that emphasizes a single key message. The headline should state the main message, supported by at least two bullet points.",
       parameters: {
         type: "object",
         properties: {
@@ -88,9 +88,9 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createHypothesisSlide",
+      name: "Hypothesis",
       description:
-        "Insert or update one slide in the presentation that presents a hypothesis. This slide states the hypothesis clearly and may also outline implications and suggested next steps.",
+        "one slide in the presentation that presents a hypothesis. This slide states the hypothesis clearly and may also outline implications and suggested next steps.",
       parameters: {
         type: "object",
         properties: {
@@ -108,9 +108,9 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createIssueTreeSlide",
+      name: "IssueTree",
       description:
-        "Insert or update one slide in the presentation that visualizes an issue tree. This slide shows the root issue at the top and branches into MECE sub-issues to structure the problem.",
+        "one slide in the presentation that visualizes an issue tree. This slide shows the root issue at the top and branches into MECE sub-issues to structure the problem.",
       parameters: {
         type: "object",
         properties: {
@@ -132,9 +132,9 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createDriverTreeSlide",
+      name: "DriverTree",
       description:
-        "Insert or update one slide in the presentation that visualizes a driver tree. This slide shows a key business metric at the top and the drivers that influence it branching below.",
+        "one slide in the presentation that visualizes a driver tree. This slide shows a key business metric at the top and the drivers that influence it branching below.",
       parameters: {
         type: "object",
         properties: {
@@ -156,9 +156,9 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createMeceListSlide",
+      name: "MeceList",
       description:
-        "Insert or update one slide in the presentation that organizes items into MECE (Mutually Exclusive, Collectively Exhaustive) groups. Each group has a label and its own bullet list.",
+        "one slide in the presentation that organizes items into MECE (Mutually Exclusive, Collectively Exhaustive) groups. Each group has a label and its own bullet list.",
       parameters: {
         type: "object",
         properties: {
@@ -191,9 +191,9 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createPyramidPrincipleSlide",
+      name: "PyramidPrinciple",
       description:
-        "Insert or update one slide in the presentation that follows the pyramid principle. The slide starts with the key message, followed by supporting reasons, and optional detailed breakdowns.",
+        "one slide in the presentation that follows the pyramid principle. The slide starts with the key message, followed by supporting reasons, and optional detailed breakdowns.",
       parameters: {
         type: "object",
         properties: {
@@ -215,8 +215,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createScqaSlide",
-      description: "Insert or update one slide in the presentation that explains a storyline using the SCQA framework: Situation, Complication, Question, and Answer.",
+      name: "Scqa",
+      description: "one slide in the presentation that explains a storyline using the SCQA framework: Situation, Complication, Question, and Answer.",
       parameters: {
         type: "object",
         properties: {
@@ -235,8 +235,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createSwotSlide",
-      description: "Create or update a SWOT matrix.",
+      name: "Swot",
+      description: "a SWOT matrix.",
       parameters: {
         type: "object",
         properties: {
@@ -255,8 +255,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createThreeCSlide",
-      description: "Create or update a 3C (Company, Customer, Competitor) slide.",
+      name: "ThreeC",
+      description: "a 3C (Company, Customer, Competitor) slide.",
       parameters: {
         type: "object",
         properties: {
@@ -274,8 +274,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createFourPSlide",
-      description: "Create or update a marketing 4P slide.",
+      name: "FourP",
+      description: "a marketing 4P slide.",
       parameters: {
         type: "object",
         properties: {
@@ -294,8 +294,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createSevenSSlide",
-      description: "Create or update a McKinsey 7S slide.",
+      name: "SevenS",
+      description: "a McKinsey 7S slide.",
       parameters: {
         type: "object",
         properties: {
@@ -317,8 +317,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createValueChainSlide",
-      description: "Create or update a value chain with primary and support activities.",
+      name: "ValueChain",
+      description: "a value chain with primary and support activities.",
       parameters: {
         type: "object",
         properties: {
@@ -335,8 +335,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createPorterFiveForcesSlide",
-      description: "Create or update a Porter’s Five Forces slide.",
+      name: "PorterFiveForces",
+      description: "a Porter’s Five Forces slide.",
       parameters: {
         type: "object",
         properties: {
@@ -356,8 +356,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createBusinessModelCanvasSlide",
-      description: "Create or update a Business Model Canvas (9 blocks).",
+      name: "BusinessModelCanvas",
+      description: "a Business Model Canvas (9 blocks).",
       parameters: {
         type: "object",
         properties: {
@@ -376,8 +376,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createCustomerJourneySlide",
-      description: "Create or update a customer journey with stages and touchpoints.",
+      name: "CustomerJourney",
+      description: "a customer journey with stages and touchpoints.",
       parameters: {
         type: "object",
         properties: {
@@ -397,8 +397,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createStakeholderMapSlide",
-      description: "Create or update a stakeholder influence-interest map.",
+      name: "StakeholderMap",
+      description: "a stakeholder influence-interest map.",
       parameters: {
         type: "object",
         properties: {
@@ -426,8 +426,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createRaciSlide",
-      description: "Create or update a RACI matrix.",
+      name: "Raci",
+      description: "a RACI matrix.",
       parameters: {
         type: "object",
         properties: {
@@ -448,8 +448,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createOkrKpiDashboardSlide",
-      description: "Create or update an OKR/KPI dashboard with tiles.",
+      name: "OkrKpiDashboard",
+      description: "an OKR/KPI dashboard with tiles.",
       parameters: {
         type: "object",
         properties: {
@@ -479,8 +479,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createBalancedScorecardSlide",
-      description: "Create or update a balanced scorecard slide.",
+      name: "BalancedScorecard",
+      description: "a balanced scorecard slide.",
       parameters: {
         type: "object",
         properties: {
@@ -506,8 +506,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createQuarterlyRoadmapSlide",
-      description: "Create or update a quarterly roadmap.",
+      name: "QuarterlyRoadmap",
+      description: "a quarterly roadmap.",
       parameters: {
         type: "object",
         properties: {
@@ -534,8 +534,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createMilestoneTimelineSlide",
-      description: "Create or update a milestone timeline.",
+      name: "MilestoneTimeline",
+      description: "a milestone timeline.",
       parameters: {
         type: "object",
         properties: {
@@ -564,8 +564,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createGanttSimpleSlide",
-      description: "Create or update a simple Gantt placeholder.",
+      name: "GanttSimple",
+      description: "a simple Gantt placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -592,8 +592,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createWaterfallSlide",
-      description: "Create or update a numeric waterfall steps placeholder.",
+      name: "Waterfall",
+      description: "a numeric waterfall steps placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -620,8 +620,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createFunnelSlide",
-      description: "Create or update a funnel stages placeholder.",
+      name: "Funnel",
+      description: "a funnel stages placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -648,8 +648,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createTwoByTwoMatrixSlide",
-      description: "Create or update a 2x2 matrix with quadrant items.",
+      name: "TwoByTwoMatrix",
+      description: "a 2x2 matrix with quadrant items.",
       parameters: {
         type: "object",
         properties: {
@@ -672,8 +672,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createBcgMatrixSlide",
-      description: "Create or update a BCG matrix placeholder.",
+      name: "BcgMatrix",
+      description: "a BCG matrix placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -692,8 +692,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createGeMcKinseyMatrixSlide",
-      description: "Create or update a GE-McKinsey 3x3 matrix placeholder.",
+      name: "GeMcKinseyMatrix",
+      description: "a GE-McKinsey 3x3 matrix placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -722,8 +722,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createMarimekkoPlaceholderSlide",
-      description: "Create or update a Marimekko chart placeholder.",
+      name: "MarimekkoPlaceholder",
+      description: "a Marimekko chart placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -740,8 +740,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createBubbleChartPlaceholderSlide",
-      description: "Create or update a bubble chart placeholder.",
+      name: "BubbleChartPlaceholder",
+      description: "a bubble chart placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -770,8 +770,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createHeatmapPlaceholderSlide",
-      description: "Create or update a heatmap placeholder.",
+      name: "HeatmapPlaceholder",
+      description: "a heatmap placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -792,8 +792,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createKpiHighlightSlide",
-      description: "Create or update a slide highlighting key KPIs.",
+      name: "KpiHighlight",
+      description: "a slide highlighting key KPIs.",
       parameters: {
         type: "object",
         properties: {
@@ -821,8 +821,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createBeforeAfterSlide",
-      description: "Create or update a before vs after comparison slide.",
+      name: "BeforeAfter",
+      description: "a before vs after comparison slide.",
       parameters: {
         type: "object",
         properties: {
@@ -840,8 +840,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createOptionEvaluationSlide",
-      description: "Create or update an options vs criteria evaluation matrix.",
+      name: "OptionEvaluation",
+      description: "an options vs criteria evaluation matrix.",
       parameters: {
         type: "object",
         properties: {
@@ -862,8 +862,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createRiskMitigationSlide",
-      description: "Create or update a risk register with mitigations.",
+      name: "RiskMitigation",
+      description: "a risk register with mitigations.",
       parameters: {
         type: "object",
         properties: {
@@ -891,8 +891,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createPositioningMapSlide",
-      description: "Create or update a competitive positioning map.",
+      name: "PositioningMap",
+      description: "a competitive positioning map.",
       parameters: {
         type: "object",
         properties: {
@@ -921,8 +921,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createTamSamSomSlide",
-      description: "Create or update a market size (TAM/SAM/SOM) slide.",
+      name: "TamSamSom",
+      description: "a market size (TAM/SAM/SOM) slide.",
       parameters: {
         type: "object",
         properties: {
@@ -941,8 +941,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createMarketDriversSlide",
-      description: "Create or update a list of market growth drivers.",
+      name: "MarketDrivers",
+      description: "a list of market growth drivers.",
       parameters: {
         type: "object",
         properties: {
@@ -959,8 +959,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createRevenueModelSlide",
-      description: "Create or update revenue streams and pricing notes.",
+      name: "RevenueModel",
+      description: "revenue streams and pricing notes.",
       parameters: {
         type: "object",
         properties: {
@@ -977,8 +977,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createCostStructureSlide",
-      description: "Create or update a cost structure with buckets and notes.",
+      name: "CostStructure",
+      description: "a cost structure with buckets and notes.",
       parameters: {
         type: "object",
         properties: {
@@ -995,8 +995,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createOrgChartSlide",
-      description: "Create or update a simple org chart placeholder.",
+      name: "OrgChart",
+      description: "a simple org chart placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -1023,8 +1023,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createCapabilityMaturitySlide",
-      description: "Create or update a capability maturity model (1–5).",
+      name: "CapabilityMaturity",
+      description: "a capability maturity model (1–5).",
       parameters: {
         type: "object",
         properties: {
@@ -1050,8 +1050,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createTechRoadmapSlide",
-      description: "Create or update a technology roadmap with phases.",
+      name: "TechRoadmap",
+      description: "a technology roadmap with phases.",
       parameters: {
         type: "object",
         properties: {
@@ -1078,8 +1078,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createDigitalMaturitySlide",
-      description: "Create or update a digital maturity assessment.",
+      name: "DigitalMaturity",
+      description: "a digital maturity assessment.",
       parameters: {
         type: "object",
         properties: {
@@ -1097,8 +1097,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createEcosystemMapSlide",
-      description: "Create or update an ecosystem or partner map.",
+      name: "EcosystemMap",
+      description: "an ecosystem or partner map.",
       parameters: {
         type: "object",
         properties: {
@@ -1125,8 +1125,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createChangeCurveSlide",
-      description: "Create or update a change curve with stages.",
+      name: "ChangeCurve",
+      description: "a change curve with stages.",
       parameters: {
         type: "object",
         properties: {
@@ -1143,8 +1143,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createCommunicationPlanSlide",
-      description: "Create or update a communication plan matrix.",
+      name: "CommunicationPlan",
+      description: "a communication plan matrix.",
       parameters: {
         type: "object",
         properties: {
@@ -1162,8 +1162,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createIntegrationPlanSlide",
-      description: "Create or update a post-merger integration (PMI) plan placeholder.",
+      name: "IntegrationPlan",
+      description: "a post-merger integration (PMI) plan placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -1184,8 +1184,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createBenchmarkingTableSlide",
-      description: "Create or update a benchmarking comparison table.",
+      name: "BenchmarkingTable",
+      description: "a benchmarking comparison table.",
       parameters: {
         type: "object",
         properties: {
@@ -1206,8 +1206,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createSurveyResultsSlide",
-      description: "Create or update a survey results summary.",
+      name: "SurveyResults",
+      description: "a survey results summary.",
       parameters: {
         type: "object",
         properties: {
@@ -1224,8 +1224,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createPersonasSlide",
-      description: "Create or update customer persona cards.",
+      name: "Personas",
+      description: "customer persona cards.",
       parameters: {
         type: "object",
         properties: {
@@ -1252,8 +1252,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createSegmentationSlide",
-      description: "Create or update a customer segmentation slide.",
+      name: "Segmentation",
+      description: "a customer segmentation slide.",
       parameters: {
         type: "object",
         properties: {
@@ -1270,8 +1270,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createPricingWaterfallSlide",
-      description: "Create or update a pricing waterfall placeholder.",
+      name: "PricingWaterfall",
+      description: "a pricing waterfall placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -1297,8 +1297,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createSensitivityAnalysisSlide",
-      description: "Create or update a sensitivity analysis placeholder.",
+      name: "SensitivityAnalysis",
+      description: "a sensitivity analysis placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -1315,8 +1315,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createPLBreakdownSlide",
-      description: "Create or update a P&L breakdown placeholder.",
+      name: "PLBreakdown",
+      description: "a P&L breakdown placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -1333,8 +1333,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createCashFlowSlide",
-      description: "Create or update a cash flow summary placeholder.",
+      name: "CashFlow",
+      description: "a cash flow summary placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -1351,8 +1351,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createBalanceSheetSlide",
-      description: "Create or update a balance sheet summary placeholder.",
+      name: "BalanceSheet",
+      description: "a balance sheet summary placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -1370,8 +1370,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createShareholderValueTreeSlide",
-      description: "Create or update a shareholder value driver tree.",
+      name: "ShareholderValueTree",
+      description: "a shareholder value driver tree.",
       parameters: {
         type: "object",
         properties: {
@@ -1387,8 +1387,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createNpvSummarySlide",
-      description: "Create or update an NPV summary placeholder.",
+      name: "NpvSummary",
+      description: "an NPV summary placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -1405,8 +1405,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createScenarioPlanningSlide",
-      description: "Create or update a scenario planning slide.",
+      name: "ScenarioPlanning",
+      description: "a scenario planning slide.",
       parameters: {
         type: "object",
         properties: {
@@ -1423,8 +1423,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createComplianceHeatmapSlide",
-      description: "Create or update a compliance heatmap placeholder.",
+      name: "ComplianceHeatmap",
+      description: "a compliance heatmap placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -1441,8 +1441,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createEsgFrameworkSlide",
-      description: "Create or update an ESG framework summary.",
+      name: "EsgFramework",
+      description: "an ESG framework summary.",
       parameters: {
         type: "object",
         properties: {
@@ -1460,8 +1460,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createCsrInitiativesSlide",
-      description: "Create or update a CSR initiatives slide.",
+      name: "CsrInitiatives",
+      description: "a CSR initiatives slide.",
       parameters: {
         type: "object",
         properties: {
@@ -1481,8 +1481,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createSustainabilityRoadmapSlide",
-      description: "Create or update a sustainability roadmap.",
+      name: "SustainabilityRoadmap",
+      description: "a sustainability roadmap.",
       parameters: {
         type: "object",
         properties: {
@@ -1499,8 +1499,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createCircularEconomyMapSlide",
-      description: "Create or update a circular economy loop map placeholder.",
+      name: "CircularEconomyMap",
+      description: "a circular economy loop map placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -1516,8 +1516,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createInnovationFunnelSlide",
-      description: "Create or update an innovation funnel placeholder.",
+      name: "InnovationFunnel",
+      description: "an innovation funnel placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -1534,8 +1534,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createProductRoadmapSlide",
-      description: "Create or update a product roadmap.",
+      name: "ProductRoadmap",
+      description: "a product roadmap.",
       parameters: {
         type: "object",
         properties: {
@@ -1562,8 +1562,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createLaunchPlanSlide",
-      description: "Create or update a go-to-market launch plan.",
+      name: "LaunchPlan",
+      description: "a go-to-market launch plan.",
       parameters: {
         type: "object",
         properties: {
@@ -1581,8 +1581,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createPipelineFunnelSlide",
-      description: "Create or update a pipeline funnel placeholder.",
+      name: "PipelineFunnel",
+      description: "a pipeline funnel placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -1599,8 +1599,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createSalesDashboardSlide",
-      description: "Create or update a sales dashboard placeholder.",
+      name: "SalesDashboard",
+      description: "a sales dashboard placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -1617,8 +1617,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createMarketingMixSlide",
-      description: "Create or update a marketing mix summary.",
+      name: "MarketingMix",
+      description: "a marketing mix summary.",
       parameters: {
         type: "object",
         properties: {
@@ -1635,8 +1635,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createCustomerSuccessJourneySlide",
-      description: "Create or update a customer success journey map.",
+      name: "CustomerSuccessJourney",
+      description: "a customer success journey map.",
       parameters: {
         type: "object",
         properties: {
@@ -1653,8 +1653,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createSupportOrgModelSlide",
-      description: "Create or update a support organization model placeholder.",
+      name: "SupportOrgModel",
+      description: "a support organization model placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -1671,8 +1671,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createPartnershipMapSlide",
-      description: "Create or update a partnership ecosystem map.",
+      name: "PartnershipMap",
+      description: "a partnership ecosystem map.",
       parameters: {
         type: "object",
         properties: {
@@ -1699,8 +1699,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createMAPipelineSlide",
-      description: "Create or update an M&A pipeline placeholder.",
+      name: "MAPipeline",
+      description: "an M&A pipeline placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -1717,8 +1717,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createSynergyCaptureSlide",
-      description: "Create or update a synergy capture plan placeholder.",
+      name: "SynergyCapture",
+      description: "a synergy capture plan placeholder.",
       parameters: {
         type: "object",
         properties: {
@@ -1735,8 +1735,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createCultureValuesSlide",
-      description: "Create or update a culture and values slide.",
+      name: "CultureValues",
+      description: "a culture and values slide.",
       parameters: {
         type: "object",
         properties: {
@@ -1753,8 +1753,8 @@ export const tools = [
   {
     type: "function",
     function: {
-      name: "createThankYouContactSlide",
-      description: "Create or update a closing slide with a thank-you message and contacts.",
+      name: "ThankYouContact",
+      description: "a closing slide with a thank-you message and contacts.",
       parameters: {
         type: "object",
         properties: {
@@ -1770,3 +1770,33 @@ export const tools = [
     },
   },
 ] as any;
+
+
+export const tools = toolsBase.map((tool: any) => {
+  const { type, function: func } = tool;
+  const { name, description, parameters } = func;
+  return {
+    type,
+    function: {
+      name: `create${name}Slide`,
+      description: `Create or update ${description}`,
+      parameters,
+    }
+  }
+});
+
+export const toolsForBeat = toolsBase.map((tool: any) => {
+  const { type, function: func } = tool;
+  const { name, description, parameters } = func;
+  return {
+    type,
+    function: {
+      name: `updateBeatStyleTo${name}`,
+      description: `Change the beat image to ${description}`,
+      parameters,
+    }
+  }
+});
+
+// updateBeatImageForXXStyle
+// Change the beat image to
