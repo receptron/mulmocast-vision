@@ -13,19 +13,17 @@ export class htmlPlugin {
   protected rootDir: string; // for read html template
   protected sessionDir: string;
   protected templateOptions: any;
-  [key: string]: any;
 
   constructor({ outputDir, rootDir, templateOptions }: { outputDir?: string; rootDir?: string; templateOptions?: any }) {
     this.outputDir = outputDir ?? getOutDir();
     this.rootDir = rootDir ?? getRootDir();
     this.sessionDir = "";
     this.templateOptions = templateOptions ?? {};
-    tools.forEach((tool: { function: { name: string } }) => {
-      const functionName = tool.function.name;
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      this[functionName] = (args: ToolArgs, options: PluginOptionParams) => this.generateHtml(args, { ...options, functionName });
-    });
   }
+
+  public callNamedFunction = async (functionName: string, args: ToolArgs, options: PluginOptionParams) => {
+    return this.generateHtml(args, { ...options, functionName });
+  };
 
   private generateHtml = async (args: ToolArgs, options: PluginOptionParams) => {
     const { outputFileName, functionName, imageFilePath, htmlFilePath } = options ?? {};

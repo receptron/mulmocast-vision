@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply bg-white text-gray-800;
+      }
+    }
+  </style>
+
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <div class="bg-gradient-to-br from-slate-50 to-blue-50 text-gray-900 px-16 py-16 min-h-screen">
+  <!-- Header -->
+  <div class="mb-16">
+    <div class="w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 mb-6"></div>
+    <h1 class="text-6xl font-bold text-gray-900 mb-4 leading-tight">Customer Journey</h1>
+    <div class="w-32 h-0.5 bg-gray-300"></div>
+  </div>
+
+  <!-- Journey Timeline -->
+  <div class="max-w-7xl mx-auto">
+    <!-- Stage Timeline -->
+    <div class="flex justify-center mb-12">
+      <div class="flex items-center space-x-4">
+        
+        <div class="flex items-center">
+          <div
+            class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg"
+          >
+            1
+          </div>
+          <div class="ml-3 text-lg font-semibold text-gray-800">Discover</div>
+          
+          <div class="ml-6 w-8 h-0.5 bg-gradient-to-r from-blue-300 to-indigo-300"></div>
+          
+        </div>
+        
+        <div class="flex items-center">
+          <div
+            class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg"
+          >
+            2
+          </div>
+          <div class="ml-3 text-lg font-semibold text-gray-800">Draft</div>
+          
+          <div class="ml-6 w-8 h-0.5 bg-gradient-to-r from-blue-300 to-indigo-300"></div>
+          
+        </div>
+        
+        <div class="flex items-center">
+          <div
+            class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg"
+          >
+            3
+          </div>
+          <div class="ml-3 text-lg font-semibold text-gray-800">Verify</div>
+          
+          <div class="ml-6 w-8 h-0.5 bg-gradient-to-r from-blue-300 to-indigo-300"></div>
+          
+        </div>
+        
+        <div class="flex items-center">
+          <div
+            class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg"
+          >
+            4
+          </div>
+          <div class="ml-3 text-lg font-semibold text-gray-800">Publish</div>
+          
+          <div class="ml-6 w-8 h-0.5 bg-gradient-to-r from-blue-300 to-indigo-300"></div>
+          
+        </div>
+        
+        <div class="flex items-center">
+          <div
+            class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg"
+          >
+            5
+          </div>
+          <div class="ml-3 text-lg font-semibold text-gray-800">Audit</div>
+          
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Touchpoints -->
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+       
+      <div
+        class="bg-gradient-to-br from-emerald-500 to-green-600 rounded-3xl p-8 text-white shadow-2xl transform hover:scale-105 transition-all duration-300"
+      >
+        <div class="flex items-center mb-6">
+          <div class="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mr-4">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold">Discover</h3>
+        </div>
+        <ul class="space-y-3 text-lg">
+          
+          <li class="flex items-start"><span class="w-2 h-2 bg-white rounded-full mt-3 mr-3 flex-shrink-0"></span><span>Search UI</span></li>
+          
+          <li class="flex items-start"><span class="w-2 h-2 bg-white rounded-full mt-3 mr-3 flex-shrink-0"></span><span>Corpus filters</span></li>
+          
+        </ul>
+      </div>
+       
+      <div
+        class="bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl p-8 text-white shadow-2xl transform hover:scale-105 transition-all duration-300"
+      >
+        <div class="flex items-center mb-6">
+          <div class="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mr-4">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold">Draft</h3>
+        </div>
+        <ul class="space-y-3 text-lg">
+          
+          <li class="flex items-start"><span class="w-2 h-2 bg-white rounded-full mt-3 mr-3 flex-shrink-0"></span><span>Editor plugin</span></li>
+          
+          <li class="flex items-start"><span class="w-2 h-2 bg-white rounded-full mt-3 mr-3 flex-shrink-0"></span><span>Reference panel</span></li>
+          
+        </ul>
+      </div>
+       
+      <div
+        class="bg-gradient-to-br from-purple-500 to-violet-600 rounded-3xl p-8 text-white shadow-2xl transform hover:scale-105 transition-all duration-300"
+      >
+        <div class="flex items-center mb-6">
+          <div class="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mr-4">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold">Verify</h3>
+        </div>
+        <ul class="space-y-3 text-lg">
+          
+          <li class="flex items-start"><span class="w-2 h-2 bg-white rounded-full mt-3 mr-3 flex-shrink-0"></span><span>Reviewer queue</span></li>
+          
+          <li class="flex items-start"><span class="w-2 h-2 bg-white rounded-full mt-3 mr-3 flex-shrink-0"></span><span>Signed citations</span></li>
+          
+        </ul>
+      </div>
+       
+      <div
+        class="bg-gradient-to-br from-amber-500 to-orange-600 rounded-3xl p-8 text-white shadow-2xl transform hover:scale-105 transition-all duration-300"
+      >
+        <div class="flex items-center mb-6">
+          <div class="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mr-4">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold">Publish</h3>
+        </div>
+        <ul class="space-y-3 text-lg">
+          
+          <li class="flex items-start"><span class="w-2 h-2 bg-white rounded-full mt-3 mr-3 flex-shrink-0"></span><span>Export formats</span></li>
+          
+          <li class="flex items-start"><span class="w-2 h-2 bg-white rounded-full mt-3 mr-3 flex-shrink-0"></span><span>Permalinks</span></li>
+          
+        </ul>
+      </div>
+       
+      <div
+        class="bg-gradient-to-br from-red-500 to-rose-600 rounded-3xl p-8 text-white shadow-2xl transform hover:scale-105 transition-all duration-300"
+      >
+        <div class="flex items-center mb-6">
+          <div class="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mr-4">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold">Audit</h3>
+        </div>
+        <ul class="space-y-3 text-lg">
+          
+          <li class="flex items-start"><span class="w-2 h-2 bg-white rounded-full mt-3 mr-3 flex-shrink-0"></span><span>Randomized QA</span></li>
+          
+          <li class="flex items-start"><span class="w-2 h-2 bg-white rounded-full mt-3 mr-3 flex-shrink-0"></span><span>Dashboards</span></li>
+          
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Journey Summary -->
+  <div class="text-center mt-16">
+    <div class="inline-flex items-center bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl shadow-xl px-8 py-6">
+      <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 20 20">
+        <path
+          fill-rule="evenodd"
+          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+          clip-rule="evenodd"
+        />
+      </svg>
+      <span class="text-2xl font-bold">End-to-End Customer Experience</span>
+    </div>
+  </div>
+</div>
+
+  </body>
+</html>

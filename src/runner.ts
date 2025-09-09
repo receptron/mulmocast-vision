@@ -4,18 +4,14 @@ export const toolsRunner = async (handler: any, response: any) => {
   const nodes: Record<string, NodeData> = {};
 
   response.forEach((tool: { name: string; arguments: unknown }, index: number) => {
-    if (handler[tool.name]) {
-      nodes[String(index)] = {
-        agent: async (namedInput: { data: { args: unknown; options: { name: string; index: number } } }) => {
-          await handler[tool.name](namedInput.data.args, namedInput.data.options);
-        },
-        inputs: {
-          data: { args: tool.arguments, options: { outputFileName: index } },
-        },
-      };
-    } else {
-      console.log(tool.name);
-    }
+    nodes[String(index)] = {
+      agent: async (namedInput: { data: { args: unknown; options: { name: string; index: number } } }) => {
+        await handler.callNamedFunction(tool.name, namedInput.data.args, namedInput.data.options);
+      },
+      inputs: {
+        data: { args: tool.arguments, options: { outputFileName: index } },
+      },
+    };
   });
 
   const data = {
