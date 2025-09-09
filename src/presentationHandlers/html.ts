@@ -15,6 +15,9 @@ const filePath = (filename: string) => {
 
 const generateHtml = async (args: ToolArgs, options: PluginOptionParams) => {
   const { outputFileName, functionName, imageFilePath } = options ?? {};
+  if (!functionName) {
+    throw new Error("functionName is required");
+  }
   const templateFileName = functionNameToTemplateName(functionName);
   const outfile = imageFilePath ?? path.resolve(baseDir, `${outputFileName}.png`);
 
