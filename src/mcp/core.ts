@@ -32,7 +32,7 @@ export const getServer = (rootDir: string, outputDir: string) => {
   server.setRequestHandler(CallToolRequestSchema, async (request: CallToolRequest) => {
     const { name, arguments: args } = request.params;
     try {
-      if (name in handler && args) {
+      if (args) {
         const fileName = generateUniqueId();
         const result = await handler.callNamedFunction(name, args, { outputFileName: fileName });
         return {
@@ -44,7 +44,7 @@ export const getServer = (rootDir: string, outputDir: string) => {
           ],
         };
       }
-      throw new Error(`Unknown command: ${name}.`);
+      throw new Error(`No args: ${name}.`);
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : String(error);
       return {

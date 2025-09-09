@@ -21,6 +21,10 @@ export class htmlPlugin {
   }
 
   public callNamedFunction = async (functionName: string, args: ToolArgs, options: PluginOptionParams) => {
+    const member = (this as Record<string, unknown>)[functionName];
+    if (member && typeof member === "function") {
+      return member(args, { ...options, functionName });
+    }
     return this.generateHtml(args, { ...options, functionName });
   };
 
