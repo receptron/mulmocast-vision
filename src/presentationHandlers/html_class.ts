@@ -13,6 +13,7 @@ export class htmlPlugin {
   protected rootDir: string; // for read html template
   protected sessionDir: string;
   protected templateOptions: any;
+  [key: string]: any;
 
   constructor({ outputDir, rootDir, templateOptions }: { outputDir?: string; rootDir?: string; templateOptions?: any }) {
     this.outputDir = outputDir ?? getOutDir();
