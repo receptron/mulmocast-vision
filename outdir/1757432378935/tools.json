@@ -1,0 +1,82 @@
+[
+  {
+    "id": "call_btAZ6ZXCphdWmVdbvbHwTfwT",
+    "name": "createSectionDividerSlide",
+    "arguments": {
+      "heading": "Kremlin and Ukraine Summit",
+      "subheading": "Diplomatic Efforts to End the War"
+    }
+  },
+  {
+    "id": "call_2svdpUZsLFMLtXgF3ca0h4Bn",
+    "name": "createAgendaSlide",
+    "arguments": {
+      "title": "Discussion Points",
+      "items": [
+        "Imminent Summit Between Putin and Zelensky",
+        "Trump's Call for Direct Talks",
+        "US and European Leaders' Involvement",
+        "Security Guarantees for Ukraine"
+      ]
+    }
+  },
+  {
+    "id": "call_nfboB4NNCVTxh40AquXQR4Us",
+    "name": "createScqaSlide",
+    "arguments": {
+      "situation": "US President met Putin and welcomed European leaders and Zelensky to the White House.",
+      "complication": "Kremlin played down talk of a summit between Putin and Zelensky.",
+      "question": "Will a bilateral meeting take place to discuss ending the war in Ukraine?",
+      "answer": "The possibility remains uncertain, with Russia and Ukraine having differing positions."
+    }
+  },
+  {
+    "id": "call_2QsO5FGLBOhpVhJgITHJhR0B",
+    "name": "createKeyMessageWithSupportsSlide",
+    "arguments": {
+      "headline": "Trump's Renewed Call for Talks",
+      "supports": [
+        "Trump met with Putin and European leaders.",
+        "Acknowledged the complexity and challenges in resolving the conflict."
+      ]
+    }
+  },
+  {
+    "id": "call_fH945jxbj9YlasUHzB8WvfZZ",
+    "name": "createIssueTreeSlide",
+    "arguments": {
+      "rootIssue": "Conflict Resolution in Ukraine",
+      "branches": [
+        [
+          "Imminent Summit",
+          "Bilateral Meeting Challenges"
+        ],
+        [
+          "Security Guarantees",
+          "Permanent Peace Deal"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "call_2hYmuGVSbYUKjsP3VQEk528v",
+    "name": "createPyramidPrincipleSlide",
+    "arguments": {
+      "keyMessage": "Direct Talks Needed for Conflict Resolution",
+      "supports": [
+        "US and European Leaders' Involvement",
+        "Security Guarantees for Ukraine"
+      ],
+      "details": [
+        [
+          "Trump's mediation efforts",
+          "Putin's stance on the conflict"
+        ],
+        [
+          "Commitments to Kyiv's sovereignty",
+          "Reassurance force deployment discussions"
+        ]
+      ]
+    }
+  }
+]

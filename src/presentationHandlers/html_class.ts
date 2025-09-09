@@ -6,7 +6,6 @@ import { createPage, getOutDir, getRootDir, mkdir } from "../utils";
 import { functionNameToTemplateName } from "../commons";
 import nunjucks from "nunjucks";
 import { type PluginOptionParams, type ToolArgs } from "../type";
-import { tools } from "../tools";
 
 export class htmlPlugin {
   protected outputDir: string;
