@@ -33,21 +33,16 @@ export const getServer = (rootDir: string, outputDir: string) => {
     const { name, arguments: args } = request.params;
     try {
       if (name in handler && args) {
-        const key = name as keyof typeof handler;
-        const method = handler[key];
-        if (typeof method === "function") {
-          const fileName = generateUniqueId();
-          const result = await method(args, { functionName: name, outputFileName: fileName });
-
-          return {
-            content: [
-              {
-                type: "text",
-                text: result?.text ?? "success",
-              },
-            ],
-          };
-        }
+        const fileName = generateUniqueId();
+        const result = await handler.callNamedFunction(name, args, { outputFileName: fileName });
+        return {
+          content: [
+            {
+              type: "text",
+              text: result?.text ?? "success",
+            },
+          ],
+        };
       }
       throw new Error(`Unknown command: ${name}.`);
     } catch (error) {
