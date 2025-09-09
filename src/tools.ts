@@ -2,7 +2,7 @@ import { OpenAITool } from "./type";
 
 const indexDescription = "If 0 <= _index < slides.length, update that position. Omit or -1/out-of-range to append to the end (default -1).";
 
-export const toolsBase = [
+export const toolsBase: OpenAITool[] = [
   // 01 Section divider
   {
     type: "function",
@@ -1770,7 +1770,7 @@ export const toolsBase = [
       },
     },
   },
-] as OpenAITool[];
+];
 
 export const tools = toolsBase.map((tool: OpenAITool) => {
   const { type, function: func } = tool;
