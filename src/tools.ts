@@ -1,3 +1,5 @@
+import { OpenAITool } from "./type";
+
 const indexDescription = "If 0 <= _index < slides.length, update that position. Omit or -1/out-of-range to append to the end (default -1).";
 
 export const toolsBase = [
@@ -1768,9 +1770,9 @@ export const toolsBase = [
       },
     },
   },
-] as any;
+] as OpenAITool[];
 
-export const tools = toolsBase.map((tool: any) => {
+export const tools = toolsBase.map((tool: OpenAITool) => {
   const { type, function: func } = tool;
   const { name, description, parameters } = func;
   return {
@@ -1783,7 +1785,7 @@ export const tools = toolsBase.map((tool: any) => {
   };
 });
 
-export const toolsForBeat = toolsBase.map((tool: any) => {
+export const toolsForBeat = toolsBase.map((tool: OpenAITool) => {
   const { type, function: func } = tool;
   const { name, description, parameters } = func;
   return {
