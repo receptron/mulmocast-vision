@@ -1,4 +1,4 @@
-import { OpenAITool } from "./type";
+import { OpenAITool } from "../type";
 
 const indexDescription = "If 0 <= _index < slides.length, update that position. Omit or -1/out-of-range to append to the end (default -1).";
 
