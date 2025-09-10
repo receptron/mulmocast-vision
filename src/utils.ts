@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import os from "os";
 import puppeteer from "puppeteer";
 
 const isCI = process.env.CI === "true";
@@ -81,8 +82,10 @@ export const getRootDir = () => {
   return path.resolve(__dirname, "../");
 };
 export const getOutDir = () => {
+  const documentsDir = path.join(os.homedir(), "Documents");
+
   const now = Date.now();
-  return path.resolve(getRootDir(), "outdir", String(now));
+  return path.join(documentsDir, "mulmocast-vision", String(now));
 };
 
 export const debugLogger = (data: unknown) => {
