@@ -1,6 +1,6 @@
 import { htmlPlugin } from "../src/presentationHandlers/html_class";
 
-import { toolsRunner } from "../src/runner";
+import { toolsRunner } from "./runner";
 import { data } from "./ai_referencing_80_tool_calls";
 import { mkdir, getRootDir, getOutDir } from "../src/utils";
 

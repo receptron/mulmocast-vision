@@ -49,15 +49,6 @@ yarn run generate_all_images
 outdir/{timeStamp}/{index}.png に画像生成
 
 
-### openaiのエージェントでprompt -> tools -> html作成
-
-```
-yarn run ai
-```
-
-プロンプトはソースに直接書いている `src/presentation.ts`
-
-
 ### プラグイン＋デザインテンプレート
 
 デザインは
