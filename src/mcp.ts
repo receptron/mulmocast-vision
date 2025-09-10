@@ -3,13 +3,13 @@
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { CallToolRequestSchema, CallToolRequest, ListToolsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
 
-import { tools, mcp_tools } from "../tools";
-import { htmlPlugin } from "../presentationHandlers/html_class";
-import { openAIToolsToAnthropicTools, generateUniqueId } from "../commons";
+import { tools, mcp_tools } from "./tools";
+import { htmlPlugin } from "./presentationHandlers/html_class";
+import { openAIToolsToAnthropicTools, generateUniqueId } from "./commons";
 
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 
-import { mkdir, getRootDir, getOutDir } from "../utils";
+import { mkdir, getRootDir, getOutDir } from "./utils";
 
 export const getServer = (rootDir: string, outputDir: string) => {
   const server = new Server(

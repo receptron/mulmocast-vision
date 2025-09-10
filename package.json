@@ -4,7 +4,7 @@
   "description": "Slide geneartor",
   "main": "lib/index.js",
   "bin": {
-    "mulmocast-vision": "lib/mcp/cli.js"
+    "mulmocast-vision": "lib/mcp.js"
   },
   "files": [
     "./lib",
