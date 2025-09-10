@@ -1,110 +1,112 @@
-# 📖 mulmo vision とは？
+# mulmocast-vision  
 
-mulmo vision は LLM（大規模言語モデル） を使って、プレゼンテーション資料を自動で作成するツールです。
+**mulmocast-vision** is a tool that uses LLMs via MCP (Model Context Protocol) to automatically generate presentation slides, similar to PowerPoint.  
+With **80+ business-oriented slide templates**, you can quickly create proposals, strategy decks, and other professional materials.  
 
-プログラミングやデザインの専門知識がなくても、
-「伝えたい情報」を入力すれば、スライドの文章とデザインが自動生成されます。
+---
 
-# ⚙️ 仕組み
+## Features  
 
-- 情報整理
-ユーザーが資料に入れたい情報をまとめます。
+- 📑 **Rich Templates**: Over 80 business-optimized slide designs  
+- ⚡ **Instant Generation**: Create slides in seconds using LLMs via MCP  
+- 🖥️ **Simple Setup**: Just add a small config to your MCP client (e.g., Claude Desktop)  
+- 📂 **Auto Save**: Output files are saved under `~/Documents/mulmocast-vision/`  
 
-- スライド設計（LLM）
-LLM が情報を読み取り、必要なスライド構成と文言を決定します。
+---
 
-- HTML テンプレート生成
-Node.js 関数が呼ばれ、スライド用の HTML テンプレートに文言が埋め込まれます。
+## No Installation Needed  
 
-- 画像生成
-HTML をレンダリングし、最終的なスライド画像を作成します。
+Runs directly with `npx`. No global install required.  
 
+---
 
-```mermaid
-flowchart TD
+## Configuration
 
-    A[📝 ユーザーが情報を入力] --> B[🤖 LLM: スライド設計 & 文言作成]
-    B --> C[⚙️ Node 関数: HTML テンプレートに適用]
-    C --> D[🖼 HTML レンダリング: スライド画像生成]
-    D --> E[📑 完成したプレゼン資料]
+Add the following to your MCP client settings (e.g., Claude Desktop):  
+
+```json
+"mulmocast-vision": {
+  "command": "npx",
+  "args": [
+    "mulmocast-vision"
+  ],
+  "transport": {
+    "stdio": true
+  }
+}
 ```
 
+---
 
-# 技術的な流れ
-- LLMがtoolsを使ってスライドの内容を決める
-  - [slideを作成するtoolsの関数定義](./src/tools.ts)
-- [runner](./src/runner.ts)でtoolsの結果から関数を呼び出す
-  - [呼び出される関数](./src/presentationHandlers/html_class.ts)
-- [html + tailwindを使ったベースhtml](./assets/templates/tailwind.html) + [スライドごとの個別のhtml](./assets/html/) でhtmlページをつくる
-- outdirに画像として保存する
+## Usage  
 
+1. Launch an MCP-compatible client (e.g., Claude Desktop)  
+2. Call `mulmocast-vision` to request slide generation  
+3. The generated slides will be saved automatically under `~/Documents/mulmocast-vision/`  
 
-### sample: 80このサンプルデータを使ってhtml -> imageを生成する
+---
 
-```
-yarn run generate_all_images
-```
-- [その関数で生成される80種類のサンプルのデータ](./tests/ai_referencing_80_tool_calls.ts)
+## Output Examples
 
-outdir/{timeStamp}/{index}.png に画像生成
+- Proposal (Problem → Solution → Value → Next Action)
+- Business Model Canvas
+- SWOT, PEST, and 3C Analysis
+- Summary, Agenda, and Closing Slides
 
+---
 
-### プラグイン＋デザインテンプレート
+# mulmocast-vision（日本語版）
 
-デザインは
-- toolsから呼ばれる関数群を変更する(html以外でも書き出せる)
-- htmlのベースファイルに変更、もしくはstyleの追加
-  - assets/templates以下のファイルを書き換える
-  - templateファイルの指定
-    - `const handler = new htmlPlugin({ outputDir, rootDir, templateOptions: {htmlTemplateFile: "tailwind-sea"}});`
-  - templateのheaderへstyleを注入
-    - `const handler = new htmlPlugin({ outputDir, rootDir, templateOptions: {headerStyle: darkStyle}});`
-- 各スライド用の個別のhtmlファイルの変更
-  - `assets/html/` 以下のファイルを編集
-  - 各スライド用のフォルダーを変更する
-    `const templateFileName = path.resolve(this.rootDir, "./assets/html/", `${fileName}.html`);`
+**mulmocast-vision** は、MCP (Model Context Protocol) 経由で LLM を活用し、パワーポイントのようなスライド資料を自動生成できるツールです。
+ビジネスに特化した **80種類以上のスライドテンプレート** を備えており、企画書・提案資料・戦略資料などを簡単に作成できます。
 
-することでカスタマイズできます。
+---
 
+## 特徴
 
-### mcp
+- 📑 **豊富なテンプレート**: ビジネスに最適化された 80種類以上のスライドデザイン
+- ⚡ **即時生成**: LLM と MCP を通じて、最短数秒でプレゼン資料を出力
+- 🖥️ **シンプルな利用方法**: MCP対応ツール（例: Claude Desktop）に設定するだけ
+- 📂 **自動保存**: 生成された資料は `~/Documents/mulmocast-vision/` 以下に保存
 
-buildする
-```
-yarn run build
-```
+---
 
-mcp設定
+## インストール不要
 
-for dev
-```
-    "mulmocast-vision": {
-      "command": "npx",
-      "args": [
-        "mulmocast-vision",
-        "page"
-      ],
-      "transport": {
-        "stdio": true
-      }
-    }
+追加のインストールは不要です。`npx` 経由で直接実行できます。
+
+---
+
+## 設定方法
+
+MCP対応ツール（例: Claude Desktop）の設定ファイルに以下を追記してください。
+
+```json
+"mulmocast-vision": {
+  "command": "npx",
+  "args": [
+    "mulmocast-vision"
+  ],
+  "transport": {
+    "stdio": true
+  }
+}
 ```
 
+---
 
-for dev
-```
-    "mulmocast-vision": {
-      "command": "env",
-      "args": [
-        "node",
-        "/path/to/mulmocast-vision/lib/mcp/cli.js"
-      ],
-      "transport": {
-        "stdio": true
-      }
-    }
-```
+## 使い方
 
-mulmocast-vision/output以下に画像が出力される。
-セッションごとにfolderができるので注意
-(連続すると画像が上書きされるかも)
+1. MCP対応クライアント（Claude Desktop など）を起動
+2. `mulmocast-vision` を呼び出してスライド生成を指示
+3. 完成した資料が自動的に `~/Documents/mulmocast-vision/` に保存されます
+
+---
+
+## 出力例
+
+- 企画書（Problem → Solution → Value → Next Action）
+- ビジネスモデルキャンバス
+- SWOT分析、PEST分析、3C分析
+- サマリースライド、アジェンダスライド、クロージングスライド
+
