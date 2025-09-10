@@ -7,7 +7,7 @@ With **80+ business-oriented slide templates**, you can quickly create proposals
 
 ## Features  
 
-- 📑 **Rich Templates**: Over 80 business-optimized slide designs  
+- 📑 **Rich Templates**: 80 business-optimized slide designs  
 - ⚡ **Instant Generation**: Create slides in seconds using LLMs via MCP  
 - 🖥️ **Simple Setup**: Just add a small config to your MCP client (e.g., Claude Desktop)  
 - 📂 **Auto Save**: Output files are saved under `~/Documents/mulmocast-vision/`  
@@ -58,7 +58,7 @@ Add the following to your MCP client settings (e.g., Claude Desktop):
 # mulmocast-vision（日本語版）
 
 **mulmocast-vision** は、MCP (Model Context Protocol) 経由で LLM を活用し、パワーポイントのようなスライド資料を自動生成できるツールです。
-ビジネスに特化した **80種類以上のスライドテンプレート** を備えており、企画書・提案資料・戦略資料などを簡単に作成できます。
+ビジネスに特化した **80種類のスライドテンプレート** を備えており、企画書・提案資料・戦略資料などを簡単に作成できます。
 
 ---
 
