@@ -1772,31 +1772,3 @@ export const toolsBase: OpenAITool[] = [
   },
 ];
 
-export const tools = toolsBase.map((tool: OpenAITool) => {
-  const { type, function: func } = tool;
-  const { name, description, parameters } = func;
-  return {
-    type,
-    function: {
-      name: `create${name}Slide`,
-      description: `Create or update ${description}`,
-      parameters,
-    },
-  };
-});
-
-export const toolsForBeat = toolsBase.map((tool: OpenAITool) => {
-  const { type, function: func } = tool;
-  const { name, description, parameters } = func;
-  return {
-    type,
-    function: {
-      name: `updateBeatStyleTo${name}`,
-      description: `Change the beat image to ${description}`,
-      parameters,
-    },
-  };
-});
-
-// updateBeatImageForXXStyle
-// Change the beat image to
