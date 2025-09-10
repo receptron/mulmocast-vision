@@ -16,7 +16,7 @@
     "format": "prettier --write '{src,tests,html}/**/*.{ts,html}'",
     "test": "node --test --require ts-node/register ./tests/test_*.ts",
     "test_run": "node --test  --require ts-node/register ./tests/run_*.ts # just run locally",
-    "ai": "npx tsx ./src/presentation.ts",
+    "ai": "npx tsx ./old/presentation.ts",
     "generate_all_images": "npx tsx ./tests/test.ts",
     "ci_test": "NODE_ENV=test npx tsx ./tests/test.ts",
     "ci_test2": "NODE_ENV=test npx tsx ./tests/test2.ts"
@@ -32,10 +32,7 @@
   "homepage": "https://github.com/receptron/mulmocast-vision",
   "license": "AGPL-3.0-or-later",
   "dependencies": {
-    "@graphai/openai_agent": "^2.0.7",
-    "@graphai/vanilla": "^2.0.12",
     "@modelcontextprotocol/sdk": "^1.17.5",
-    "dotenv": "^17.2.2",
     "graphai": "^2.0.14",
     "nunjucks": "^3.2.4",
     "pdfkit": "^0.17.2",

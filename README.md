@@ -49,15 +49,6 @@ yarn run generate_all_images
 outdir/{timeStamp}/{index}.png に画像生成
 
 
-### openaiのエージェントでprompt -> tools -> html作成
-
-```
-yarn run ai
-```
-
-プロンプトはソースに直接書いている `src/presentation.ts`
-
-
 ### プラグイン＋デザインテンプレート
 
 デザインは
@@ -106,7 +97,7 @@ for dev
       "command": "env",
       "args": [
         "node",
-        "/path/to/mulmocast-vision/lib/mcp/server.js"
+        "/path/to/mulmocast-vision/lib/mcp/cli.js"
       ],
       "transport": {
         "stdio": true

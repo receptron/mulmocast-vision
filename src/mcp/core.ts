@@ -3,8 +3,7 @@
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { CallToolRequestSchema, CallToolRequest, ListToolsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
 
-import { tools } from "../tools";
-import { mcp_tools } from "../mcp_tools";
+import { tools, mcp_tools } from "../tools";
 import { htmlPlugin } from "../presentationHandlers/html_class";
 import { openAIToolsToAnthropicTools, generateUniqueId } from "../commons";
 

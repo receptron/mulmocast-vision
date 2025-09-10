@@ -13,7 +13,6 @@ const main = async () => {
 
   const documentsDir = path.join(os.homedir(), "Documents");
   const now = Date.now();
-
   const outputDir = path.join(documentsDir, "mulmocast-vision", String(now));
   mkdir(outputDir);
 
