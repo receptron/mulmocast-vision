@@ -1,5 +1,6 @@
 import { OpenAITool } from "../type";
 import { toolsBase } from "./tools_base";
+export * from "./tools_base";
 
 export const tools = toolsBase.map((tool: OpenAITool) => {
   const { type, function: func } = tool;
