@@ -1,4 +1,4 @@
-import { OpenAITool } from "./type";
+import { OpenAITool } from "../type";
 import { toolsBase } from "./tools_base";
 
 export const tools = toolsBase.map((tool: OpenAITool) => {
