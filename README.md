@@ -97,7 +97,7 @@ for dev
       "command": "env",
       "args": [
         "node",
-        "/path/to/mulmocast-vision/lib/mcp/server.js"
+        "/path/to/mulmocast-vision/lib/mcp/cli.js"
       ],
       "transport": {
         "stdio": true
