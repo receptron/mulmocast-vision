@@ -33,7 +33,6 @@
   "license": "AGPL-3.0-or-later",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.5",
-    "graphai": "^2.0.14",
     "nunjucks": "^3.2.4",
     "pdfkit": "^0.17.2",
     "puppeteer": "^24.19.0"
@@ -44,6 +43,7 @@
     "eslint": "^9.35.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
+    "graphai": "^2.0.14",
     "prettier": "^3.6.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2",
