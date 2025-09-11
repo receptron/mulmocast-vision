@@ -15,7 +15,7 @@ export const getServer = (rootDir: string, outputDir: string) => {
   const server = new Server(
     {
       name: "mulmocast-vision-mcp",
-      version: "0.1.3",
+      version: "0.1.4",
     },
     {
       capabilities: {
