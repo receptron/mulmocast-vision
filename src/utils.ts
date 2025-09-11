@@ -3,6 +3,8 @@ import path from "path";
 import os from "os";
 import puppeteer from "puppeteer";
 
+import { formattedDate } from "./commons";
+
 const isCI = process.env.CI === "true";
 
 export const renderHTMLToImage = async (html: string, outputPath: string, width: number, height: number) => {
@@ -83,9 +85,7 @@ export const getRootDir = () => {
 };
 export const getOutDir = () => {
   const documentsDir = path.join(os.homedir(), "Documents");
-
-  const now = Date.now();
-  return path.join(documentsDir, "mulmocast-vision", String(now));
+  return path.join(documentsDir, "mulmocast-vision", formattedDate());
 };
 
 export const debugLogger = (data: unknown) => {

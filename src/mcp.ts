@@ -9,13 +9,13 @@ import { openAIToolsToAnthropicTools, generateUniqueId } from "./commons";
 
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 
-import { mkdir, getRootDir, getOutDir } from "./utils";
+import { getRootDir, getOutDir } from "./utils";
 
 export const getServer = (rootDir: string, outputDir: string) => {
   const server = new Server(
     {
       name: "mulmocast-vision-mcp",
-      version: "0.1.0",
+      version: "0.1.3",
     },
     {
       capabilities: {
@@ -68,7 +68,6 @@ export const getServer = (rootDir: string, outputDir: string) => {
 const main = async () => {
   const rootDir = getRootDir();
   const outputDir = getOutDir();
-  mkdir(outputDir);
 
   const server = getServer(rootDir, outputDir);
   const transport = new StdioServerTransport();

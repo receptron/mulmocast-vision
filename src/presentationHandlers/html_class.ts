@@ -10,13 +10,15 @@ import { type PluginOptionParams, type ToolArgs } from "../type";
 export class htmlPlugin {
   protected outputDir: string;
   protected rootDir: string; // for read html template
+  protected htmlDir: string;
   protected sessionDir: string;
   protected templateOptions: any;
 
-  constructor({ outputDir, rootDir, templateOptions }: { outputDir?: string; rootDir?: string; templateOptions?: any }) {
+  constructor({ outputDir, rootDir, templateOptions, htmlDir }: { outputDir?: string; rootDir?: string; templateOptions?: any, htmlDir?: string }) {
     this.outputDir = outputDir ?? getOutDir();
     this.rootDir = rootDir ?? getRootDir();
     this.sessionDir = "";
+    this.htmlDir = htmlDir ?? "html2"
     this.templateOptions = templateOptions ?? {};
   }
 
@@ -34,7 +36,7 @@ export class htmlPlugin {
       throw new Error("functionName is required");
     }
     const templateFileName = functionNameToTemplateName(functionName);
-    const templateFilePath = path.resolve(this.rootDir, "./html/html2", `${templateFileName}.html`);
+    const templateFilePath = path.resolve(this.rootDir, `./html/${this.htmlDir}`, `${templateFileName}.html`);
 
     const outfile = imageFilePath ?? path.resolve(this.outputDir, this.sessionDir, `${outputFileName}.png`);
     const htmlFile = htmlFilePath ?? path.resolve(this.outputDir, this.sessionDir, `${outputFileName}.html`);
@@ -58,7 +60,8 @@ export class htmlPlugin {
     };
   };
 
-  public createPDF = async (__args: ToolArgs, __options: PluginOptionParams) => {
+  public createPDF = async (args: ToolArgs, __options: PluginOptionParams) => {
+    const { filename } = args;
     const imageWidth = 1536;
     const imageHeight = 1024;
 
@@ -86,7 +89,7 @@ export class htmlPlugin {
         right: 0,
       },
     });
-    doc.pipe(fs.createWriteStream(path.resolve(outputDir, "result.pdf")));
+    doc.pipe(fs.createWriteStream(path.resolve(outputDir, filename as string)));
 
     files.forEach((f, i) => {
       if (i > 0) {

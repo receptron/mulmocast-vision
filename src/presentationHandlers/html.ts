@@ -5,9 +5,7 @@ import nunjucks from "nunjucks";
 import { type PluginOptionParams, type ToolArgs } from "../type";
 
 const rootDir = getRootDir();
-
-export const baseDir = getOutDir();
-mkdir(baseDir);
+const baseDir = getOutDir();
 
 const filePath = (filename: string) => {
   return path.resolve(rootDir, "./html/html/", `${filename}.html`);
@@ -18,6 +16,7 @@ const generateHtml = async (args: ToolArgs, options: PluginOptionParams) => {
   if (!functionName) {
     throw new Error("functionName is required");
   }
+  mkdir(baseDir);
   const templateFileName = functionNameToTemplateName(functionName);
   const outfile = imageFilePath ?? path.resolve(baseDir, `${outputFileName}.png`);
 

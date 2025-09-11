@@ -55,9 +55,9 @@ export const mcp_tools: OpenAITool[] = [
       parameters: {
         type: "object",
         properties: {
-          status: { type: "string", description: "statis" },
+          filename: { type: "string", description: "pdf file name" },
         },
-        required: ["status"],
+        required: ["filename"],
       },
     },
   },
