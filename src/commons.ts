@@ -60,7 +60,6 @@ export const generateUniqueId = (): string => {
   return `${now}-${random}`;
 };
 
-
 export const formattedDate = () => {
   const now = new Date();
 

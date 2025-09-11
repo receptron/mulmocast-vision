@@ -14,11 +14,11 @@ export class htmlPlugin {
   protected sessionDir: string;
   protected templateOptions: any;
 
-  constructor({ outputDir, rootDir, templateOptions, htmlDir }: { outputDir?: string; rootDir?: string; templateOptions?: any, htmlDir?: string }) {
+  constructor({ outputDir, rootDir, templateOptions, htmlDir }: { outputDir?: string; rootDir?: string; templateOptions?: any; htmlDir?: string }) {
     this.outputDir = outputDir ?? getOutDir();
     this.rootDir = rootDir ?? getRootDir();
     this.sessionDir = "";
-    this.htmlDir = htmlDir ?? "html2"
+    this.htmlDir = htmlDir ?? "html2";
     this.templateOptions = templateOptions ?? {};
   }
 
