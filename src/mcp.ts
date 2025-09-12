@@ -4,7 +4,7 @@ import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { CallToolRequestSchema, CallToolRequest, ListToolsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
 
 import { tools, mcp_tools } from "./tools";
-import { htmlPlugin } from "./presentationHandlers/html_class";
+import { htmlPlugin } from "./html_class";
 import { openAIToolsToAnthropicTools, generateUniqueId } from "./commons";
 
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";

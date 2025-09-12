@@ -2,10 +2,10 @@ import path from "path";
 import fs from "fs";
 import PDFDocument from "pdfkit";
 
-import { createPage, getOutDir, getRootDir, mkdir } from "../utils";
-import { functionNameToTemplateName } from "../commons";
+import { createPage, getOutDir, getRootDir, mkdir } from "./utils";
+import { functionNameToTemplateName } from "./commons";
 import nunjucks from "nunjucks";
-import { type PluginOptionParams, type ToolArgs, type CreatePageOptions } from "../type";
+import { type PluginOptionParams, type ToolArgs, type CreatePageOptions } from "./type";
 
 export class htmlPlugin {
   protected outputDir: string;
