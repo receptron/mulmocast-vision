@@ -75,7 +75,7 @@ export class htmlPlugin {
     };
   };
 
-  public createPDF = async (args: {filename: string, images?: string[]}, __options: PluginOptionParams) => {
+  public createPDF = async (args: { filename: string; images?: string[] }, __options: PluginOptionParams) => {
     const { filename, images } = args ?? {};
     const imageWidth = 1536;
     const imageHeight = 1024;
@@ -85,10 +85,12 @@ export class htmlPlugin {
 
     const outputDir = path.resolve(this.outputDir, this.sessionDir);
 
-    const files = images ?? fs
-      .readdirSync(outputDir)
-      .filter((f) => f.toLowerCase().endsWith(".png"))
-      .sort(new Intl.Collator("ja", { numeric: true }).compare);
+    const files =
+      images ??
+      fs
+        .readdirSync(outputDir)
+        .filter((f) => f.toLowerCase().endsWith(".png"))
+        .sort(new Intl.Collator("ja", { numeric: true }).compare);
 
     if (files.length === 0) {
       console.error("no PNG file");

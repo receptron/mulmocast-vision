@@ -1787,5 +1787,4 @@ export const toolsBase: OpenAITool[] = [
       },
     },
   },
-
 ];
