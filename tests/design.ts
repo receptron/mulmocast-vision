@@ -17,7 +17,7 @@ export const darkStyle = `
   </style>
 `;
 
-const defaultStyle = `
+const __defaultStyle = `
   <style type="text/tailwindcss">
     @layer base {
       body {
@@ -31,13 +31,12 @@ const main = () => {
   mkdir(outputDir);
   // use tailwind-sea html layout template in html/templates and apply darkStyle in header.
   // The html used in each slide is specified in the ${htmlDir} directory.
-  const handler = new htmlPlugin({ outputDir, rootDir, templateOptions: { htmlTemplateFile: "tailwind-sea", headerStyle: darkStyle}, htmlDir: "html"});
+  const handler = new htmlPlugin({ outputDir, rootDir, templateOptions: { htmlTemplateFile: "tailwind-sea", headerStyle: darkStyle }, htmlDir: "html" });
   // const handler = new htmlPlugin({ outputDir, rootDir, templateOptions: { headerStyle: defaultStyle } });
   // const handler = new htmlPlugin({ outputDir, rootDir, templateOptions: {headerStyle: darkStyle}});
   // toolsRunner(presentationHandlers, toolsResponses);
   toolsRunner(handler, data.items);
   console.log(outputDir);
-  
 };
 
 main();
