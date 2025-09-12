@@ -102,3 +102,5 @@ The configuration items correspond to:
 - htmlDir (3)
 
 You can test by changing these variables.
+
+### output dir

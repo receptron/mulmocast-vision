@@ -11,6 +11,7 @@ export class htmlPlugin {
   protected outputDir: string;
   protected rootDir: string; // for read html template
   protected htmlDir: string;
+  protected templateDir: string;
   protected sessionDir: string;
   protected templateOptions: CreatePageOptions;
 
@@ -18,17 +19,21 @@ export class htmlPlugin {
     outputDir,
     rootDir,
     templateOptions,
-    htmlDir,
+    // for html template. If templateDir exists, it takes precedence over htmlDir.
+    htmlDir, // relative path
+    templateDir, // absolute path
   }: {
     outputDir?: string;
     rootDir?: string;
     templateOptions?: CreatePageOptions;
     htmlDir?: string;
+    templateDir?: string;
   }) {
     this.outputDir = outputDir ?? getOutDir();
     this.rootDir = rootDir ?? getRootDir();
     this.sessionDir = "";
     this.htmlDir = htmlDir ?? "html2";
+    this.templateDir = templateDir ?? "";
     this.templateOptions = templateOptions ?? {};
   }
 
@@ -46,7 +51,7 @@ export class htmlPlugin {
       throw new Error("functionName is required");
     }
     const templateFileName = functionNameToTemplateName(functionName);
-    const templateFilePath = path.resolve(this.rootDir, `./html/${this.htmlDir}`, `${templateFileName}.html`);
+    const templateFilePath = path.resolve(this.templateDir ? this.templateDir : path.resolve(this.rootDir, "html", this.htmlDir), `${templateFileName}.html`);
 
     const outfile = imageFilePath ?? path.resolve(this.outputDir, this.sessionDir, `${outputFileName}.png`);
     const htmlFile = htmlFilePath ?? path.resolve(this.outputDir, this.sessionDir, `${outputFileName}.html`);
