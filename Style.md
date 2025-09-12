@@ -86,8 +86,22 @@ mulmoscript vision では、HTMLやTailwindでスタイルを変更すること�
 - html dir以下にhtml3, fooTemplateなどの名前でdirectoryを作ります。
 
 
+### テスト方法
 
+```
+yarn run design
+```
+で、tests/design.ts が実行される
 
+```
+const handler = new htmlPlugin({ outputDir, rootDir, templateOptions: { htmlTemplateFile: "tailwind-sea", headerStyle: darkStyle}, htmlDir: "html"});
+```
 
+設定項目はそれぞれ
+- htmlTemplateFile (1)
+- headerStyle (2)
+- htmlDir (3)
+
+と対応している。これらの変数を変更してテストできる。
 
 
