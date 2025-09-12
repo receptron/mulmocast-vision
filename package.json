@@ -1,7 +1,7 @@
 {
   "name": "mulmocast-vision",
-  "version": "0.1.4",
-  "description": "Slide geneartor",
+  "version": "1.0.0",
+  "description": "Easy and stylish presentation slide generator",
   "main": "lib/index.js",
   "bin": {
     "mulmocast-vision": "lib/mcp.js"
