@@ -1,19 +1,19 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
-  "name": "io.github.receptron/mulmocast-vision",
+  "name": "io.github.isamu/mulmocast-vision",
   "description": "Easy and stylish presentation slide generator.",
   "status": "active",
   "repository": {
     "url": "https://github.com/receptron/mulmocast-vision",
     "source": "github"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "packages": [
     {
       "registry_type": "npm",
       "registry_base_url": "https://registry.npmjs.org",
       "identifier": "mulmocast-vision",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "transport": {
         "type": "stdio"
       },

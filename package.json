@@ -1,8 +1,8 @@
 {
   "name": "mulmocast-vision",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Easy and stylish presentation slide generator",
-  "mcpName": "io.github.receptron/mulmocast-vision",
+  "mcpName": "io.github.isamu/mulmocast-vision",
   "main": "lib/index.js",
   "bin": {
     "mulmocast-vision": "lib/mcp.js"
