@@ -5,16 +5,26 @@ import PDFDocument from "pdfkit";
 import { createPage, getOutDir, getRootDir, mkdir } from "../utils";
 import { functionNameToTemplateName } from "../commons";
 import nunjucks from "nunjucks";
-import { type PluginOptionParams, type ToolArgs } from "../type";
+import { type PluginOptionParams, type ToolArgs, type CreatePageOptions } from "../type";
 
 export class htmlPlugin {
   protected outputDir: string;
   protected rootDir: string; // for read html template
   protected htmlDir: string;
   protected sessionDir: string;
-  protected templateOptions: any;
+  protected templateOptions: CreatePageOptions;
 
-  constructor({ outputDir, rootDir, templateOptions, htmlDir }: { outputDir?: string; rootDir?: string; templateOptions?: any; htmlDir?: string }) {
+  constructor({
+    outputDir,
+    rootDir,
+    templateOptions,
+    htmlDir,
+  }: {
+    outputDir?: string;
+    rootDir?: string;
+    templateOptions?: CreatePageOptions;
+    htmlDir?: string;
+  }) {
     this.outputDir = outputDir ?? getOutDir();
     this.rootDir = rootDir ?? getRootDir();
     this.sessionDir = "";

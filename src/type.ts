@@ -23,3 +23,5 @@ export type PluginOptionParams = {
 };
 
 export type ToolArgs = Record<string, unknown>;
+
+export type CreatePageOptions = { htmlTemplateFile?: string; headerStyle?: string; htmlFile?: string };

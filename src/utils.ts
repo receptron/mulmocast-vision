@@ -4,6 +4,7 @@ import os from "os";
 import puppeteer from "puppeteer";
 
 import { formattedDate } from "./commons";
+import { type CreatePageOptions, type OpenAITool } from "./type";
 
 const isCI = process.env.CI === "true";
 
@@ -51,12 +52,7 @@ export const getHTMLFile = (rootDir: string, filename: string) => {
   return fs.readFileSync(path.resolve(rootDir, `./html/templates/${filename}.html`), "utf-8");
 };
 
-export const createPage = async (
-  rootDir: string,
-  outputFile: string,
-  htmlBody: string,
-  options?: { htmlTemplateFile?: string; headerStyle?: string; htmlFile?: string },
-) => {
+export const createPage = async (rootDir: string, outputFile: string, htmlBody: string, options?: CreatePageOptions) => {
   const canvasSize = { width: 1536, height: 1024 };
   const { htmlTemplateFile, headerStyle, htmlFile } = options ?? {};
 
@@ -76,7 +72,7 @@ export const mkdir = (dirPath: string) => {
   }
 };
 
-export const writeJSONData = (baseDir: string, tools: any) => {
+export const writeJSONData = (baseDir: string, tools: OpenAITool[]) => {
   fs.writeFileSync(path.resolve(baseDir, "tools.json"), JSON.stringify(tools, null, 2), "utf8");
 };
 

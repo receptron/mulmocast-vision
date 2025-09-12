@@ -11,7 +11,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 
 import { getRootDir, getOutDir } from "./utils";
 
-export const getServer = (rootDir: string, outputDir: string) => {
+export const getServer = (handler: htmlPlugin) => {
   const server = new Server(
     {
       name: "mulmocast-vision-mcp",
@@ -28,8 +28,6 @@ export const getServer = (rootDir: string, outputDir: string) => {
   server.setRequestHandler(ListToolsRequestSchema, async () => {
     return openAIToolsToAnthropicTools([...tools, ...mcp_tools]);
   });
-
-  const handler = new htmlPlugin({ outputDir, rootDir });
 
   // Handle tool calls
   server.setRequestHandler(CallToolRequestSchema, async (request: CallToolRequest) => {
@@ -68,8 +66,10 @@ export const getServer = (rootDir: string, outputDir: string) => {
 const main = async () => {
   const rootDir = getRootDir();
   const outputDir = getOutDir();
+  const htmlDir = "html2";
+  const handler = new htmlPlugin({ outputDir, rootDir, htmlDir });
 
-  const server = getServer(rootDir, outputDir);
+  const server = getServer(handler);
   const transport = new StdioServerTransport();
   await server.connect(transport);
 };
