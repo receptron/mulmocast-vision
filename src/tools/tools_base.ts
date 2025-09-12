@@ -1770,4 +1770,22 @@ export const toolsBase: OpenAITool[] = [
       },
     },
   },
+
+  {
+    type: "function",
+    function: {
+      name: "image",
+      description: "a closing slide with a thank-you message and contacts.",
+      parameters: {
+        type: "object",
+        properties: {
+          title: { type: "string" },
+          imageUrl: { type: "string" },
+          _index: { type: "integer", description: indexDescription },
+        },
+        required: ["imageUrl"],
+      },
+    },
+  },
+
 ];

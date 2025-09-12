@@ -75,8 +75,8 @@ export class htmlPlugin {
     };
   };
 
-  public createPDF = async (args: ToolArgs, __options: PluginOptionParams) => {
-    const { filename } = args;
+  public createPDF = async (args: {filename: string, images?: string[]}, __options: PluginOptionParams) => {
+    const { filename, images } = args ?? {};
     const imageWidth = 1536;
     const imageHeight = 1024;
 
@@ -85,7 +85,7 @@ export class htmlPlugin {
 
     const outputDir = path.resolve(this.outputDir, this.sessionDir);
 
-    const files = fs
+    const files = images ?? fs
       .readdirSync(outputDir)
       .filter((f) => f.toLowerCase().endsWith(".png"))
       .sort(new Intl.Collator("ja", { numeric: true }).compare);

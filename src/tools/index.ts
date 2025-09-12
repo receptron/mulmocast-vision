@@ -55,7 +55,12 @@ export const mcp_tools: OpenAITool[] = [
       parameters: {
         type: "object",
         properties: {
-          filename: { type: "string", description: "pdf file name" },
+          filename: { type: "string", description: "a file name including the .pdf extension" },
+          images: {
+            type: "array",
+            description: "Optional. If provided, combine exactly these image file name in the given order. those image file name should be the basename (including the .pdf extension) without any directory path, corresponding to the slides that were created. If omitted, images will be discovered in dir, sorted by filename ascending, and combined.",
+            items: { type: "string" }
+          },
         },
         required: ["filename"],
       },
