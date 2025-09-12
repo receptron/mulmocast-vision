@@ -41,9 +41,9 @@ mulmoscript vision では、HTMLやTailwindでスタイルを変更すること�
 
 ### 方法①：ベーステンプレートを入れ替える
 
-html/templates 以下にベースのテンプレートがある
-defaultは tailwind.html
-これを同じディレクトリー(html/templates)にコピーして使います。
+- [html/templates](./html/templates/) 以下にベースのテンプレートがある
+- defaultのベース点レートは [tailwind.html](./html/templates/tailwind.html)
+- これを同じディレクトリー(html/templates)にコピーして使います。
 
 ```html
 <!doctype html>
@@ -62,29 +62,28 @@ defaultは tailwind.html
 </html>
 ```
 
-htmlBodyは各スライドのbody部分（３）
-headerStyleが設定で変更できるスタイル部分（２）
-
-これらを残したままhtmlを作る。
-
-htmlPlugin classにわたすoptionでファイル名を指定します
-option.htmlTemplateFileで指定する
-"tailwind" のように、ファイル名でhtmlはつけません
+- htmlBodyは各スライドのbody部分（３）
+- headerStyleが設定で変更できるスタイル部分（２）
+- これらを残したままhtmlを作る。
+- htmlPlugin classにわたすoptionでファイル名を指定します
+- option.htmlTemplateFileで指定する
+  - TODO具体例 
+  - tailwind のように、拡張子はなしのファイル名のみです
 
 ### 方法②：base templateのheaderにスタイルを追加する
-(1)を参考にスタイルを記述
 
-option.headerStyleにtextで記述する。
-injectionのリスクあり
+- (1)を参考にスタイルを記述
+- option.headerStyleにtextで記述する。
+  - injectionのリスクあり
 
 ### 方法③：スライドテンプレートをコピーして改造する
 
-現在のdefaultのhtml テンプレートは html/html2 以下にある。
-各ファイルはllmが呼ぶtoolsの関数と対応している。
-これらのhtmlファイルをコピーし、htmlを変更してデザインを適用します。埋め込んでいる変数は変えないように。
+- 現在のdefaultのhtml テンプレートは [html/html2](./html/html2/) 以下にある。
+- 各ファイルはllmが呼ぶtoolsの関数と対応している。
+- これらのhtmlファイルをコピーし、htmlを変更してデザインを適用します。埋め込んでいる変数は変えないように。
 
-dir名は、htmlPluginの４つ目の引数でhtml2を渡しています。
-html dir以下にhtml3, fooTemplateなどの名前でdirectoryを作ります。
+- dir名は、htmlPluginの４つ目の引数でhtml2を渡しています。
+- html dir以下にhtml3, fooTemplateなどの名前でdirectoryを作ります。
 
 
 
