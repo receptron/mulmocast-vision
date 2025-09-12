@@ -92,6 +92,7 @@ mulmoscript vision では、HTMLやTailwindでスタイルを変更すること�
 yarn run design
 ```
 で、tests/design.ts が実行される
+~/Documents/mulmocast-vision/以下にdirectoryが作成されて80個のhtmlとpngが作成されます。
 
 ```
 const handler = new htmlPlugin({ outputDir, rootDir, templateOptions: { htmlTemplateFile: "tailwind-sea", headerStyle: darkStyle}, htmlDir: "html"});

@@ -90,6 +90,8 @@ yarn run design
 ```
 executes tests/design.ts
 
+A directory will be created under ~/Documents/mulmocast-vision/, and 80 HTML and PNG files will be generated inside it.
+
 ```
 const handler = new htmlPlugin({ outputDir, rootDir, templateOptions: { htmlTemplateFile: "tailwind-sea", headerStyle: darkStyle}, htmlDir: "html"});
 ```
