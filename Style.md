@@ -1,49 +1,47 @@
-# スライドのレイアウトや見た目の変更について
+# About Changing Slide Layout and Appearance
 
-mulmoscript vision は、htmlテンプレートとTailwindcssを使ってスライドをつくる仕組みです。
-スライドのレイアウトや見た目は、HTMLとTailwindのクラスでデザインされています。
+Mulmoscript vision is a system that creates slides using HTML templates and Tailwind CSS.
+The layout and appearance of slides are designed with HTML and Tailwind classes.
 
-## スライドの構造
+## Slide Structure
 
-mulmoscript visionのスライドは、2つの層でできています。
+Mulmoscript vision slides consist of two layers:
 
-- ベーステンプレート（base template）
-  - スライド全体に共通するHTML構造
-  - header（スタイルやフォントなどの設定）と body（スライドを表示する枠）で構成
-- スライドテンプレート（bodyテンプレート）
-  - 実際のスライド1枚分の中身やレイアウト
-  - 80種類以上あり、用途に応じて選べる
+- **Base Template**
+  - Common HTML structure for all slides
+  - Composed of header (settings for styles, fonts, etc.) and body (frame for displaying slides)
+- **Slide Template (Body Template)**
+  - Content and layout for each individual slide
+  - Over 80 types available, selectable according to purpose
 
+## Methods to Customize Styles
 
-## スタイルをカスタマイズする方法
+In mulmoscript vision, you can freely customize the appearance and atmosphere by modifying styles with HTML and Tailwind.
+There are three main customization methods:
 
-mulmoscript vision では、HTMLやTailwindでスタイルを変更することで、見た目や雰囲気を自由にアレンジできます。
-主なカスタマイズ方法は次の3つです。
+### Method ①: Replace the Base Template
 
-### 方法①：ベーステンプレートを入れ替える
+- Replace the base template file with another one
+- The overall slide design (background, fonts, basic layout, etc.) changes all at once
 
-- base templateファイルを別のものに差し替える
-- スライド全体のデザイン（背景、フォント、基本レイアウトなど）が一括で変わる
+### Method ②: Add Styles to the Base Template Header
 
-### 方法②：base templateのheaderにスタイルを追加する
+- Add style tags or link tags within the header of the existing base template
+- Change colors, font sizes, margins, etc. with Tailwind custom themes or additional CSS
 
-- 既存のbase templateのheader内に styleタグや link タグを追加
-- Tailwindのカスタムテーマや追加CSSで、色・文字サイズ・余白などを変更できる
+### Method ③: Copy and Modify Slide Templates
 
-### 方法③：スライドテンプレートをコピーして改造する
+- Copy the 80 types of slide templates (body parts) along with their directories
+- Rewrite HTML and Tailwind classes to create custom designs
+- Use the completed template set by specifying it and replacing the original template collection
 
-- 80種類のスライドテンプレート（body部分）をディレクトリごとコピー
-- HTMLやTailwindクラスを書き換えて、独自デザインに変更
-- 完成したテンプレートセットを指定して、元のテンプレート群と入れ替えて使う
+## Specific Modification Methods
 
+### Method ①: Replace the Base Template
 
-## 具体的な変更方法
-
-### 方法①：ベーステンプレートを入れ替える
-
-- [html/templates](./html/templates/) 以下にベースのテンプレートがある
-- defaultのベース点レートは [tailwind.html](./html/templates/tailwind.html)
-- これを同じディレクトリー(html/templates)にコピーして使います。
+- Base templates are located under [html/templates](./html/templates/)
+- The default base template is [tailwind.html](./html/templates/tailwind.html)
+- Copy this to the same directory (html/templates) to use it.
 
 ```html
 <!doctype html>
@@ -62,46 +60,43 @@ mulmoscript vision では、HTMLやTailwindでスタイルを変更すること�
 </html>
 ```
 
-- htmlBodyは各スライドのbody部分（３）
-- headerStyleが設定で変更できるスタイル部分（２）
-- これらを残したままhtmlを作る。
-- htmlPlugin classにわたすoptionでファイル名を指定します
-- option.htmlTemplateFileで指定する
-  - TODO具体例 
-  - tailwind のように、拡張子はなしのファイル名のみです
+- `htmlBody` is the body part of each slide (③)
+- `headerStyle` is the style part that can be changed in settings (②)
+- Create HTML while keeping these parts intact
+- Specify the filename in the option passed to the htmlPlugin class
+- Specify with `option.htmlTemplateFile`
+  - TODO: specific example
+  - Like "tailwind", use only the filename without extension
 
-### 方法②：base templateのheaderにスタイルを追加する
+### Method ②: Add Styles to the Base Template Header
 
-- (1)を参考にスタイルを記述
-- option.headerStyleにtextで記述する。
-  - injectionのリスクあり
+- Write styles referring to (1)
+- Describe in text in `option.headerStyle`
+  - Risk of injection
 
-### 方法③：スライドテンプレートをコピーして改造する
+### Method ③: Copy and Modify Slide Templates
 
-- 現在のdefaultのhtml テンプレートは [html/html2](./html/html2/) 以下にある。
-- 各ファイルはllmが呼ぶtoolsの関数と対応している。
-- これらのhtmlファイルをコピーし、htmlを変更してデザインを適用します。埋め込んでいる変数は変えないように。
+- The current default HTML templates are located under [html/html2](./html/html2/)
+- Each file corresponds to functions in tools called by LLM
+- Copy these HTML files and modify the HTML to apply designs. Be careful not to change the embedded variables.
 
-- dir名は、htmlPluginの４つ目の引数でhtml2を渡しています。
-- html dir以下にhtml3, fooTemplateなどの名前でdirectoryを作ります。
+- The directory name is passed as "html2" in the 4th argument of htmlPlugin
+- Create directories with names like html3, fooTemplate, etc. under the html directory
 
-
-### テスト方法
+### Testing Method
 
 ```
 yarn run design
 ```
-で、tests/design.ts が実行される
+executes tests/design.ts
 
 ```
 const handler = new htmlPlugin({ outputDir, rootDir, templateOptions: { htmlTemplateFile: "tailwind-sea", headerStyle: darkStyle}, htmlDir: "html"});
 ```
 
-設定項目はそれぞれ
+The configuration items correspond to:
 - htmlTemplateFile (1)
-- headerStyle (2)
+- headerStyle (2) 
 - htmlDir (3)
 
-と対応している。これらの変数を変更してテストできる。
-
-
+You can test by changing these variables.
