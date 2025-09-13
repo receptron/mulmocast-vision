@@ -14,8 +14,8 @@ import { getRootDir, getOutDir } from "./utils";
 export const getServer = (handler: htmlPlugin) => {
   const server = new Server(
     {
-      name: "mulmocast-vision-mcp",
-      version: "0.1.4",
+      name: "mulmocast-vision",
+      version: "1.0.2",
     },
     {
       capabilities: {
