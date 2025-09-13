@@ -4,7 +4,7 @@
 With **80+ business-oriented slide templates**, you can quickly create proposals, strategy decks, and other professional materials.  
 
 
-## ✨ :contentReference[oaicite:0]{index=0} — Instantly Create Business Slides
+## ✨ Features
 
 - 📑 **80+ Rich Templates**  
   Business-optimized designs for proposals, reports, and analysis documents
