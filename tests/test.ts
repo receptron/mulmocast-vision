@@ -1,4 +1,4 @@
-import { htmlPlugin } from "../src/presentationHandlers/html_class";
+import { htmlPlugin } from "../src/html_class";
 
 import { toolsRunner } from "./runner";
 import { data } from "./ai_referencing_80_tool_calls";

@@ -20,8 +20,7 @@
     "ai": "npx tsx ./old/presentation.ts",
     "generate_all_images": "npx tsx ./tests/test.ts",
     "design": "NODE_ENV=test npx tsx ./tests/design.ts",
-    "ci_test": "NODE_ENV=test npx tsx ./tests/test.ts",
-    "ci_test2": "NODE_ENV=test npx tsx ./tests/test2.ts"
+    "ci_test": "NODE_ENV=test npx tsx ./tests/test.ts"
   },
   "repository": {
     "type": "git",
