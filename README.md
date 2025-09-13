@@ -3,32 +3,46 @@
 **mulmocast-vision** is a tool that uses LLMs via MCP (Model Context Protocol) to automatically generate presentation slides, similar to PowerPoint.  
 With **80+ business-oriented slide templates**, you can quickly create proposals, strategy decks, and other professional materials.  
 
----
 
-## Features  
+## ✨ :contentReference[oaicite:0]{index=0} — Instantly Create Business Slides
 
-- 📑 **Rich Templates**: 80 business-optimized slide designs  
-- ⚡ **Instant Generation**: Create slides in seconds using LLMs via MCP  
-- 🖥️ **Simple Setup**: Just add a small config to your MCP client (e.g., Claude Desktop)  
-- 📂 **Auto Save**: Output files are saved under `~/Documents/mulmocast-vision/`  
+- 📑 **80+ Rich Templates**  
+  Business-optimized designs for proposals, reports, and analysis documents
 
----
+- ⚡ **Instant Generation**  
+  Create professional slides in seconds using LLMs via :contentReference[oaicite:1]{index=1} (MCP)
+
+- ⚙️ **Simple Setup**  
+  Just add a small config to your MCP client (e.g. :contentReference[oaicite:2]{index=2}) to start
+
+- 💾 **Auto Save & Easy Export**  
+  Outputs are automatically saved under `~/Documents/mulmocast-vision/`  
+  Export instantly to PDF
+
+- 🎨 **Fully Customizable**  
+  HTML-based templates allow fine-grained design tweaks or full redesigns
+
+You can create documents like these in just a few minutes.
+
+[Sample AI Company Analysis Slide (PDF)](https://github.com/isamu/slide_example/blob/master/pdf/AI_Companies_Corporate_Analysis_2025.pdf)
+
 
 ## No Installation Needed  
 
 Runs directly with `npx`. No global install required.  
 
----
 
-## Configuration
+## Setup
 
-Add the following to your MCP client settings (e.g., Claude Desktop):  
+Here is an example for Claude desktop. Add the following to your `claude_desktop_config.json`.  
+You can use similar settings for other MCPs.
 
 ```json
+// claude_desktop_config.json
 "mulmocast-vision": {
   "command": "npx",
   "args": [
-    "mulmocast-vision"
+    "mulmocast-vision@latest"
   ],
   "transport": {
     "stdio": true
@@ -36,14 +50,19 @@ Add the following to your MCP client settings (e.g., Claude Desktop):
 }
 ```
 
----
+That's all for the setup.  
+If the path to `npx` is not set, specify the full path.  
+If `npx` is not installed, please install it in advance.
+
 
 ## Usage  
 
 1. Launch an MCP-compatible client (e.g., Claude Desktop)  
-2. Call `mulmocast-vision` to request slide generation  
-3. The generated slides will be saved automatically under `~/Documents/mulmocast-vision/`  
+2. Just give an instruction like "Compare corporate analysis of AI companies such as OpenAi Anthropic Replicate. About 20 slides.".  
+3. The generated slides will be saved automatically under `~/Documents/mulmocast-vision/{date}`  
 
+Currently available features include creating slides for each page, updating specified slides, generating a PDF of all slides, and generating a PDF for specified slides.  
+You can instruct these actions via prompts.
 ---
 
 ## Output Examples
@@ -52,6 +71,16 @@ Add the following to your MCP client settings (e.g., Claude Desktop):
 - Business Model Canvas
 - SWOT, PEST, and 3C Analysis
 - Summary, Agenda, and Closing Slides
+
+## For Developers
+
+MulmoCast Vision is open source, so you can apply various designs by modifying the HTML.  
+For adding styles, please refer to [Style.ja.md](https://github.com/receptron/mulmocast-vision/blob/main/Style.ja.md).
+
+### Official Repository & Package
+
+- [GitHub: receptron/mulmocast-vision](https://github.com/receptron/mulmocast-vision)
+- [npm: mulmocast-vision](https://www.npmjs.com/package/mulmocast-vision)
 
 ---
 
