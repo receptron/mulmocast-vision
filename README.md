@@ -63,7 +63,7 @@ If `npx` is not installed, please install it in advance.
 
 Currently available features include creating slides for each page, updating specified slides, generating a PDF of all slides, and generating a PDF for specified slides.  
 You can instruct these actions via prompts.
----
+
 
 ## Output Examples
 
