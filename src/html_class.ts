@@ -37,6 +37,7 @@ export class htmlPlugin {
     this.templateOptions = templateOptions ?? {};
   }
 
+  // api for mcp
   public callNamedFunction = async (functionName: string, args: ToolArgs, options: PluginOptionParams) => {
     const member = (this as Record<string, unknown>)[functionName];
     if (member && typeof member === "function") {
@@ -50,17 +51,23 @@ export class htmlPlugin {
     if (!functionName) {
       throw new Error("functionName is required");
     }
-    const templateFileName = functionNameToTemplateName(functionName);
-    const templateFilePath = path.resolve(this.templateDir ? this.templateDir : path.resolve(this.rootDir, "html", this.htmlDir), `${templateFileName}.html`);
-
+    const html = this.getHtml(functionName, args);
     const outfile = imageFilePath ?? path.resolve(this.outputDir, this.sessionDir, `${outputFileName}.png`);
     const htmlFile = htmlFilePath ?? path.resolve(this.outputDir, this.sessionDir, `${outputFileName}.html`);
 
-    await createPage(this.rootDir, outfile, nunjucks.render(templateFilePath, args), { htmlFile, ...this.templateOptions });
+    await createPage(this.rootDir, outfile, html, { htmlFile, ...this.templateOptions });
 
     return {
       text: `html generated successfully to: ${outfile}`,
     };
+  };
+
+  // for electron
+  public getHtml = (functionName: string, args: ToolArgs) => {
+    const templateFileName = functionNameToTemplateName(functionName);
+    const templateFilePath = path.resolve(this.templateDir ? this.templateDir : path.resolve(this.rootDir, "html", this.htmlDir), `${templateFileName}.html`);
+
+    return nunjucks.render(templateFilePath, args);
   };
 
   // for mcp
