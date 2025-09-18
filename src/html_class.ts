@@ -67,6 +67,9 @@ export class htmlPlugin {
     const templateFileName = functionNameToTemplateName(functionName);
     const templateFilePath = path.resolve(this.templateDir ? this.templateDir : path.resolve(this.rootDir, "html", this.htmlDir), `${templateFileName}.html`);
 
+    if (!fs.existsSync(templateFilePath)) {
+      throw new Error(`getHtml: file ${templateFilePath} not exists.`);
+    }
     return nunjucks.render(templateFilePath, args);
   };
 
@@ -74,7 +77,7 @@ export class htmlPlugin {
   public setDirectory = async (args: ToolArgs, __options: PluginOptionParams) => {
     this.sessionDir = args.directoryName as string;
     const outputDir = path.resolve(this.outputDir, this.sessionDir);
-    console.error(outputDir);
+    // console.error(outputDir);
     mkdir(outputDir);
 
     return {
