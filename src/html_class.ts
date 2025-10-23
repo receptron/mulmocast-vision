@@ -137,4 +137,7 @@ export class htmlPlugin {
       text: `pdf created: ${outputDir}`,
     };
   };
+
+  public dumpMulmoScript = () => {
+  };
 }
