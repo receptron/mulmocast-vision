@@ -138,6 +138,5 @@ export class htmlPlugin {
     };
   };
 
-  public dumpMulmoScript = () => {
-  };
+  public dumpMulmoScript = () => {};
 }
