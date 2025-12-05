@@ -73,6 +73,13 @@ export class htmlPlugin {
       const outfile = imageFilePath ?? path.resolve(this.outputDir, this.sessionDir, `${outputFileName}.png`);
       const htmlFile = htmlFilePath ?? path.resolve(this.outputDir, this.sessionDir, `${outputFileName}.html`);
 
+      // Ensure the output directory exists
+      const outputDir = path.dirname(outfile);
+      if (!fs.existsSync(outputDir)) {
+        logger.info("Creating output directory", { outputDir });
+        mkdir(outputDir);
+      }
+
       await createPage(this.rootDir, outfile, html, { htmlFile, ...this.templateOptions });
 
       logger.fileWrite(outfile);
