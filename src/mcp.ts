@@ -88,7 +88,6 @@ const main = async () => {
     await server.connect(transport);
     logger.info("MCP server connected and ready");
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : String(error);
     logger.error("Failed to start MCP server", error);
     throw error;
   }

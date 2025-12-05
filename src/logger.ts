@@ -129,15 +129,15 @@ class FileLogger implements LoggerInterface {
 
 // No-op logger for disabling logging
 class NoOpLogger implements LoggerInterface {
-  info(_message: string, _data?: unknown): void {}
-  error(_message: string, _error?: Error | unknown, _data?: unknown): void {}
-  warn(_message: string, _data?: unknown): void {}
-  debug(_message: string, _data?: unknown): void {}
-  fileRead(_filePath: string): void {}
-  fileWrite(_filePath: string, _size?: number): void {}
-  fileDelete(_filePath: string): void {}
-  toolCall(_toolName: string, _args: unknown): void {}
-  toolResult(_toolName: string, _success: boolean, _result?: unknown): void {}
+  info(__message: string, __data?: unknown): void {}
+  error(__message: string, __error?: Error | unknown, __data?: unknown): void {}
+  warn(__message: string, __data?: unknown): void {}
+  debug(__message: string, __data?: unknown): void {}
+  fileRead(__filePath: string): void {}
+  fileWrite(__filePath: string, __size?: number): void {}
+  fileDelete(__filePath: string): void {}
+  toolCall(__toolName: string, __args: unknown): void {}
+  toolResult(__toolName: string, __success: boolean, __result?: unknown): void {}
 }
 
 // Logger manager
