@@ -76,8 +76,23 @@ export const writeJSONData = (baseDir: string, tools: OpenAITool[]) => {
   fs.writeFileSync(path.resolve(baseDir, "tools.json"), JSON.stringify(tools, null, 2), "utf8");
 };
 
+const findPackageRoot = (startPath: string): string => {
+  let dir = startPath;
+  while (true) {
+    const pkg = path.resolve(dir, "package.json");
+    if (fs.existsSync(pkg)) return dir;
+
+    const parent = path.dirname(dir);
+    if (parent === dir) {
+      throw new Error("package root not found");
+    }
+    dir = parent;
+  }
+};
+
 export const getRootDir = () => {
-  return path.resolve(__dirname, "../");
+  return findPackageRoot(__dirname);
+  // return path.resolve(__dirname, "../");
 };
 export const getOutDir = () => {
   const documentsDir = path.join(os.homedir(), "Documents");
