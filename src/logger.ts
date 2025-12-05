@@ -164,7 +164,19 @@ export const getLogger = (): LoggerInterface => {
   return loggerManager.getLogger();
 };
 
-export const logger = loggerManager.getLogger();
+// Proxy object that delegates to current logger
+// This ensures that the exported logger updates when setLogger() is called
+export const logger: LoggerInterface = {
+  info: (message: string, data?: unknown) => loggerManager.getLogger().info(message, data),
+  error: (message: string, error?: Error | unknown, data?: unknown) => loggerManager.getLogger().error(message, error, data),
+  warn: (message: string, data?: unknown) => loggerManager.getLogger().warn(message, data),
+  debug: (message: string, data?: unknown) => loggerManager.getLogger().debug(message, data),
+  fileRead: (filePath: string) => loggerManager.getLogger().fileRead(filePath),
+  fileWrite: (filePath: string, size?: number) => loggerManager.getLogger().fileWrite(filePath, size),
+  fileDelete: (filePath: string) => loggerManager.getLogger().fileDelete(filePath),
+  toolCall: (toolName: string, args: unknown) => loggerManager.getLogger().toolCall(toolName, args),
+  toolResult: (toolName: string, success: boolean, result?: unknown) => loggerManager.getLogger().toolResult(toolName, success, result),
+};
 
 // Export logger implementations
 export { FileLogger, NoOpLogger };
