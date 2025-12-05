@@ -6,6 +6,7 @@ import { createPage, getOutDir, getRootDir, mkdir } from "./utils";
 import { functionNameToTemplateName } from "./commons";
 import nunjucks from "nunjucks";
 import { type PluginOptionParams, type ToolArgs, type CreatePageOptions } from "./type";
+import { getLogger } from "./logger";
 
 export class htmlPlugin {
   protected outputDir: string;
@@ -39,6 +40,8 @@ export class htmlPlugin {
 
   // api for mcp
   public callNamedFunction = async (functionName: string, args: ToolArgs, options: PluginOptionParams) => {
+    const logger = getLogger();
+    logger.debug(`callNamedFunction: ${functionName}`, { args, options });
     const member = (this as Record<string, unknown>)[functionName];
     if (member && typeof member === "function") {
       return member(args, { ...options, functionName });
@@ -47,37 +50,74 @@ export class htmlPlugin {
   };
 
   private generateHtml = async (args: ToolArgs, options: PluginOptionParams) => {
+    const logger = getLogger();
     const { outputFileName, functionName, imageFilePath, htmlFilePath } = options ?? {};
     if (!functionName) {
       throw new Error("functionName is required");
     }
-    const html = this.getHtml(functionName, args);
-    const outfile = imageFilePath ?? path.resolve(this.outputDir, this.sessionDir, `${outputFileName}.png`);
-    const htmlFile = htmlFilePath ?? path.resolve(this.outputDir, this.sessionDir, `${outputFileName}.html`);
+    logger.info("Generating HTML", { functionName, outputFileName });
 
-    await createPage(this.rootDir, outfile, html, { htmlFile, ...this.templateOptions });
+    try {
+      const html = this.getHtml(functionName, args);
+      const outfile = imageFilePath ?? path.resolve(this.outputDir, this.sessionDir, `${outputFileName}.png`);
+      const htmlFile = htmlFilePath ?? path.resolve(this.outputDir, this.sessionDir, `${outputFileName}.html`);
 
-    return {
-      text: `html generated successfully to: ${outfile}`,
-    };
+      await createPage(this.rootDir, outfile, html, { htmlFile, ...this.templateOptions });
+
+      logger.fileWrite(outfile);
+      logger.fileWrite(htmlFile);
+      logger.info("HTML generated successfully", { outfile, htmlFile });
+
+      return {
+        text: `html generated successfully to: ${outfile}`,
+      };
+    } catch (error) {
+      logger.error("Failed to generate HTML", error, {
+        functionName,
+        outputFileName,
+        args,
+        outputDir: this.outputDir,
+        sessionDir: this.sessionDir,
+      });
+      throw error;
+    }
   };
 
   // for electron
   public getHtml = (functionName: string, args: ToolArgs) => {
+    const logger = getLogger();
     const templateFileName = functionNameToTemplateName(functionName);
     const templateFilePath = path.resolve(this.templateDir ? this.templateDir : path.resolve(this.rootDir, "html", this.htmlDir), `${templateFileName}.html`);
 
     if (!fs.existsSync(templateFilePath)) {
-      throw new Error(`getHtml: file ${templateFilePath} not exists.`);
+      const error = new Error(`getHtml: file ${templateFilePath} not exists.`);
+      logger.error("Template file not found", error, {
+        templateFilePath,
+        functionName,
+        templateFileName,
+        templateDir: this.templateDir,
+        htmlDir: this.htmlDir,
+        rootDir: this.rootDir,
+      });
+      throw error;
     }
-    return nunjucks.render(templateFilePath, args);
+    logger.fileRead(templateFilePath);
+    logger.debug("Rendering template", { templateFileName, args });
+
+    try {
+      return nunjucks.render(templateFilePath, args);
+    } catch (error) {
+      logger.error("Template rendering failed", error, { templateFilePath, args });
+      throw error;
+    }
   };
 
   // for mcp
   public setDirectory = async (args: ToolArgs, __options: PluginOptionParams) => {
+    const logger = getLogger();
     this.sessionDir = args.directoryName as string;
     const outputDir = path.resolve(this.outputDir, this.sessionDir);
-    // console.error(outputDir);
+    logger.info("Setting directory", { sessionDir: this.sessionDir, outputDir });
     mkdir(outputDir);
 
     return {
@@ -86,56 +126,79 @@ export class htmlPlugin {
   };
 
   public createPDF = async (args: { filename: string; images?: string[] }, __options: PluginOptionParams) => {
+    const logger = getLogger();
     const { filename, images } = args ?? {};
-    const imageWidth = 1536;
-    const imageHeight = 1024;
+    logger.info("Creating PDF", { filename, imagesCount: images?.length });
 
-    const pageWidth = imageWidth * 0.75; // 1152pt
-    const pageHeight = imageHeight * 0.75; // 768pt
+    try {
+      const imageWidth = 1536;
+      const imageHeight = 1024;
 
-    const outputDir = path.resolve(this.outputDir, this.sessionDir);
+      const pageWidth = imageWidth * 0.75; // 1152pt
+      const pageHeight = imageHeight * 0.75; // 768pt
 
-    const files =
-      images ??
-      fs
-        .readdirSync(outputDir)
-        .filter((f) => f.toLowerCase().endsWith(".png"))
-        .sort(new Intl.Collator("ja", { numeric: true }).compare);
+      const outputDir = path.resolve(this.outputDir, this.sessionDir);
 
-    if (files.length === 0) {
-      console.error("no PNG file");
-      return;
-    }
+      const files =
+        images ??
+        fs
+          .readdirSync(outputDir)
+          .filter((f) => f.toLowerCase().endsWith(".png"))
+          .sort(new Intl.Collator("ja", { numeric: true }).compare);
 
-    const doc = new PDFDocument({
-      size: [pageWidth, pageHeight],
-      margins: {
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0,
-      },
-    });
-    doc.pipe(fs.createWriteStream(path.resolve(outputDir, filename as string)));
-
-    files.forEach((f, i) => {
-      if (i > 0) {
-        doc.addPage({
-          size: [pageWidth, pageHeight],
-          margins: { top: 0, bottom: 0, left: 0, right: 0 },
-        });
+      if (files.length === 0) {
+        const error = new Error("No PNG files found");
+        logger.error("No PNG files found", error, { outputDir });
+        console.error("no PNG file");
+        return;
       }
-      doc.image(path.join(outputDir, f), 0, 0, {
-        width: pageWidth,
-        height: pageHeight,
+
+      logger.debug("PNG files found", { count: files.length, files });
+
+      const doc = new PDFDocument({
+        size: [pageWidth, pageHeight],
+        margins: {
+          top: 0,
+          bottom: 0,
+          left: 0,
+          right: 0,
+        },
       });
-    });
 
-    doc.end();
+      const pdfPath = path.resolve(outputDir, filename as string);
+      doc.pipe(fs.createWriteStream(pdfPath));
 
-    return {
-      text: `pdf created: ${outputDir}`,
-    };
+      files.forEach((f, i) => {
+        const imagePath = path.join(outputDir, f);
+        logger.fileRead(imagePath);
+        if (i > 0) {
+          doc.addPage({
+            size: [pageWidth, pageHeight],
+            margins: { top: 0, bottom: 0, left: 0, right: 0 },
+          });
+        }
+        doc.image(imagePath, 0, 0, {
+          width: pageWidth,
+          height: pageHeight,
+        });
+      });
+
+      doc.end();
+      logger.fileWrite(pdfPath);
+      logger.info("PDF created successfully", { pdfPath, pageCount: files.length });
+
+      return {
+        text: `pdf created: ${outputDir}`,
+      };
+    } catch (error) {
+      logger.error("Failed to create PDF", error, {
+        filename,
+        images,
+        outputDir: this.outputDir,
+        sessionDir: this.sessionDir,
+      });
+      throw error;
+    }
   };
 
   public dumpMulmoScript = () => {};
