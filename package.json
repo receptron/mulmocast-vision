@@ -33,7 +33,7 @@
   "homepage": "https://github.com/receptron/mulmocast-vision",
   "license": "AGPL-3.0-or-later",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.24.2",
+    "@modelcontextprotocol/sdk": "^1.24.3",
     "nunjucks": "^3.2.4",
     "pdfkit": "^0.17.2",
     "puppeteer": "^24.32.0"
