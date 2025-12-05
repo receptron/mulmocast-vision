@@ -15,6 +15,7 @@ export class htmlPlugin {
   protected templateDir: string;
   protected sessionDir: string;
   protected templateOptions: CreatePageOptions;
+  protected nunjucksEnv: nunjucks.Environment;
 
   constructor({
     outputDir,
@@ -36,6 +37,16 @@ export class htmlPlugin {
     this.htmlDir = htmlDir ?? "html2";
     this.templateDir = templateDir ?? "";
     this.templateOptions = templateOptions ?? {};
+
+    // Configure Nunjucks environment with FileSystemLoader
+    const templatePath = this.templateDir ? this.templateDir : path.resolve(this.rootDir, "html", this.htmlDir);
+    const loader = new nunjucks.FileSystemLoader(templatePath, {
+      noCache: true, // Disable cache to ensure fresh templates
+    });
+    this.nunjucksEnv = new nunjucks.Environment(loader, {
+      autoescape: false, // Don't escape HTML
+      throwOnUndefined: false, // Don't throw on undefined variables
+    });
   }
 
   // api for mcp
@@ -105,9 +116,11 @@ export class htmlPlugin {
     logger.debug("Rendering template", { templateFileName, args });
 
     try {
-      return nunjucks.render(templateFilePath, args);
+      // Use the configured Nunjucks environment instead of the default
+      // This ensures the FileSystemLoader can find the template
+      return this.nunjucksEnv.render(`${templateFileName}.html`, args);
     } catch (error) {
-      logger.error("Template rendering failed", error, { templateFilePath, args });
+      logger.error("Template rendering failed", error, { templateFilePath, templateFileName, args });
       throw error;
     }
   };
