@@ -10,8 +10,10 @@ import { openAIToolsToAnthropicTools, generateUniqueId } from "./commons";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 
 import { getRootDir, getOutDir } from "./utils";
+import { getLogger } from "./logger";
 
 export const getServer = (handler: htmlPlugin) => {
+  const logger = getLogger();
   const server = new Server(
     {
       name: "mulmocast-vision",
@@ -24,19 +26,24 @@ export const getServer = (handler: htmlPlugin) => {
     },
   );
 
+  logger.info("MCP Server initialized", { name: "mulmocast-vision", version: "1.0.2" });
+
   // List available tools
   server.setRequestHandler(ListToolsRequestSchema, async () => {
+    logger.debug("List tools requested");
     return openAIToolsToAnthropicTools([...tools, ...mcp_tools]);
   });
 
   // Handle tool calls
   server.setRequestHandler(CallToolRequestSchema, async (request: CallToolRequest) => {
     const { name, arguments: args } = request.params;
+    logger.toolCall(name, args);
     console.error([...tools, ...mcp_tools]);
     try {
       if (args) {
         const fileName = generateUniqueId();
         const result = await handler.callNamedFunction(name, args, { outputFileName: fileName });
+        logger.toolResult(name, true, result);
         return {
           content: [
             {
@@ -49,6 +56,8 @@ export const getServer = (handler: htmlPlugin) => {
       throw new Error(`No args: ${name}.`);
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : String(error);
+      logger.toolResult(name, false, { error: errorMessage });
+      logger.error(`Tool call failed: ${name}`, error, { toolName: name, args });
       return {
         content: [
           {
@@ -64,14 +73,24 @@ export const getServer = (handler: htmlPlugin) => {
 };
 
 const main = async () => {
-  const rootDir = getRootDir();
-  const outputDir = getOutDir();
-  const htmlDir = "html2";
-  const handler = new htmlPlugin({ outputDir, rootDir, htmlDir });
+  const logger = getLogger();
+  try {
+    logger.info("Starting MCP server");
+    const rootDir = getRootDir();
+    const outputDir = getOutDir();
+    const htmlDir = "html2";
+    logger.info("Configuration loaded", { rootDir, outputDir, htmlDir });
 
-  const server = getServer(handler);
-  const transport = new StdioServerTransport();
-  await server.connect(transport);
+    const handler = new htmlPlugin({ outputDir, rootDir, htmlDir });
+
+    const server = getServer(handler);
+    const transport = new StdioServerTransport();
+    await server.connect(transport);
+    logger.info("MCP server connected and ready");
+  } catch (error) {
+    logger.error("Failed to start MCP server", error);
+    throw error;
+  }
 };
 
 main();

@@ -72,9 +72,62 @@ You can instruct these actions via prompts.
 - SWOT, PEST, and 3C Analysis
 - Summary, Agenda, and Closing Slides
 
+## Logging
+
+mulmocast-vision automatically logs all operations and errors to help with debugging and monitoring.
+
+### Log Location
+
+Logs are saved in `/tmp/mulmocast-vision-mcp/` with daily rotation:
+- Format: `mcp_yyyymmdd.log` (e.g., `mcp_20251206.log`)
+- Each day creates a new log file
+
+### What is Logged
+
+- **MCP Server Operations**: Server initialization, tool calls, and results
+- **File Operations**: Template reads, HTML/PNG generation, PDF creation
+- **Errors**: Detailed error messages with full stack traces
+- **Debug Information**: Template rendering, directory operations, and more
+
+### Log Format
+
+Logs are written in JSON Lines format for easy parsing:
+
+```json
+{
+  "timestamp": "2025-01-15T10:30:45.123Z",
+  "level": "ERROR",
+  "message": "Template file not found",
+  "data": {
+    "errorMessage": "getHtml: file /path/to/template.html not exists.",
+    "errorName": "Error",
+    "stack": "Error: getHtml: file...\n    at htmlPlugin.getHtml...",
+    "templateFilePath": "/path/to/template.html",
+    "functionName": "createAgendaSlide"
+  }
+}
+```
+
+### Custom Logger
+
+You can replace the default logger with your own implementation (e.g., for telemetry):
+
+```typescript
+import { setLogger, LoggerInterface } from 'mulmocast-vision/logger';
+
+class CustomLogger implements LoggerInterface {
+  info(message: string, data?: unknown) {
+    // Your implementation
+  }
+  // ... other methods
+}
+
+setLogger(new CustomLogger());
+```
+
 ## For Developers
 
-MulmoCast Vision is open source, so you can apply various designs by modifying the HTML.  
+MulmoCast Vision is open source, so you can apply various designs by modifying the HTML.
 For adding styles, please refer to [Style.ja.md](https://github.com/receptron/mulmocast-vision/blob/main/Style.ja.md).
 
 ### Official Repository & Package
@@ -138,4 +191,59 @@ MCP対応ツール（例: Claude Desktop）の設定ファイルに以下を追�
 - ビジネスモデルキャンバス
 - SWOT分析、PEST分析、3C分析
 - サマリースライド、アジェンダスライド、クロージングスライド
+
+---
+
+## ログ機能
+
+mulmocast-visionは、デバッグや監視を支援するため、すべての操作とエラーを自動的にログに記録します。
+
+### ログの保存場所
+
+ログは `/tmp/mulmocast-vision-mcp/` に日次ローテーションで保存されます：
+- 形式: `mcp_yyyymmdd.log` (例: `mcp_20251206.log`)
+- 日付が変わると新しいログファイルが作成されます
+
+### 記録される内容
+
+- **MCPサーバー操作**: サーバーの初期化、ツール呼び出し、実行結果
+- **ファイル操作**: テンプレート読み込み、HTML/PNG生成、PDF作成
+- **エラー**: 詳細なエラーメッセージとスタックトレース
+- **デバッグ情報**: テンプレートレンダリング、ディレクトリ操作など
+
+### ログフォーマット
+
+ログはJSON Lines形式で記録され、解析が容易です：
+
+```json
+{
+  "timestamp": "2025-01-15T10:30:45.123Z",
+  "level": "ERROR",
+  "message": "Template file not found",
+  "data": {
+    "errorMessage": "getHtml: file /path/to/template.html not exists.",
+    "errorName": "Error",
+    "stack": "Error: getHtml: file...\n    at htmlPlugin.getHtml...",
+    "templateFilePath": "/path/to/template.html",
+    "functionName": "createAgendaSlide"
+  }
+}
+```
+
+### カスタムロガー
+
+デフォルトのロガーを独自の実装（テレメトリーなど）に置き換えることができます：
+
+```typescript
+import { setLogger, LoggerInterface } from 'mulmocast-vision/logger';
+
+class CustomLogger implements LoggerInterface {
+  info(message: string, data?: unknown) {
+    // 独自の実装
+  }
+  // ... その他のメソッド
+}
+
+setLogger(new CustomLogger());
+```
 
