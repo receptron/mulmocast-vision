@@ -19,8 +19,8 @@
     "test_run": "node --test  --require ts-node/register ./tests/run_*.ts # just run locally",
     "ai": "npx tsx ./old/presentation.ts",
     "generate_all_images": "npx tsx ./tests/test.ts",
-    "design": "NODE_ENV=test npx tsx ./tests/design.ts",
-    "ci_test": "NODE_ENV=test npx tsx ./tests/test.ts"
+    "design": "cross-env NODE_ENV=test npx tsx ./tests/design.ts",
+    "ci_test": "cross-env NODE_ENV=test npx tsx ./tests/test.ts"
   },
   "repository": {
     "type": "git",
@@ -41,6 +41,7 @@
   "devDependencies": {
     "@types/nunjucks": "^3.2.6",
     "@types/pdfkit": "^0.17.4",
+    "cross-env": "^10.1.0",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
