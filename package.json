@@ -33,23 +33,25 @@
   "homepage": "https://github.com/receptron/mulmocast-vision",
   "license": "AGPL-3.0-or-later",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.24.3",
+    "@modelcontextprotocol/sdk": "^1.26.0",
     "nunjucks": "^3.2.4",
     "pdfkit": "^0.17.2",
-    "puppeteer": "^24.32.0"
+    "puppeteer": "^24.37.2"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/nunjucks": "^3.2.6",
     "@types/pdfkit": "^0.17.4",
     "cross-env": "^10.1.0",
-    "eslint": "^9.39.1",
+    "eslint": "^10.0.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-prettier": "^5.5.5",
+    "globals": "^17.3.0",
     "graphai": "^2.0.16",
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.48.1"
+    "typescript-eslint": "^8.54.0"
   },
   "types": "./lib/index.d.ts",
   "directories": {
