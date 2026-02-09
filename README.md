@@ -1,3 +1,4 @@
+[![npm version](https://badge.fury.io/js/mulmocast-vision.svg)](https://badge.fury.io/js/mulmocast-vision)
 # mulmocast-vision  
 
 **mulmocast-vision** is a tool that uses LLMs via MCP (Model Context Protocol) to automatically generate presentation slides, similar to PowerPoint.  
@@ -246,4 +247,3 @@ class CustomLogger implements LoggerInterface {
 
 setLogger(new CustomLogger());
 ```
-
