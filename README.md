@@ -1,5 +1,7 @@
 [![npm version](https://badge.fury.io/js/mulmocast-vision.svg)](https://badge.fury.io/js/mulmocast-vision)
-# mulmocast-vision  
+# mulmocast-vision
+
+> **Note**: This repository has been archived. Development has moved to [mulmocast-plus](https://github.com/receptron/mulmocast-plus) monorepo (`packages/mulmocast-vision`).
 
 **mulmocast-vision** is a tool that uses LLMs via MCP (Model Context Protocol) to automatically generate presentation slides, similar to PowerPoint.  
 With **80+ business-oriented slide templates**, you can quickly create proposals, strategy decks, and other professional materials.  
