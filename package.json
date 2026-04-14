@@ -39,7 +39,8 @@
     "@modelcontextprotocol/sdk": "^1.27.1",
     "nunjucks": "^3.2.4",
     "pdfkit": "^0.18.0",
-    "puppeteer": "^24.39.1"
+    "puppeteer": "^24.39.1",
+    "yauzl": "^3.2.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
