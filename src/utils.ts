@@ -28,7 +28,7 @@ export const renderHTMLToImage = async (html: string, outputPath: string, width:
       const de = document.documentElement;
       const sw = Math.max(de.scrollWidth, document.body.scrollWidth || 0);
       const sh = Math.max(de.scrollHeight, document.body.scrollHeight || 0);
-      const scale = Math.min(vw / (sw || vw), vh / (sh || vh), 1); // <=1 で縮小のみ
+      const scale = Math.min(vw / (sw || vw), vh / (sh || vh), 1);
       de.style.overflow = "hidden";
       (document.body as HTMLElement).style.zoom = String(scale);
     },

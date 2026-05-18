@@ -14,7 +14,7 @@ export default [
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    files: ['**/utils/markdown.ts'],
+    files: ['**/utils/markdown.ts', 'src/utils.ts'],
     languageOptions: {
       globals: {
         ...globals.browser,

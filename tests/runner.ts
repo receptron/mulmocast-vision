@@ -1,10 +1,19 @@
 import { GraphAI, type NodeData } from "graphai";
-// options: fileName, style
+import { type ToolArgs, type PluginOptionParams } from "../src/type";
 
-export const toolsRunner = async (handler: any, response: any) => {
+type ToolCallHandler = {
+  callNamedFunction: (name: string, args: ToolArgs, options: PluginOptionParams) => Promise<void>;
+};
+
+type ToolCallItem = {
+  name: string;
+  arguments: unknown;
+};
+
+export const toolsRunner = async (handler: ToolCallHandler, response: ToolCallItem[]) => {
   const nodes: Record<string, NodeData> = {};
 
-  response.forEach((tool: { name: string; arguments: unknown }, index: number) => {
+  response.forEach((tool, index) => {
     nodes[String(index)] = {
       agent: async (namedInput: { data: { args: unknown; options: { name: string; index: number } } }) => {
         await handler.callNamedFunction(tool.name, namedInput.data.args, namedInput.data.options);
