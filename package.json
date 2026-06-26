@@ -52,7 +52,7 @@
     "eslint-plugin-prettier": "^5.5.6",
     "globals": "^17.7.0",
     "graphai": "^2.0.18",
-    "prettier": "^3.8.4",
+    "prettier": "^3.8.5",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.62.0"
