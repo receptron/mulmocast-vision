@@ -39,7 +39,7 @@
     "@modelcontextprotocol/sdk": "^1.27.1",
     "nunjucks": "^3.2.4",
     "pdfkit": "^0.18.0",
-    "puppeteer": "^25.2.1",
+    "puppeteer": "^25.3.0",
     "yauzl": "^3.4.0"
   },
   "devDependencies": {
@@ -47,15 +47,15 @@
     "@types/nunjucks": "^3.2.6",
     "@types/pdfkit": "^0.17.6",
     "cross-env": "^10.1.0",
-    "eslint": "^10.5.0",
+    "eslint": "^10.7.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.6",
     "globals": "^17.7.0",
     "graphai": "^2.0.18",
-    "prettier": "^3.8.5",
+    "prettier": "^3.9.5",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.62.0"
+    "typescript-eslint": "^8.64.0"
   },
   "types": "./lib/index.d.ts",
   "directories": {
