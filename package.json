@@ -52,10 +52,10 @@
     "eslint-plugin-prettier": "^5.5.6",
     "globals": "^17.7.0",
     "graphai": "^2.0.18",
-    "prettier": "^3.9.5",
+    "prettier": "^3.9.6",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.64.0"
+    "typescript-eslint": "^8.65.0"
   },
   "types": "./lib/index.d.ts",
   "directories": {
