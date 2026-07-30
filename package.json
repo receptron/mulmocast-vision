@@ -13,6 +13,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "typecheck": "tsc --noEmit",
     "lint": "eslint src tests",
     "format": "prettier --write '{src,tests,html}/**/*.{ts,html}'",
     "test": "node --test --require ts-node/register ./tests/test_*.ts",
@@ -36,10 +37,10 @@
     "yauzl": "^3.2.1"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.27.1",
+    "@modelcontextprotocol/sdk": "^1.30.0",
     "nunjucks": "^3.2.4",
-    "pdfkit": "^0.18.0",
-    "puppeteer": "^25.3.0",
+    "pdfkit": "^0.19.1",
+    "puppeteer": "^25.4.0",
     "yauzl": "^3.4.0"
   },
   "devDependencies": {
@@ -47,10 +48,10 @@
     "@types/nunjucks": "^3.2.6",
     "@types/pdfkit": "^0.17.6",
     "cross-env": "^10.1.0",
-    "eslint": "^10.7.0",
+    "eslint": "^10.8.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.6",
-    "globals": "^17.7.0",
+    "globals": "^17.8.0",
     "graphai": "^2.0.18",
     "prettier": "^3.9.6",
     "ts-node": "^10.9.2",
