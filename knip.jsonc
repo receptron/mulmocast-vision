@@ -1,0 +1,29 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  // Public API entry is src/index.ts (package.json "main": lib/index.js is its build output) and
+  // the MCP CLI is src/mcp.ts (package.json "bin": lib/mcp.js). knip maps both back through the
+  // tsconfig outDir and auto-detects them as default entries, so they are not listed here.
+  // Every tests/*.ts is a standalone script that exercises the library: the node --test target
+  // (test_*.ts) plus manually-run scripts wired to package.json (tests/test.ts for
+  // generate_all_images/ci_test, tests/design.ts for design). They are entry points, not
+  // analyzed source.
+  "entry": ["tests/**/*.ts"],
+  "project": ["src/**/*.ts"],
+  "ignoreExportsUsedInFile": true,
+  "includeEntryExports": false,
+  "rules": {
+    // Warn mode: every rule is "warn" (reported, exit 0) or "off". Nothing gates CI here.
+    "files": "warn",
+    "dependencies": "warn",
+    "devDependencies": "warn",
+    "unlisted": "warn",
+    "exports": "warn",
+    "types": "warn",
+    "unresolved": "off",
+    "binaries": "off",
+    "nsExports": "off",
+    "nsTypes": "off",
+    "enumMembers": "off",
+    "duplicates": "off",
+  },
+}

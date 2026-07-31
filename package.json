@@ -21,7 +21,8 @@
     "ai": "npx tsx ./old/presentation.ts",
     "generate_all_images": "npx tsx ./tests/test.ts",
     "design": "cross-env NODE_ENV=test npx tsx ./tests/design.ts",
-    "ci_test": "cross-env NODE_ENV=test npx tsx ./tests/test.ts"
+    "ci_test": "cross-env NODE_ENV=test npx tsx ./tests/test.ts",
+    "knip": "knip"
   },
   "repository": {
     "type": "git",
@@ -53,6 +54,7 @@
     "eslint-plugin-prettier": "^5.5.6",
     "globals": "^17.8.0",
     "graphai": "^2.0.18",
+    "knip": "^6",
     "prettier": "^3.9.6",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3",
