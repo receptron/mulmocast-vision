@@ -38,27 +38,27 @@
     "yauzl": "^3.2.1"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.32.1",
+    "@modelcontextprotocol/sdk": "^1.32.2",
     "nunjucks": "^3.2.4",
-    "pdfkit": "^0.20.2",
-    "puppeteer": "^25.14.0",
+    "pdfkit": "^0.21.0",
+    "puppeteer": "^25.18.1",
     "yauzl": "^3.4.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/nunjucks": "^3.2.6",
-    "@types/pdfkit": "^0.17.6",
+    "@types/pdfkit": "^0.17.7",
     "cross-env": "^10.1.0",
-    "eslint": "^10.13.0",
+    "eslint": "^10.15.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.7",
-    "globals": "^17.13.0",
+    "globals": "^17.14.0",
     "graphai": "^2.0.18",
-    "knip": "^6.41.0",
-    "prettier": "^3.9.10",
+    "knip": "^6.48.0",
+    "prettier": "^3.10.1",
     "ts-node": "^10.9.2",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.71.2"
+    "typescript-eslint": "^8.74.0"
   },
   "types": "./lib/index.d.ts",
   "directories": {
